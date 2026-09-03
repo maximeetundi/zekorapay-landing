@@ -1,23 +1,47 @@
 // Métadonnées du guide utilisateur, indépendantes de la langue — même pattern
-// que content/blog et content/features (voir posts.ts / features.ts). Le
-// contenu long vit dans translations/<locale>.ts, indexé par slug.
+// que content/blog et content/features. Le contenu long vit dans
+// translations/<locale>.ts, indexé par slug.
 //
-// 7 sujets réels, ancrés sur les fonctionnalités effectivement disponibles
-// dans l'app (onboarding/KYC, wallet, tontines, événements, entreprise,
-// boutique, cartes) — pas de sujet "bientôt disponible" comme dans l'ancien
-// guide Laravel (resources/views/guide/*.blade.php), qui marquait "compte" et
-// "entreprises" comme non prêts alors qu'ils le sont côté backend.
+// 15 sujets, un par module réel du menu de l'application (app.zekorapay.com),
+// vérifiés en conditions réelles le 2026-09-03 via une connexion live au
+// compte de test (voir memory zekorapay-frontend-test-account) : chaque
+// section de ce guide correspond à un écran effectivement visité et
+// photographié pendant cette session, pas à une supposition sur ce que
+// l'app est censée faire.
 export interface GuideMeta {
   slug: string;
-  icon: "onboarding" | "wallet" | "tontines" | "events" | "enterprise" | "shop" | "cards";
+  icon:
+    | "onboarding"
+    | "wallet"
+    | "transfer"
+    | "cash"
+    | "exchange"
+    | "cards"
+    | "qr"
+    | "tontines"
+    | "events"
+    | "enterprise"
+    | "rentals"
+    | "shop"
+    | "donations"
+    | "video"
+    | "agent";
 }
 
 export const guideMeta: GuideMeta[] = [
   { slug: "demarrage", icon: "onboarding" },
-  { slug: "depots-retraits", icon: "wallet" },
+  { slug: "portefeuilles", icon: "wallet" },
+  { slug: "transferts", icon: "transfer" },
+  { slug: "depots-retraits", icon: "cash" },
+  { slug: "conversion", icon: "exchange" },
+  { slug: "cartes", icon: "cards" },
+  { slug: "paiements-marchand", icon: "qr" },
   { slug: "tontines-associations", icon: "tontines" },
   { slug: "evenements-billetterie", icon: "events" },
   { slug: "entreprises", icon: "enterprise" },
+  { slug: "location-immobilier", icon: "rentals" },
   { slug: "boutique", icon: "shop" },
-  { slug: "cartes", icon: "cards" },
+  { slug: "dons", icon: "donations" },
+  { slug: "reunions", icon: "video" },
+  { slug: "agents", icon: "agent" },
 ];

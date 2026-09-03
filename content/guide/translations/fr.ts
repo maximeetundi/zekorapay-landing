@@ -1,9 +1,9 @@
-// Contenu du guide utilisateur, en français. Porté et condensé depuis
-// l'ancien guide Laravel (resources/views/guide/*.blade.php et
-// resources/docs — voir DocumentSeeder.php) et vérifié contre les vraies
-// routes/permissions backend auditées cette session (association-service,
-// enterprise-service/rental_module_handler.go, shop-service, card-service) —
-// pas de fonctionnalité inventée.
+// Contenu du guide utilisateur, en français. Chaque sujet est vérifié en
+// conditions réelles (connexion live à app.zekorapay.com, compte de test)
+// le 2026-09-03 — captures d'écran et libellés d'interface pris tels quels,
+// aucune fonctionnalité inventée. Les sujets tontines-associations et
+// evenements-billetterie réutilisent en plus les vraies captures déjà
+// produites pour l'ancien guide Laravel (resources/views/guide/*.blade.php).
 
 export interface GuideStep {
   title: string;
@@ -45,7 +45,7 @@ export const fr: Record<string, LocalizedGuide> = {
       },
       {
         heading: "Vérification d'identité (KYC)",
-        intro: "Pour débloquer les limites de dépôt et de transfert, votre identité doit être vérifiée.",
+        intro: "Pour débloquer les limites de dépôt et de transfert, votre identité doit être vérifiée. Une fois validée, le badge « Vérifié » apparaît dans Paramètres → Vérification d'identité.",
         steps: [
           { title: "Pièce d'identité", description: "Photographiez votre carte d'identité ou votre passeport." },
           { title: "Selfie de vérification", description: "Prenez un court selfie ou une vidéo de vérification." },
@@ -53,10 +53,20 @@ export const fr: Record<string, LocalizedGuide> = {
         ],
       },
       {
+        heading: "Tableau de bord",
+        intro: "Après connexion, le tableau de bord regroupe en un coup d'œil vos portefeuilles, vos dernières transactions et vos cartes.",
+        images: [{ src: "/guide/demarrage/dashboard.png", alt: "Tableau de bord ZekoraPay" }],
+      },
+      {
+        heading: "Paramètres du compte",
+        intro: "La page Paramètres centralise tout : profil, sécurité (mot de passe, 2FA, sessions), vérification d'identité, préférences, notifications, méthodes de paiement, numéros de dépôt Mobile Money, clés API développeur, limites et PIN de vos cartes, paramètres entreprise, activation en tant qu'agent, et gestion locative.",
+        images: [{ src: "/guide/demarrage/settings.png", alt: "Page Paramètres" }],
+      },
+      {
         heading: "Types de profils",
         bullets: [
           "Particulier — profil standard, pour un usage personnel.",
-          "Agent — partenaire ZekoraPay qui traite les dépôts et retraits en espèces pour d'autres utilisateurs.",
+          "Agent — activable depuis Paramètres → Agent particulier ; traite les dépôts et retraits en espèces pour d'autres utilisateurs contre commission.",
           "Entreprise — nécessite des documents d'entreprise, débloque le module entreprise (employés, paie, boutique, événements, gestion locative).",
         ],
       },
@@ -68,31 +78,157 @@ export const fr: Record<string, LocalizedGuide> = {
           "Chiffrement RSA-OAEP côté client — le PIN est chiffré avec une clé publique avant de quitter votre appareil ; seul le serveur possède la clé privée.",
           "Validation serveur — l'action n'est exécutée qu'après vérification de la signature côté serveur.",
           "Traçabilité totale — chaque transaction, vote ou approbation est horodaté et conservé de façon immuable.",
+          "Ne communiquez jamais votre code PIN à qui que ce soit, pas même à un agent ZekoraPay — chacun valide toujours une opération depuis son propre compte.",
         ],
       },
     ],
   },
 
-  "depots-retraits": {
-    title: "Dépôts et retraits",
-    tagline: "Alimenter son portefeuille et récupérer ses fonds, par mobile money, carte, agent ou crypto.",
+  portefeuilles: {
+    title: "Portefeuilles",
+    tagline: "Un portefeuille multi-devises pour vos monnaies locales et vos cryptomonnaies.",
     sections: [
       {
-        heading: "Alimenter son portefeuille (dépôt)",
+        heading: "Vue d'ensemble",
+        intro: "La page « Mes Portefeuilles » regroupe tous vos comptes : devises fiduciaires (XAF, EUR…) et cryptomonnaies (BTC, USDC, XRP…), chacun avec son solde, son adresse de dépôt pour les cryptos, et ses actions rapides.",
+        bullets: [
+          "Solde protégé — le solde du portefeuille principal peut être masqué et nécessite de cliquer sur « Déverrouiller » pour s'afficher.",
+          "Recharger — alimente le portefeuille (Mobile Money, carte, agent ou dépôt crypto selon le type de portefeuille).",
+          "Envoyer — ouvre le formulaire de transfert avec ce portefeuille pré-sélectionné comme source.",
+          "Gérer — renommer, voir l'historique détaillé ou configurer un portefeuille.",
+          "+ Nouveau — crée un portefeuille supplémentaire (autre devise, ou portefeuille d'épargne dédié).",
+        ],
+        images: [{ src: "/guide/portefeuilles/overview.png", alt: "Mes Portefeuilles — vue multi-devises" }],
+      },
+    ],
+  },
+
+  transferts: {
+    title: "Transferts",
+    tagline: "Envoyer de l'argent à un ou plusieurs destinataires, par 5 méthodes différentes.",
+    sections: [
+      {
+        heading: "Transfert simple",
+        intro: "Choisissez le portefeuille source, le montant, puis la méthode de réception du destinataire :",
+        bullets: [
+          "ZekoraPay — vers un autre utilisateur, identifié par email ou téléphone.",
+          "Mobile Money — vers un numéro mobile money local.",
+          "Virement bancaire — vers un compte bancaire.",
+          "PayPal — vers une adresse email PayPal.",
+          "Crypto — vers une adresse de portefeuille externe.",
+        ],
+        images: [{ src: "/guide/transferts/transfer_form.png", alt: "Formulaire de transfert" }],
+      },
+      {
+        heading: "Transfert multiple",
+        intro: "Envoyez de l'argent à plusieurs destinataires en une seule fois, chacun avec sa propre méthode de réception — pratique pour un remboursement de groupe ou une petite paie ponctuelle.",
         steps: [
-          { title: "Mobile Money", description: "Indiquez le montant, choisissez votre opérateur, saisissez votre numéro et validez via le prompt USSD reçu sur votre téléphone." },
-          { title: "Carte bancaire", description: "Renseignez les informations de votre carte (Visa/Mastercard) dans une interface chiffrée avec vérification 3D Secure." },
-          { title: "Agent ZekoraPay (espèces)", description: "Trouvez l'agent le plus proche dans l'app, scannez son QR code, remettez vos espèces en échange de monnaie électronique." },
-          { title: "Dépôt en cryptomonnaie", description: "Chaque portefeuille dispose d'une adresse de dépôt dédiée par blockchain supportée. Les dépôts sont détectés automatiquement par un scanner de blocs et crédités après confirmation sur le réseau." },
+          { title: "Nommer le lot", description: "Donnez un nom au lot d'envoi (ex : « Paie fournisseurs mensuelle »)." },
+          { title: "Choisir le portefeuille source", description: "Sélectionnez le portefeuille qui financera l'ensemble du lot." },
+          { title: "Ajouter les destinataires", description: "Chaque destinataire a son propre montant et sa propre méthode (ZekoraPay, Mobile Money, banque…)." },
+          { title: "Envoyer", description: "Confirmez pour exécuter tous les transferts du lot.", pinRequired: true },
+        ],
+        images: [{ src: "/guide/transferts/bulk_transfer.png", alt: "Transfert multiple" }],
+      },
+    ],
+  },
+
+  "depots-retraits": {
+    title: "Dépôts et retraits en espèces",
+    tagline: "Convertir du cash en solde ZekoraPay et inversement, via le réseau d'agents.",
+    sections: [
+      {
+        heading: "Retirer du cash chez un agent",
+        steps: [
+          { title: "Identifier l'agent", description: "Scannez le QR code de l'agent, ou saisissez son code de retrait et son numéro de téléphone." },
+          { title: "Indiquer le montant", description: "Précisez la somme à retirer." },
+          { title: "Confirmer", description: "L'agent valide l'opération depuis son propre compte ; le montant est débité du vôtre.", pinRequired: true },
+        ],
+        images: [{ src: "/guide/depots-retraits/withdraw_agent.png", alt: "Retirer du cash chez un agent" }],
+      },
+      {
+        heading: "Déposer du cash chez un agent",
+        intro: "Rendez-vous chez un agent ZekoraPay et montrez-lui votre QR de dépôt personnel, ou donnez-lui votre numéro de téléphone. L'agent saisit le montant et valide l'opération depuis son propre compte.",
+        bullets: [
+          "Ne donnez jamais votre code PIN à l'agent — il n'en a jamais besoin pour créditer votre compte.",
+          "Le crédit est instantané dès validation par l'agent.",
+        ],
+        images: [{ src: "/guide/depots-retraits/deposit_qr.png", alt: "Déposer du cash — QR de dépôt personnel" }],
+      },
+      {
+        heading: "Autres moyens de recharge",
+        intro: "Depuis « Mes Portefeuilles » → « Recharger », un dépôt est aussi possible directement par Mobile Money, carte bancaire (3D Secure), ou vers l'adresse de dépôt crypto dédiée de votre portefeuille — sans passer par un agent.",
+      },
+    ],
+  },
+
+  conversion: {
+    title: "Conversion et change",
+    tagline: "Convertir entre devises locales, ou acheter/vendre des cryptomonnaies, instantanément.",
+    sections: [
+      {
+        heading: "Deux parcours",
+        bullets: [
+          "Conversion Monnaies Fiduciaires — convertit instantanément entre USD, EUR, GBP, JPY, CAD, AUD et plus, aux meilleurs taux disponibles.",
+          "Acheter / Vendre Crypto — achète ou vend des cryptomonnaies instantanément contre le solde de votre portefeuille.",
+        ],
+        images: [{ src: "/guide/conversion/overview.png", alt: "Page Convertir" }],
+      },
+    ],
+  },
+
+  cartes: {
+    title: "Cartes",
+    tagline: "Cartes prépayées virtuelles, physiques ou cadeaux, personnelles ou d'entreprise.",
+    sections: [
+      {
+        heading: "Vos cartes",
+        intro: "Les soldes sont masqués par défaut (bouton « Afficher les soldes »). Chaque carte affiche son statut :",
+        bullets: [
+          "Active — utilisable normalement.",
+          "Gelée — temporairement bloquée par vous, réactivable à tout moment.",
+          "Bloquée — bloquée définitivement (perte, fraude).",
+          "Expirée — date de validité dépassée, à renouveler.",
+        ],
+        images: [{ src: "/guide/cartes/overview.png", alt: "Mes Cartes" }],
+      },
+      {
+        heading: "Types de cartes",
+        bullets: [
+          "Carte virtuelle — disponible immédiatement, pour les paiements en ligne.",
+          "Carte physique — livrée par courrier, pour les paiements en boutique et aux distributeurs.",
+          "Carte cadeau — montant prédéfini, à offrir.",
         ],
       },
       {
-        heading: "Retirer des fonds",
-        steps: [
-          { title: "Vers Mobile Money", description: "Transférez le solde de votre portefeuille vers n'importe quel numéro compatible.", pinRequired: true },
-          { title: "Vers un compte bancaire", description: "Retrait par virement classique, traité sous quelques jours ouvrables.", pinRequired: true },
-          { title: "Chez un agent", description: "Initiez le retrait dans l'app puis récupérez l'argent physique auprès d'un agent ZekoraPay.", pinRequired: true },
+        heading: "Gestion",
+        bullets: [
+          "Rechargez votre carte depuis votre portefeuille.",
+          "Gelez ou débloquez votre carte instantanément.",
+          "Définissez des limites de dépense et un code PIN dédiés, depuis Paramètres → Mes cartes.",
         ],
+      },
+    ],
+  },
+
+  "paiements-marchand": {
+    title: "Scanner, payer et encaisser",
+    tagline: "Un scanner unique pour payer, valider un billet ou confirmer un transfert — et un espace pour encaisser vos propres clients.",
+    sections: [
+      {
+        heading: "Scanner un QR code",
+        intro: "Un seul scanner pour trois usages, détectés automatiquement selon le contenu du code : paiement marchand, billet d'événement, ou transfert. Trois modes de saisie : caméra, image, ou code manuel.",
+        images: [{ src: "/guide/paiements-marchand/scan.png", alt: "Scanner un QR code" }],
+      },
+      {
+        heading: "Espace Marchand — encaisser vos clients",
+        intro: "Créez une demande de paiement et recevez un QR code à présenter au client.",
+        bullets: [
+          "Prix fixe — le QR n'est utilisable qu'une seule fois, pour un montant donné.",
+          "Réutilisable (« reusable ») — le même QR peut servir à encaisser plusieurs clients successivement.",
+          "Le tableau de bord affiche le total reçu, le nombre de paiements et les demandes encore en attente.",
+        ],
+        images: [{ src: "/guide/paiements-marchand/merchant_space.png", alt: "Espace Marchand" }],
       },
     ],
   },
@@ -101,6 +237,11 @@ export const fr: Record<string, LocalizedGuide> = {
     title: "Tontines et associations",
     tagline: "Gestion complète des cotisations, votes et trésorerie de groupe, avec traçabilité totale.",
     sections: [
+      {
+        heading: "Explorer les associations",
+        intro: "La page Associations propose un explorateur public — filtrable par type (tontines, groupes de cotisation, groupes de solidarité) — avant de créer ou rejoindre un groupe.",
+        images: [{ src: "/guide/association/explorer_live.png", alt: "Explorateur d'associations et tontines" }],
+      },
       {
         heading: "Les acteurs",
         bullets: [
@@ -230,32 +371,66 @@ export const fr: Record<string, LocalizedGuide> = {
 
   entreprises: {
     title: "Module Entreprise",
-    tagline: "Employés, paie, facturation et modules additionnels pour les comptes professionnels.",
+    tagline: "Employés, paie, facturation, boutique, immobilier et bien plus pour les comptes professionnels.",
     sections: [
       {
+        heading: "Deux espaces",
+        bullets: [
+          "Entreprises — annuaire public : découvrez les entreprises de la communauté et abonnez-vous à leurs services.",
+          "Mes entreprises — pilotez les structures dont vous êtes propriétaire ou employé.",
+        ],
+        images: [{ src: "/guide/entreprises/dashboard.png", alt: "Tableau de bord entreprise" }],
+      },
+      {
+        heading: "Tout ce que gère une entreprise",
+        intro: "Le workspace d'une entreprise réunit, dans une même barre latérale : Employés, Abonnés, Portefeuilles entreprise, Transactions, Paie, Facturation, Gestion Locative, Boutiques, Paiement marchand, Événements, Campagnes, Finances, Gestion de stock, Services, Module Agent, Sécurité entreprise et historique des permissions.",
+      },
+      {
         heading: "Gestion des employés",
+        intro: "L'annuaire des employés affiche le total, les actifs, les invitations en attente et la masse salariale globale — avec, pour chacun, son poste, son rôle, son statut et son salaire net.",
         bullets: [
           "Invitez des collaborateurs et attribuez-leur un rôle (administrateur ou employé) avec des permissions précises.",
           "Chaque permission accordée à un administrateur ne peut jamais dépasser celles de la personne qui l'accorde.",
           "Configurez le mode de paiement de chaque employé (portefeuille ZekoraPay ou Mobile Money).",
         ],
+        images: [{ src: "/guide/entreprises/employees.png", alt: "Annuaire des employés" }],
       },
       {
-        heading: "Paie et finances",
+        heading: "Paie, finances et stock",
         bullets: [
-          "Paiement groupé des salaires en un clic.",
-          "Suivi des comptes et soldes de l'entreprise.",
-          "Gestion des services et de la facturation de l'entreprise.",
+          "Paiement groupé des salaires en un clic (« Lancer Paie »).",
+          "Suivi des comptes, transactions et facturation de l'entreprise.",
+          "Gestion de stock intégrée pour les entreprises qui vendent des produits physiques.",
+        ],
+      },
+    ],
+  },
+
+  "location-immobilier": {
+    title: "Location et immobilier",
+    tagline: "Publier et louer des logements, véhicules ou équipements.",
+    sections: [
+      {
+        heading: "Espace Location",
+        intro: "Disponible aussi bien pour un particulier que pour une entreprise (dans ce cas via l'onglet « Gestion Locative » du workspace entreprise). Trois catégories :",
+        bullets: [
+          "Immobilier — logements, chambres, bureaux.",
+          "Véhicules — location de véhicules.",
+          "Matériels — équipement à louer.",
+        ],
+        images: [{ src: "/guide/location-immobilier/personal_overview.png", alt: "Espace Location — catalogue" }],
+      },
+      {
+        heading: "Deux rôles",
+        bullets: [
+          "Mes Locations — ce que vous louez en tant que locataire.",
+          "Mes Espaces — les biens que vous proposez en tant que propriétaire/gérant, avec leur disponibilité (ex. « 6/7 libre(s) ») et leur prix mensuel.",
         ],
       },
       {
-        heading: "Modules additionnels",
-        bullets: [
-          "Boutique en ligne rattachée à l'entreprise.",
-          "Campagnes de dons pour l'entreprise.",
-          "Gestion locative (biens, baux, paiements de loyers).",
-          "Événements organisés au nom de l'entreprise.",
-        ],
+        heading: "Côté entreprise",
+        intro: "Une entreprise peut gérer un vrai parc immobilier depuis « Gestion Locative » : concessions immobilières, parcs de véhicules et magasins de matériel de location, tous rattachés au portefeuille de l'entreprise.",
+        images: [{ src: "/guide/location-immobilier/enterprise_rentals.png", alt: "Gestion Locative — espace entreprise" }],
       },
     ],
   },
@@ -265,8 +440,9 @@ export const fr: Record<string, LocalizedGuide> = {
     tagline: "Vendre en ligne, que vous soyez un particulier ou une entreprise.",
     sections: [
       {
-        heading: "Une boutique, deux profils possibles",
-        intro: "Une boutique peut être créée et gérée par un particulier ou par une entreprise — les fonctionnalités de vente sont identiques des deux côtés.",
+        heading: "Marketplace",
+        intro: "Trois onglets : Boutiques (parcourir), Produits, et Mes Boutiques (gérer les vôtres). Les boutiques sont classées par catégorie (Mode, Électronique, Alimentation, Beauté, Maison, Sport…).",
+        images: [{ src: "/guide/boutique/marketplace.png", alt: "Marketplace boutiques" }],
       },
       {
         heading: "Créer sa boutique",
@@ -284,36 +460,76 @@ export const fr: Record<string, LocalizedGuide> = {
           "Les paiements sont encaissés directement dans votre portefeuille ZekoraPay.",
         ],
       },
+    ],
+  },
+
+  dons: {
+    title: "Dons et solidarité",
+    tagline: "Créer et soutenir des cagnottes et campagnes de collecte.",
+    sections: [
       {
-        heading: "Pour les clients",
-        bullets: [
-          "Parcourez les produits par boutique ou par catégorie.",
-          "Laissez un avis après achat.",
-          "Suivez vos commandes en cours.",
+        heading: "Découvrir et soutenir",
+        intro: "Recherchez une cause, filtrez par statut (en cours, terminée…). Chaque cagnotte affiche le montant récolté, son objectif (ou « Sans limite ») et sa date de fin.",
+        images: [{ src: "/guide/dons/overview.png", alt: "Dons & Solidarité" }],
+      },
+      {
+        heading: "Créer une cagnotte",
+        steps: [
+          { title: "Créer une cagnotte", description: "Titre, description, objectif (optionnel), date de fin." },
+          { title: "Partager", description: "Diffusez le lien de votre cagnotte pour recevoir des dons." },
+          { title: "Retirer les fonds", description: "Depuis « Mes campagnes », transférez les dons reçus vers votre portefeuille.", pinRequired: true },
         ],
       },
     ],
   },
 
-  cartes: {
-    title: "Cartes ZekoraPay",
-    tagline: "Cartes prépayées virtuelles ou physiques, personnelles ou d'entreprise.",
+  reunions: {
+    title: "Réunions vidéo",
+    tagline: "Appels vidéo et réunions de groupe, jusqu'à 100 participants.",
     sections: [
       {
-        heading: "Types de cartes",
+        heading: "Démarrer ou rejoindre",
         bullets: [
-          "Carte virtuelle — disponible immédiatement, pour les paiements en ligne.",
-          "Carte physique — livrée par courrier, pour les paiements en boutique et aux distributeurs.",
-          "Carte cadeau — montant prédéfini, à offrir.",
+          "Démarrer une réunion — lance un appel instantané.",
+          "Programmer une réunion — planifie une réunion à venir, partageable par lien ou code.",
+          "Rejoindre une réunion — via un lien ou un code reçu.",
+        ],
+        images: [{ src: "/guide/reunions/overview.png", alt: "Vidéo et réunions" }],
+      },
+      {
+        heading: "Suivi",
+        bullets: [
+          "Onglet Réunions — réunions actives et à venir.",
+          "Onglet Enregistrements — replays des réunions enregistrées.",
+          "Onglet Historique — durée totale et historique complet.",
+        ],
+      },
+    ],
+  },
+
+  agents: {
+    title: "Devenir agent",
+    tagline: "Rejoindre le réseau d'agents ZekoraPay pour traiter des dépôts et retraits en espèces.",
+    sections: [
+      {
+        heading: "Activation",
+        intro: "Depuis Paramètres → Agent particulier (ou Agent entreprise pour une structure), activez votre portail agent. Un code agent unique vous est attribué, à partager avec vos clients.",
+        images: [{ src: "/guide/agents/portal.png", alt: "Portail Agent" }],
+      },
+      {
+        heading: "Traiter une opération",
+        steps: [
+          { title: "Dépôt client", description: "Le client vous montre son QR de dépôt ou son numéro ; vous saisissez le montant et validez depuis votre propre compte.", pinRequired: true },
+          { title: "Retrait client", description: "Le client scanne votre QR ou saisit votre code agent + votre numéro ; vous remettez les espèces après validation.", pinRequired: true },
         ],
       },
       {
-        heading: "Gestion de la carte",
+        heading: "Suivi de l'activité",
         bullets: [
-          "Rechargez votre carte depuis votre portefeuille, manuellement ou via une recharge automatique configurable.",
-          "Gelez ou débloquez votre carte instantanément en cas de perte ou de doute.",
-          "Définissez des limites de dépense personnalisées.",
-          "Consultez l'historique détaillé des transactions de la carte.",
+          "Float disponible — solde utilisable pour traiter les opérations.",
+          "Transactions et volume — cumul des opérations traitées.",
+          "Commissions — gains cumulés sur chaque opération.",
+          "Dépôts / Retraits confirmés — détail par type d'opération.",
         ],
       },
     ],

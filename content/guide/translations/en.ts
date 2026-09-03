@@ -1,4 +1,5 @@
-// English user guide content — mirrors translations/fr.ts.
+// English user guide content — mirrors translations/fr.ts. Every topic was
+// verified live against app.zekorapay.com on 2026-09-03.
 import type { LocalizedGuide } from "./fr";
 
 export const en: Record<string, LocalizedGuide> = {
@@ -16,7 +17,7 @@ export const en: Record<string, LocalizedGuide> = {
       },
       {
         heading: "Identity verification (KYC)",
-        intro: "To unlock higher deposit and transfer limits, your identity needs to be verified.",
+        intro: "To unlock higher deposit and transfer limits, your identity needs to be verified. Once validated, the \"Verified\" badge appears under Settings → Identity verification.",
         steps: [
           { title: "ID document", description: "Take a photo of your national ID card or passport." },
           { title: "Verification selfie", description: "Take a short selfie or verification video." },
@@ -24,10 +25,20 @@ export const en: Record<string, LocalizedGuide> = {
         ],
       },
       {
+        heading: "Dashboard",
+        intro: "After logging in, the dashboard brings together your wallets, latest transactions and cards at a glance.",
+        images: [{ src: "/guide/demarrage/dashboard.png", alt: "ZekoraPay dashboard" }],
+      },
+      {
+        heading: "Account settings",
+        intro: "The Settings page centralizes everything: profile, security (password, 2FA, sessions), identity verification, preferences, notifications, payment methods, Mobile Money deposit numbers, developer API keys, card limits and PINs, enterprise settings, agent activation, and rental management.",
+        images: [{ src: "/guide/demarrage/settings.png", alt: "Settings page" }],
+      },
+      {
         heading: "Profile types",
         bullets: [
           "Individual — standard profile, for personal use.",
-          "Agent — a ZekoraPay partner who handles cash deposits and withdrawals for other users.",
+          "Agent — activated from Settings → Individual agent; handles cash deposits and withdrawals for other users for a commission.",
           "Enterprise — requires business documents, unlocks the enterprise module (employees, payroll, shop, events, rentals).",
         ],
       },
@@ -39,31 +50,157 @@ export const en: Record<string, LocalizedGuide> = {
           "Client-side RSA-OAEP encryption — your PIN is encrypted with a public key before it ever leaves your device; only the server holds the private key.",
           "Server-side validation — the action only executes after the signature is verified server-side.",
           "Full traceability — every transaction, vote or approval is timestamped and stored immutably.",
+          "Never share your PIN with anyone, not even a ZekoraPay agent — everyone always confirms an operation from their own account.",
         ],
       },
     ],
   },
 
-  "depots-retraits": {
-    title: "Deposits and withdrawals",
-    tagline: "Top up your wallet and get your funds out, via mobile money, card, agent or crypto.",
+  portefeuilles: {
+    title: "Wallets",
+    tagline: "A multi-currency wallet for your local currencies and cryptocurrencies.",
     sections: [
       {
-        heading: "Topping up your wallet (deposit)",
+        heading: "Overview",
+        intro: "The \"My Wallets\" page brings together every account: fiat currencies (XAF, EUR…) and cryptocurrencies (BTC, USDC, XRP…), each with its balance, deposit address for crypto, and quick actions.",
+        bullets: [
+          "Protected balance — the main wallet's balance can be hidden and requires clicking \"Unlock\" to reveal.",
+          "Top up — funds the wallet (Mobile Money, card, agent, or crypto deposit depending on the wallet type).",
+          "Send — opens the transfer form with this wallet pre-selected as the source.",
+          "Manage — rename, view detailed history, or configure a wallet.",
+          "+ New — creates an additional wallet (another currency, or a dedicated savings wallet).",
+        ],
+        images: [{ src: "/guide/portefeuilles/overview.png", alt: "My Wallets — multi-currency view" }],
+      },
+    ],
+  },
+
+  transferts: {
+    title: "Transfers",
+    tagline: "Send money to one or several recipients, via 5 different methods.",
+    sections: [
+      {
+        heading: "Single transfer",
+        intro: "Pick the source wallet, the amount, then the recipient's receiving method:",
+        bullets: [
+          "ZekoraPay — to another user, identified by email or phone.",
+          "Mobile Money — to a local mobile money number.",
+          "Bank transfer — to a bank account.",
+          "PayPal — to a PayPal email address.",
+          "Crypto — to an external wallet address.",
+        ],
+        images: [{ src: "/guide/transferts/transfer_form.png", alt: "Transfer form" }],
+      },
+      {
+        heading: "Bulk transfer",
+        intro: "Send money to several recipients at once, each with their own receiving method — handy for a group refund or a one-off small payroll.",
         steps: [
-          { title: "Mobile Money", description: "Enter the amount, choose your operator, enter your number and confirm via the USSD prompt on your phone." },
-          { title: "Bank card", description: "Enter your card details (Visa/Mastercard) in an encrypted interface with 3D Secure verification." },
-          { title: "ZekoraPay Agent (cash)", description: "Find the nearest agent in the app, scan their QR code, and hand over your cash in exchange for electronic money." },
-          { title: "Crypto deposit", description: "Each wallet has a dedicated deposit address per supported blockchain. Deposits are automatically detected by a block scanner and credited after network confirmation." },
+          { title: "Name the batch", description: "Give the send batch a name (e.g. \"Monthly supplier payments\")." },
+          { title: "Choose the source wallet", description: "Select the wallet that will fund the whole batch." },
+          { title: "Add recipients", description: "Each recipient has their own amount and their own method (ZekoraPay, Mobile Money, bank…)." },
+          { title: "Send", description: "Confirm to execute every transfer in the batch.", pinRequired: true },
+        ],
+        images: [{ src: "/guide/transferts/bulk_transfer.png", alt: "Bulk transfer" }],
+      },
+    ],
+  },
+
+  "depots-retraits": {
+    title: "Cash deposits and withdrawals",
+    tagline: "Turn cash into ZekoraPay balance and back, through the agent network.",
+    sections: [
+      {
+        heading: "Withdrawing cash from an agent",
+        steps: [
+          { title: "Identify the agent", description: "Scan the agent's QR code, or enter their withdrawal code and phone number." },
+          { title: "Enter the amount", description: "Specify how much to withdraw." },
+          { title: "Confirm", description: "The agent validates the operation from their own account; the amount is debited from yours.", pinRequired: true },
+        ],
+        images: [{ src: "/guide/depots-retraits/withdraw_agent.png", alt: "Withdrawing cash from an agent" }],
+      },
+      {
+        heading: "Depositing cash with an agent",
+        intro: "Go to a ZekoraPay agent and show them your personal deposit QR, or give them your phone number. The agent enters the amount and validates the operation from their own account.",
+        bullets: [
+          "Never give your PIN to the agent — they never need it to credit your account.",
+          "The credit is instant as soon as the agent validates it.",
+        ],
+        images: [{ src: "/guide/depots-retraits/deposit_qr.png", alt: "Depositing cash — personal deposit QR" }],
+      },
+      {
+        heading: "Other ways to top up",
+        intro: "From \"My Wallets\" → \"Top up\", a deposit is also possible directly by Mobile Money, bank card (3D Secure), or to your wallet's dedicated crypto deposit address — without going through an agent.",
+      },
+    ],
+  },
+
+  conversion: {
+    title: "Conversion and exchange",
+    tagline: "Convert between local currencies, or buy/sell cryptocurrencies, instantly.",
+    sections: [
+      {
+        heading: "Two paths",
+        bullets: [
+          "Fiat Currency Conversion — instantly converts between USD, EUR, GBP, JPY, CAD, AUD and more, at the best available rates.",
+          "Buy / Sell Crypto — buy or sell cryptocurrencies instantly against your wallet balance.",
+        ],
+        images: [{ src: "/guide/conversion/overview.png", alt: "Convert page" }],
+      },
+    ],
+  },
+
+  cartes: {
+    title: "Cards",
+    tagline: "Prepaid virtual, physical or gift cards, personal or enterprise.",
+    sections: [
+      {
+        heading: "Your cards",
+        intro: "Balances are hidden by default (\"Show balances\" button). Each card shows its status:",
+        bullets: [
+          "Active — usable normally.",
+          "Frozen — temporarily blocked by you, can be unfrozen at any time.",
+          "Blocked — permanently blocked (lost, fraud).",
+          "Expired — past its validity date, needs renewal.",
+        ],
+        images: [{ src: "/guide/cartes/overview.png", alt: "My Cards" }],
+      },
+      {
+        heading: "Card types",
+        bullets: [
+          "Virtual card — available instantly, for online payments.",
+          "Physical card — delivered by mail, for in-store and ATM payments.",
+          "Gift card — a preset amount, to give away.",
         ],
       },
       {
-        heading: "Withdrawing funds",
-        steps: [
-          { title: "To Mobile Money", description: "Transfer your wallet balance to any compatible phone number.", pinRequired: true },
-          { title: "To a bank account", description: "Withdrawal by standard bank transfer, processed within a few business days.", pinRequired: true },
-          { title: "At an agent", description: "Start the withdrawal in the app, then collect physical cash from a ZekoraPay agent.", pinRequired: true },
+        heading: "Managing your card",
+        bullets: [
+          "Top up your card from your wallet.",
+          "Freeze or unfreeze your card instantly.",
+          "Set spending limits and a dedicated PIN from Settings → My cards.",
         ],
+      },
+    ],
+  },
+
+  "paiements-marchand": {
+    title: "Scan, pay and collect",
+    tagline: "One scanner for payments, ticket validation and transfers — and a space to collect from your own customers.",
+    sections: [
+      {
+        heading: "Scanning a QR code",
+        intro: "A single scanner for three uses, auto-detected from the code's content: merchant payment, event ticket, or transfer. Three input modes: camera, image, or manual code.",
+        images: [{ src: "/guide/paiements-marchand/scan.png", alt: "Scan a QR code" }],
+      },
+      {
+        heading: "Merchant Space — collecting from customers",
+        intro: "Create a payment request and get a QR code to show your customer.",
+        bullets: [
+          "Fixed price — the QR can only be used once, for a set amount.",
+          "Reusable — the same QR can be used to collect from several customers in a row.",
+          "The dashboard shows total received, number of payments, and requests still pending.",
+        ],
+        images: [{ src: "/guide/paiements-marchand/merchant_space.png", alt: "Merchant Space" }],
       },
     ],
   },
@@ -72,6 +209,11 @@ export const en: Record<string, LocalizedGuide> = {
     title: "Tontines and associations",
     tagline: "Full management of group contributions, votes and treasury, with total traceability.",
     sections: [
+      {
+        heading: "Exploring associations",
+        intro: "The Associations page offers a public explorer — filterable by type (tontines, contribution groups, solidarity groups) — before you create or join a group.",
+        images: [{ src: "/guide/association/explorer_live.png", alt: "Associations and tontines explorer" }],
+      },
       {
         heading: "The actors",
         bullets: [
@@ -201,32 +343,66 @@ export const en: Record<string, LocalizedGuide> = {
 
   entreprises: {
     title: "Enterprise module",
-    tagline: "Employees, payroll, billing and additional modules for business accounts.",
+    tagline: "Employees, payroll, billing, shop, real estate and much more for business accounts.",
     sections: [
       {
+        heading: "Two spaces",
+        bullets: [
+          "Enterprises — public directory: discover enterprises in the community and subscribe to their services.",
+          "My enterprises — manage the structures you own or work for.",
+        ],
+        images: [{ src: "/guide/entreprises/dashboard.png", alt: "Enterprise dashboard" }],
+      },
+      {
+        heading: "Everything an enterprise manages",
+        intro: "An enterprise's workspace brings together, in one sidebar: Employees, Followers, Enterprise wallets, Transactions, Payroll, Billing, Rental Management, Shops, Merchant Payment, Events, Campaigns, Finances, Stock Management, Services, Agent Module, Enterprise Security and permission history.",
+      },
+      {
         heading: "Employee management",
+        intro: "The employee directory shows totals, active employees, pending invites and total payroll — with, for each employee, their position, role, status and net salary.",
         bullets: [
           "Invite collaborators and assign them a role (admin or employee) with precise permissions.",
           "Any permission granted to an admin can never exceed the permissions of the person granting it.",
           "Configure each employee's payment method (ZekoraPay wallet or Mobile Money).",
         ],
+        images: [{ src: "/guide/entreprises/employees.png", alt: "Employee directory" }],
       },
       {
-        heading: "Payroll and finances",
+        heading: "Payroll, finances and stock",
         bullets: [
-          "One-click batch salary payments.",
-          "Track the enterprise's accounts and balances.",
-          "Manage the enterprise's services and billing.",
+          "One-click batch salary payments (\"Run Payroll\").",
+          "Track the enterprise's accounts, transactions and billing.",
+          "Built-in stock management for enterprises selling physical products.",
+        ],
+      },
+    ],
+  },
+
+  "location-immobilier": {
+    title: "Rentals and real estate",
+    tagline: "List and rent out housing, vehicles or equipment.",
+    sections: [
+      {
+        heading: "Rental Space",
+        intro: "Available to both individuals and enterprises (in the latter case via the \"Rental Management\" tab of the enterprise workspace). Three categories:",
+        bullets: [
+          "Real estate — housing, rooms, offices.",
+          "Vehicles — vehicle rentals.",
+          "Equipment — rentable gear.",
+        ],
+        images: [{ src: "/guide/location-immobilier/personal_overview.png", alt: "Rental Space — catalog" }],
+      },
+      {
+        heading: "Two roles",
+        bullets: [
+          "My Rentals — what you're renting as a tenant.",
+          "My Spaces — the properties you list as an owner/manager, with their availability (e.g. \"6/7 free\") and monthly price.",
         ],
       },
       {
-        heading: "Additional modules",
-        bullets: [
-          "An online shop attached to the enterprise.",
-          "Donation campaigns for the enterprise.",
-          "Rental management (properties, leases, rent payments).",
-          "Events organized under the enterprise's name.",
-        ],
+        heading: "On the enterprise side",
+        intro: "An enterprise can manage a real property portfolio from \"Rental Management\": real estate holdings, vehicle fleets and rental equipment stores, all tied to the enterprise's wallet.",
+        images: [{ src: "/guide/location-immobilier/enterprise_rentals.png", alt: "Rental Management — enterprise space" }],
       },
     ],
   },
@@ -236,8 +412,9 @@ export const en: Record<string, LocalizedGuide> = {
     tagline: "Sell online, whether you're an individual or an enterprise.",
     sections: [
       {
-        heading: "One shop, two possible profiles",
-        intro: "A shop can be created and managed by an individual or by an enterprise — the selling features are identical on both sides.",
+        heading: "Marketplace",
+        intro: "Three tabs: Shops (browse), Products, and My Shops (manage yours). Shops are organized by category (Fashion, Electronics, Food, Beauty, Home, Sports…).",
+        images: [{ src: "/guide/boutique/marketplace.png", alt: "Shop marketplace" }],
       },
       {
         heading: "Setting up your shop",
@@ -255,36 +432,76 @@ export const en: Record<string, LocalizedGuide> = {
           "Payments are collected directly into your ZekoraPay wallet.",
         ],
       },
+    ],
+  },
+
+  dons: {
+    title: "Donations and solidarity",
+    tagline: "Create and support fundraising campaigns.",
+    sections: [
       {
-        heading: "For customers",
-        bullets: [
-          "Browse products by shop or category.",
-          "Leave a review after purchase.",
-          "Track your ongoing orders.",
+        heading: "Discover and support",
+        intro: "Search for a cause, filter by status (ongoing, ended…). Each campaign shows the amount raised, its goal (or \"No limit\") and its end date.",
+        images: [{ src: "/guide/dons/overview.png", alt: "Donations & Solidarity" }],
+      },
+      {
+        heading: "Creating a campaign",
+        steps: [
+          { title: "Create a campaign", description: "Title, description, goal (optional), end date." },
+          { title: "Share", description: "Spread your campaign's link to receive donations." },
+          { title: "Withdraw funds", description: "From \"My campaigns\", transfer received donations to your wallet.", pinRequired: true },
         ],
       },
     ],
   },
 
-  cartes: {
-    title: "ZekoraPay Cards",
-    tagline: "Prepaid virtual or physical cards, personal or enterprise.",
+  reunions: {
+    title: "Video meetings",
+    tagline: "Video calls and group meetings, up to 100 participants.",
     sections: [
       {
-        heading: "Card types",
+        heading: "Start or join",
         bullets: [
-          "Virtual card — available instantly, for online payments.",
-          "Physical card — delivered by mail, for in-store and ATM payments.",
-          "Gift card — a preset amount, to give away.",
+          "Start a meeting — launches an instant call.",
+          "Schedule a meeting — plans an upcoming meeting, shareable by link or code.",
+          "Join a meeting — via a link or code you received.",
+        ],
+        images: [{ src: "/guide/reunions/overview.png", alt: "Video and meetings" }],
+      },
+      {
+        heading: "Tracking",
+        bullets: [
+          "Meetings tab — active and upcoming meetings.",
+          "Recordings tab — replays of recorded meetings.",
+          "History tab — total duration and full history.",
+        ],
+      },
+    ],
+  },
+
+  agents: {
+    title: "Becoming an agent",
+    tagline: "Join the ZekoraPay agent network to handle cash deposits and withdrawals.",
+    sections: [
+      {
+        heading: "Activation",
+        intro: "From Settings → Individual agent (or Enterprise agent for a business), activate your agent portal. You get a unique agent code to share with your customers.",
+        images: [{ src: "/guide/agents/portal.png", alt: "Agent Portal" }],
+      },
+      {
+        heading: "Processing an operation",
+        steps: [
+          { title: "Customer deposit", description: "The customer shows you their deposit QR or number; you enter the amount and validate from your own account.", pinRequired: true },
+          { title: "Customer withdrawal", description: "The customer scans your QR or enters your agent code + your number; you hand over the cash after validation.", pinRequired: true },
         ],
       },
       {
-        heading: "Managing your card",
+        heading: "Tracking your activity",
         bullets: [
-          "Top up your card from your wallet, manually or via a configurable auto-load.",
-          "Freeze or unfreeze your card instantly if lost or in doubt.",
-          "Set custom spending limits.",
-          "View your card's detailed transaction history.",
+          "Available float — balance usable to process operations.",
+          "Transactions and volume — cumulative processed operations.",
+          "Commissions — cumulative earnings per operation.",
+          "Confirmed deposits / withdrawals — breakdown by operation type.",
         ],
       },
     ],
