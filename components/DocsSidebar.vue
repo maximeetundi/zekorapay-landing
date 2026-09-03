@@ -64,7 +64,7 @@ function selectItem(): void {
   </button>
 
   <aside v-show="open" class="mb-6 lg:mb-0 lg:w-64 lg:shrink-0">
-    <div class="lg:sticky lg:top-24">
+    <div>
       <button
         type="button"
         class="mb-3 hidden w-full items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold uppercase tracking-wide text-slate-400 transition hover:border-brand/40 hover:text-brand lg:flex"

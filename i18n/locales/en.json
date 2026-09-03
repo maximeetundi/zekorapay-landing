@@ -118,13 +118,14 @@
     "missionText": "Our mission is to democratize access to quality financial services for everyone. We build innovative tools to simplify daily transactions for individuals, associations, and businesses.",
     "valuesTitle": "Our Values",
     "values": {
-      "verified": { "title": "Innovation", "text": "We constantly push technological boundaries to deliver cutting-edge, secure, and intuitive solutions." },
-      "free": { "title": "Transparency", "text": "No hidden fees, no unnecessary jargon. We build trust through clarity." },
-      "private": { "title": "Security", "text": "Protecting your funds and personal data is our absolute priority, with bank-grade security systems." },
-      "accessible": { "title": "Inclusion", "text": "We believe finance should be accessible to everyone, regardless of income, location, or education." }
+      "innovation": { "title": "Innovation", "text": "We constantly push technological boundaries to deliver cutting-edge, secure, and intuitive solutions." },
+      "transparency": { "title": "Transparency", "text": "No hidden fees, no unnecessary jargon. We build trust through clarity." },
+      "inclusion": { "title": "Inclusion", "text": "We believe finance should be accessible to everyone, regardless of income, location, or education." },
+      "security": { "title": "Security", "text": "Protecting your funds and personal data is our absolute priority, with bank-grade security systems." }
     },
-    "ctaTitle": "Ready to join us?",
-    "ctaSubtitle": "Founded by a team passionate about finance and technology, ZekoraPay now counts dozens of experts dedicated to securing your transactions and continuously improving our ecosystem."
+    "teamTitle": "The Team",
+    "teamText": "Founded by a team passionate about finance and technology, ZekoraPay now counts dozens of experts dedicated to securing your transactions and continuously improving our ecosystem.",
+    "contactCta": "Contact us"
   },
   "contactPage": {
     "heading": "Get in touch",

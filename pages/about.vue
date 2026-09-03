@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Eye, Gift, Globe2, ShieldCheck } from "lucide-vue-next";
+import { Heart, Lightbulb, SearchCheck, ShieldCheck, TrendingUp, Users } from "lucide-vue-next";
 
 const { t } = useI18n();
 
@@ -10,62 +10,109 @@ usePageSeo({
   path: "/about",
 });
 
+// Mêmes chiffres honnêtes que la page d'accueil (voir stats.* dans les
+// fichiers de langue) plutôt que les statistiques marketing non vérifiables
+// (10K+ utilisateurs, 50K transactions/jour...) que l'ancien site affichait
+// ici — déjà corrigées côté accueil, pas de raison de les réintroduire ici.
+const stats = [
+  { icon: Users, value: "13", key: "resources" },
+  { icon: TrendingUp, value: "5", key: "counties" },
+  { icon: Heart, value: "24/7", key: "categories" },
+  { icon: ShieldCheck, value: "100%", key: "free" },
+];
+
 const values = [
-  { icon: ShieldCheck, key: "verified" },
-  { icon: Gift, key: "free" },
-  { icon: Eye, key: "private" },
-  { icon: Globe2, key: "accessible" },
+  { icon: Lightbulb, gradient: "from-brand to-secondary", key: "innovation" },
+  { icon: SearchCheck, gradient: "from-accent to-emerald-500", key: "transparency" },
+  { icon: Users, gradient: "from-amber-400 to-red-500", key: "inclusion" },
+  { icon: ShieldCheck, gradient: "from-secondary to-pink-500", key: "security" },
 ] as const;
 </script>
 
 <template>
   <div>
-    <section class="mx-auto max-w-4xl px-6 pb-12 pt-12 text-center sm:pt-16">
-      <span class="inline-flex items-center rounded-full border border-brand-tint bg-brand-tint px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand">
-        {{ t("about.badge") }}
-      </span>
-      <h1 class="mt-5 text-4xl font-black leading-[1.1] tracking-tight text-deep sm:text-5xl">
-        {{ t("about.title") }}
-      </h1>
-      <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
-        {{ t("about.subtitle") }}
-      </p>
-    </section>
+    <section class="hero-section relative overflow-hidden bg-gradient-to-br from-primary-900 via-secondary-900 to-slate-900 py-28 sm:py-36">
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute left-1/4 top-0 h-96 w-96 rounded-full opacity-20 blur-3xl"
+        style="background: radial-gradient(circle, #6366f1, transparent)"
+      />
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full opacity-20 blur-3xl"
+        style="background: radial-gradient(circle, #a855f7, transparent)"
+      />
 
-    <section class="border-y border-slate-100 bg-slate-50/60">
-      <div class="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-        <h2 class="text-2xl font-black text-deep">{{ t("about.missionTitle") }}</h2>
-        <p class="mt-4 text-base leading-relaxed text-slate-600">{{ t("about.missionText") }}</p>
+      <div class="relative mx-auto max-w-3xl px-6 text-center">
+        <span class="badge-pill border border-white/20 bg-white/10 text-white/80">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+          ZekoraPay
+        </span>
+        <h1 class="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+          {{ t("about.title") }}
+        </h1>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
+          {{ t("about.subtitle") }}
+        </p>
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-      <h2 class="text-center text-3xl font-black text-deep">{{ t("about.valuesTitle") }}</h2>
-      <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div
-          v-for="value in values"
-          :key="value.key"
-          class="rounded-2xl border border-slate-100 p-6"
-        >
-          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-tint text-brand">
-            <component :is="value.icon" class="h-5 w-5" stroke-width="2.25" />
-          </span>
-          <h3 class="mt-4 text-base font-extrabold text-deep">
-            {{ t(`about.values.${value.key}.title`) }}
-          </h3>
-          <p class="mt-1.5 text-sm leading-relaxed text-slate-600">
-            {{ t(`about.values.${value.key}.text`) }}
-          </p>
+    <section class="bg-white py-16 sm:py-24">
+      <div class="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
+        <div>
+          <span class="badge-pill bg-primary-50 text-primary-700">🎯 {{ t("about.missionTitle") }}</span>
+          <h2 class="mt-4 text-3xl font-extrabold text-deep sm:text-4xl">{{ t("about.missionTitle") }}</h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">{{ t("about.missionText") }}</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            v-for="stat in stats"
+            :key="stat.key"
+            class="rounded-2xl border border-slate-100 bg-gradient-to-br from-gray-50 to-primary-50 p-6"
+          >
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-brand shadow-sm">
+              <component :is="stat.icon" class="h-[18px] w-[18px]" stroke-width="2.25" />
+            </span>
+            <div class="mt-3 text-2xl font-extrabold text-primary-600"><CountUp :value="stat.value" /></div>
+            <div class="text-xs leading-tight text-slate-500">{{ t(`stats.${stat.key}`) }}</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-6 pb-16 sm:pb-24">
-      <div class="flex flex-col items-center gap-6 rounded-3xl bg-deep px-8 py-14 text-center sm:px-16">
-        <h2 class="max-w-lg text-3xl font-black text-white">{{ t("about.ctaTitle") }}</h2>
-        <p class="max-w-md text-white/70">{{ t("about.ctaSubtitle") }}</p>
-        <div class="mt-2 flex flex-col gap-3 sm:flex-row">
-          <OpenAppButton variant="outline" />
+    <section class="bg-gray-50 py-16 sm:py-24">
+      <div class="mx-auto max-w-5xl px-6">
+        <h2 class="text-center text-3xl font-extrabold text-deep sm:text-4xl">{{ t("about.valuesTitle") }}</h2>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2">
+          <div
+            v-for="value in values"
+            :key="value.key"
+            class="feature-card flex gap-5 p-8"
+          >
+            <span
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-white shadow-glow-sm"
+              :class="`bg-gradient-to-br ${value.gradient}`"
+            >
+              <component :is="value.icon" class="h-6 w-6" stroke-width="2.25" />
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-deep">{{ t(`about.values.${value.key}.title`) }}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-500">{{ t(`about.values.${value.key}.text`) }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-24">
+      <div class="mx-auto max-w-2xl px-6 text-center">
+        <h2 class="text-3xl font-extrabold text-deep sm:text-4xl">{{ t("about.teamTitle") }}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-600">{{ t("about.teamText") }}</p>
+        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <OpenAppButton />
+          <NuxtLink to="/contact" class="btn-outline-dark text-base px-8 py-4">
+            {{ t("about.contactCta") }}
+          </NuxtLink>
         </div>
       </div>
     </section>

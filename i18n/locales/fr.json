@@ -118,13 +118,14 @@
     "missionText": "Notre mission est de démocratiser l'accès aux services financiers de qualité pour tous. Nous développons des outils innovants pour simplifier la vie des particuliers, des associations et des entreprises dans leurs transactions quotidiennes.",
     "valuesTitle": "Nos Valeurs",
     "values": {
-      "verified": { "title": "Innovation", "text": "Nous repoussons sans cesse les limites technologiques pour offrir des solutions de pointe, sécurisées et intuitives." },
-      "free": { "title": "Transparence", "text": "Pas de frais cachés ou de blabla inutile. Nous construisons une relation de confiance basée sur la clarté." },
-      "private": { "title": "Sécurité", "text": "La protection de vos fonds et données personnelles est notre priorité absolue, avec des systèmes de sécurité de niveau bancaire." },
-      "accessible": { "title": "Inclusion", "text": "Nous croyons que la finance doit être accessible à tous, sans discrimination de revenus, de localisation ou d'éducation." }
+      "innovation": { "title": "Innovation", "text": "Nous repoussons sans cesse les limites technologiques pour offrir des solutions de pointe, sécurisées et intuitives." },
+      "transparency": { "title": "Transparence", "text": "Pas de frais cachés ou de blabla inutile. Nous construisons une relation de confiance basée sur la clarté." },
+      "inclusion": { "title": "Inclusion", "text": "Nous croyons que la finance doit être accessible à tous, sans discrimination de revenus, de localisation ou d'éducation." },
+      "security": { "title": "Sécurité", "text": "La protection de vos fonds et données personnelles est notre priorité absolue, avec des systèmes de sécurité de niveau bancaire." }
     },
-    "ctaTitle": "Prêt à nous rejoindre ?",
-    "ctaSubtitle": "Créée par une équipe de passionnés de la finance et de la technologie, ZekoraPay compte aujourd'hui des dizaines d'experts dédiés à la sécurisation de vos transactions et à l'amélioration continue de notre écosystème."
+    "teamTitle": "L'Équipe",
+    "teamText": "Créée par une équipe de passionnés de la finance et de la technologie, ZekoraPay compte aujourd'hui des dizaines d'experts dédiés à la sécurisation de vos transactions et à l'amélioration continue de notre écosystème.",
+    "contactCta": "Nous contacter"
   },
   "contactPage": {
     "heading": "Contactez-nous",

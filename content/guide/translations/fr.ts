@@ -257,12 +257,16 @@ export const fr: Record<string, LocalizedGuide> = {
         ],
       },
       {
-        heading: "Gestion",
+        heading: "Gérer une carte",
+        intro: "Cliquez sur une carte pour ouvrir son espace de gestion complet : numéro masqué (révélable), CVV masqué (révélable), solde masqué, statistiques rapides (dépenses du mois, nombre de transactions, frais du mois, statut).",
         bullets: [
-          "Rechargez votre carte depuis votre portefeuille.",
-          "Gelez ou débloquez votre carte instantanément.",
-          "Définissez des limites de dépense et un code PIN dédiés, depuis Paramètres → Mes cartes.",
+          "Geler la carte — bloque instantanément les paiements, réversible en un clic.",
+          "Recharger — alimente la carte depuis un portefeuille.",
+          "Vers un portefeuille — sens inverse : renvoie le solde de la carte vers un de vos portefeuilles.",
+          "Limites de dépense — plafond journalier et mensuel, chacun modifiable séparément avec une barre de progression du montant déjà dépensé.",
+          "Interrupteurs Achats en ligne / Retraits ATM — autorisent ou bloquent ces deux types d'opérations indépendamment.",
         ],
+        images: [{ src: "/guide/cartes/card_management.png", alt: "Gestion d'une carte" }],
       },
     ],
   },
@@ -535,10 +539,13 @@ export const fr: Record<string, LocalizedGuide> = {
       {
         heading: "Créer sa boutique",
         bullets: [
-          "Informations de la boutique — nom, description, catégories.",
-          "Produits — nom, prix, stock, images, catégorie.",
+          "Informations générales — nom, description, mots-clés (tags) pour la recherche.",
+          "Visibilité — case à cocher « Boutique publique » pour apparaître dans le marketplace, ou boutique privée sinon.",
+          "Configuration des paiements — devise de la boutique.",
+          "Produits — nom, prix, stock, images, catégorie, ajoutés ensuite depuis l'espace boutique.",
           "Avis clients visibles sur chaque produit.",
         ],
+        images: [{ src: "/guide/boutique/create_shop.png", alt: "Créer une boutique" }],
       },
       {
         heading: "Vendre",
@@ -562,11 +569,14 @@ export const fr: Record<string, LocalizedGuide> = {
       },
       {
         heading: "Créer une cagnotte",
+        intro: "Le formulaire de création rassemble le titre et l'histoire de la campagne, une image de couverture, et une vidéo de présentation optionnelle.",
         steps: [
-          { title: "Créer une cagnotte", description: "Titre, description, objectif (optionnel), date de fin." },
+          { title: "Titre et histoire", description: "Un titre accrocheur et une description qui explique le projet." },
+          { title: "Image et vidéo", description: "Une image de couverture (recommandée), une vidéo de présentation optionnelle." },
           { title: "Partager", description: "Diffusez le lien de votre cagnotte pour recevoir des dons." },
           { title: "Retirer les fonds", description: "Depuis « Mes campagnes », transférez les dons reçus vers votre portefeuille.", pinRequired: true },
         ],
+        images: [{ src: "/guide/dons/create_campaign.png", alt: "Créer une campagne" }],
       },
     ],
   },

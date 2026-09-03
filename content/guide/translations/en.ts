@@ -229,12 +229,16 @@ export const en: Record<string, LocalizedGuide> = {
         ],
       },
       {
-        heading: "Managing your card",
+        heading: "Managing a card",
+        intro: "Click a card to open its full management space: masked card number (revealable), masked CVV (revealable), masked balance, and quick stats (spending this month, transaction count, fees this month, status).",
         bullets: [
-          "Top up your card from your wallet.",
-          "Freeze or unfreeze your card instantly.",
-          "Set spending limits and a dedicated PIN from Settings → My cards.",
+          "Freeze the card — instantly blocks payments, reversible in one click.",
+          "Top up — funds the card from a wallet.",
+          "To a wallet — the reverse direction: sends the card's balance back to one of your wallets.",
+          "Spending limits — daily and monthly caps, each editable separately with a progress bar of the amount already spent.",
+          "Online purchases / ATM withdrawals toggles — allow or block each type of operation independently.",
         ],
+        images: [{ src: "/guide/cartes/card_management.png", alt: "Managing a card" }],
       },
     ],
   },
@@ -507,10 +511,13 @@ export const en: Record<string, LocalizedGuide> = {
       {
         heading: "Setting up your shop",
         bullets: [
-          "Shop info — name, description, categories.",
-          "Products — name, price, stock, images, category.",
+          "General info — name, description, tags for search.",
+          "Visibility — a \"Public shop\" checkbox to appear in the marketplace, or keep it private otherwise.",
+          "Payment configuration — the shop's currency.",
+          "Products — name, price, stock, images, category, added afterwards from the shop space.",
           "Customer reviews visible on each product.",
         ],
+        images: [{ src: "/guide/boutique/create_shop.png", alt: "Creating a shop" }],
       },
       {
         heading: "Selling",
@@ -534,11 +541,14 @@ export const en: Record<string, LocalizedGuide> = {
       },
       {
         heading: "Creating a campaign",
+        intro: "The creation form brings together the campaign's title and story, a cover image, and an optional presentation video.",
         steps: [
-          { title: "Create a campaign", description: "Title, description, goal (optional), end date." },
+          { title: "Title and story", description: "A catchy title and a description explaining the project." },
+          { title: "Image and video", description: "A cover image (recommended), an optional presentation video." },
           { title: "Share", description: "Spread your campaign's link to receive donations." },
           { title: "Withdraw funds", description: "From \"My campaigns\", transfer received donations to your wallet.", pinRequired: true },
         ],
+        images: [{ src: "/guide/dons/create_campaign.png", alt: "Creating a campaign" }],
       },
     ],
   },

@@ -28,6 +28,7 @@ export default {
           950: "#1e1b4b",
         },
         secondary: {
+          DEFAULT: "#a855f7",
           50: "#faf5ff",
           100: "#f3e8ff",
           200: "#e9d5ff",
@@ -40,6 +41,7 @@ export default {
           900: "#581c87",
         },
         accent: {
+          DEFAULT: "#06b6d4",
           50: "#ecfeff",
           100: "#cffafe",
           400: "#22d3ee",
