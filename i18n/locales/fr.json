@@ -1,5 +1,20 @@
 {
-  "nav": { "cta": "Ouvrir l'app", "home": "Accueil", "about": "À propos", "blog": "Blog", "faq": "FAQ", "contact": "Contact", "openMenu": "Ouvrir le menu", "closeMenu": "Fermer le menu" },
+  "nav": { "cta": "Ouvrir l'app", "home": "Accueil", "about": "À propos", "guide": "Guide", "docs": "API", "blog": "Blog", "faq": "FAQ", "contact": "Contact", "openMenu": "Ouvrir le menu", "closeMenu": "Fermer le menu" },
+  "docsNav": {
+    "search": "Rechercher...",
+    "noResults": "Aucun résultat.",
+    "guideBadge": "Guide utilisateur",
+    "guideHeading": "Guide utilisateur ZekoraPay",
+    "guideSubtitle": "Tout ce qu'il faut savoir pour utiliser l'application, étape par étape.",
+    "apiCallout": "Vous êtes développeur et souhaitez intégrer ZekoraPay à votre système ?",
+    "apiCalloutLink": "Consultez la documentation API",
+    "apiBadge": "Documentation API",
+    "apiHeading": "Documentation API ZekoraPay",
+    "apiSubtitle": "Intégrez portefeuilles, paiements, boutique et plus directement dans vos systèmes.",
+    "guideCallout": "Vous cherchez plutôt comment utiliser l'application elle-même ?",
+    "guideCalloutLink": "Consultez le guide utilisateur",
+    "pinRequired": "PIN requis"
+  },
   "hero": {
     "badge": "Plateforme financière globale",
     "title": "Votre monde financier, simplifié.",

@@ -1,17 +1,23 @@
 // Site vitrine statique, sans backend ni base de données — projet
 // indépendant à terme (destiné à Cloudflare Pages), pour l'instant hébergé
-// dans le monorepo à côté de landing-page-laravel/ (qui garde le guide
-// utilisateur et la doc API pour l'instant — non touchés ici).
+// dans le monorepo à côté de landing-page-laravel/. Le guide utilisateur et
+// la doc API vivent ici (content/guide, content/docs), portés depuis l'ancien
+// site Laravel et vérifiés contre le vrai code (services/public-api-gateway
+// pour l'API, resources/views/guide/*.blade.php pour le contenu utilisateur).
 //
-// La liste des slugs vient directement de content/blog/meta.ts et
-// content/features/meta.ts (source unique) plutôt que d'être dupliquée ici —
-// un nouvel article ajouté là-bas est automatiquement pré-rendu et inclus
-// dans le sitemap sans oublier ce fichier.
+// La liste des slugs vient directement de chaque content/*/meta.ts (source
+// unique) plutôt que d'être dupliquée ici — un nouvel article/sujet ajouté
+// là-bas est automatiquement pré-rendu et inclus dans le sitemap sans
+// oublier ce fichier.
 import { blogPostsMeta } from "./content/blog/meta";
 import { featuresMeta } from "./content/features/meta";
+import { guideMeta } from "./content/guide/meta";
+import { docsMeta } from "./content/docs/meta";
 
 const blogSlugs = blogPostsMeta.map((post) => post.slug);
 const featureSlugs = featuresMeta.map((feature) => feature.slug);
+const guideSlugs = guideMeta.map((topic) => topic.slug);
+const docSlugs = docsMeta.map((page) => page.slug);
 
 const staticRoutes = [
   "/",
@@ -21,8 +27,12 @@ const staticRoutes = [
   "/privacy",
   "/terms",
   "/blog",
+  "/guide",
+  "/docs",
   ...blogSlugs.map((slug) => `/blog/${slug}`),
   ...featureSlugs.map((slug) => `/features/${slug}`),
+  ...guideSlugs.map((slug) => `/guide/${slug}`),
+  ...docSlugs.map((slug) => `/docs/${slug}`),
 ];
 
 export default defineNuxtConfig({
@@ -104,8 +114,8 @@ export default defineNuxtConfig({
       playStoreUrl: "",
       contactEmail: "support@zekorapay.com",
       webAppUrl: "https://app.zekorapay.com",
-      apiDocsUrl: "https://zekorapay.com/en/docs",
-      userGuideUrl: "https://zekorapay.com/en/guide",
+      apiDocsUrl: "https://zekorapay.com/docs",
+      userGuideUrl: "https://zekorapay.com/guide",
       siteUrl: "https://zekorapay.com",
     },
   },

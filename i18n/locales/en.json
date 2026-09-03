@@ -1,5 +1,20 @@
 {
-  "nav": { "cta": "Open the app", "home": "Home", "about": "About", "blog": "Blog", "faq": "FAQ", "contact": "Contact", "openMenu": "Open menu", "closeMenu": "Close menu" },
+  "nav": { "cta": "Open the app", "home": "Home", "about": "About", "guide": "Guide", "docs": "API", "blog": "Blog", "faq": "FAQ", "contact": "Contact", "openMenu": "Open menu", "closeMenu": "Close menu" },
+  "docsNav": {
+    "search": "Search...",
+    "noResults": "No results.",
+    "guideBadge": "User guide",
+    "guideHeading": "ZekoraPay user guide",
+    "guideSubtitle": "Everything you need to use the app, step by step.",
+    "apiCallout": "Are you a developer looking to integrate ZekoraPay into your system?",
+    "apiCalloutLink": "Check out the API documentation",
+    "apiBadge": "API documentation",
+    "apiHeading": "ZekoraPay API documentation",
+    "apiSubtitle": "Integrate wallets, payments, shop and more directly into your systems.",
+    "guideCallout": "Looking for how to use the app itself instead?",
+    "guideCalloutLink": "Check out the user guide",
+    "pinRequired": "PIN required"
+  },
   "hero": {
     "badge": "Global Financial Platform",
     "title": "Your financial world, simplified.",

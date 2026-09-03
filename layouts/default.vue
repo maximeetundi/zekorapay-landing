@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { HelpCircle, Home, Mail, Menu, Newspaper, UserRound } from "lucide-vue-next";
+import { BookOpen, Code2, HelpCircle, Home, Mail, Menu, Newspaper, UserRound } from "lucide-vue-next";
 
 const { t, locale } = useI18n();
 const config = useRuntimeConfig();
@@ -11,6 +11,8 @@ const mobileMenuOpen = ref(false);
 const navIconMap: Record<string, typeof Home> = {
   home: Home,
   about: UserRound,
+  guide: BookOpen,
+  docs: Code2,
   blog: Newspaper,
   faq: HelpCircle,
   contact: Mail,
@@ -60,6 +62,8 @@ useHead(() => ({
 const navLinks = [
   { to: "/", key: "home" },
   { to: "/about", key: "about" },
+  { to: "/guide", key: "guide" },
+  { to: "/docs", key: "docs" },
   { to: "/blog", key: "blog" },
   { to: "/faq", key: "faq" },
   { to: "/contact", key: "contact" },

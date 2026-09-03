@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { HelpCircle, Home, Mail, Newspaper, UserRound, X } from "lucide-vue-next";
+import { BookOpen, Code2, HelpCircle, Home, Mail, Newspaper, UserRound, X } from "lucide-vue-next";
 
 const props = defineProps<{
   open: boolean;
@@ -14,6 +14,8 @@ const route = useRoute();
 const iconMap: Record<string, typeof Home> = {
   home: Home,
   about: UserRound,
+  guide: BookOpen,
+  docs: Code2,
   blog: Newspaper,
   faq: HelpCircle,
   contact: Mail,

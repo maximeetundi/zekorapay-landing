@@ -27,7 +27,7 @@ Site 100% statique, sans backend ni base de données, pensé pour un hébergemen
 
 ## 🎯 Présentation
 
-Ce dépôt contient uniquement le **site vitrine** de ZekoraPay — la présentation publique de l'application. Il ne contient ni l'application web/mobile, ni les API, ni le panel d'administration : c'est un projet volontairement séparé et statique, pour rester gratuit à héberger et simple à maintenir. La documentation utilisateur et la documentation API sont gérées dans un projet séparé.
+Ce dépôt contient le **site vitrine** de ZekoraPay — la présentation publique de l'application, le guide utilisateur et la documentation de l'API publique. Il ne contient ni l'application web/mobile elle-même, ni le code des API, ni le panel d'administration : c'est un projet volontairement séparé et statique, pour rester gratuit à héberger et simple à maintenir.
 
 ## 📄 Pages
 
@@ -36,6 +36,10 @@ Ce dépôt contient uniquement le **site vitrine** de ZekoraPay — la présenta
 | `/` | Accueil — présentation de l'app, fonctionnalités, accès à l'application |
 | `/about` | Notre mission, pourquoi l'app existe, nos valeurs |
 | `/features/[slug]` | Détail de chaque fonctionnalité (portefeuilles, transferts, cartes, tontines, entreprise, boutique…) |
+| `/guide` | Guide utilisateur — accueil |
+| `/guide/[slug]` | Guide utilisateur — sujet détaillé (compte, dépôts, tontines, événements, entreprise, boutique, cartes), avec captures d'écran réelles quand elles existent |
+| `/docs` | Documentation API — accueil |
+| `/docs/[slug]` | Documentation API — domaine détaillé (authentification, portefeuilles, paiements, change, boutique, dons, événements, cartes, utilisateurs, webhooks) |
 | `/faq` | Questions fréquentes |
 | `/contact` | Contact |
 | `/privacy` | Politique de confidentialité |
