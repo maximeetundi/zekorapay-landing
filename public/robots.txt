@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Crawlers used by AI assistants/answer engines — explicitly allowed (no
+# Disallow rules exist on this site for anyone, this just makes it explicit).
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://zekorapay.com/sitemap.xml

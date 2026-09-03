@@ -1,0 +1,142 @@
+{
+  "nav": { "cta": "Open the app", "home": "Home", "about": "About", "blog": "Blog", "faq": "FAQ", "contact": "Contact", "openMenu": "Open menu", "closeMenu": "Close menu" },
+  "hero": {
+    "badge": "Global Financial Platform",
+    "title": "Your financial world, simplified.",
+    "subtitle": "Manage your tontines, businesses, and personal finances. Send money, pay, and invest securely with ZekoraPay.",
+    "ctaPrimary": "Open the web app",
+    "ctaSecondary": "Explore features"
+  },
+  "store": {
+    "appleEyebrow": "Coming soon on the",
+    "appleName": "App Store",
+    "googleEyebrow": "Coming soon on",
+    "googleName": "Google Play",
+    "comingSoon": "Soon"
+  },
+  "pricing": {
+    "priced": "Free to sign up · {price}",
+    "default": "Available now on the web, mobile apps coming soon"
+  },
+  "stats": {
+    "resources": "Built-in features",
+    "counties": "Crypto blockchains supported",
+    "categories": "Platform availability",
+    "free": "Encrypted transactions"
+  },
+  "features": {
+    "kicker": "What you can do",
+    "heading": "Everything you can do with ZekoraPay",
+    "subheading": "A complete platform bringing together banking services, community management, and financial inclusion.",
+    "wallet": { "title": "Multi-currency wallets", "description": "Local currencies and crypto centralized in one secure wallet." },
+    "transfer": { "title": "Instant transfers", "description": "Send and receive money in real time via mobile money or bank transfer, anywhere in the world." },
+    "cards": { "title": "Prepaid cards", "description": "Virtual or physical cards linked to your personal or business accounts." },
+    "exchange": { "title": "Exchange & Crypto", "description": "Convert between local currencies and crypto at a transparent rate." },
+    "qr": { "title": "QR Code payments", "description": "Accept fast payments in your shop, market, or association event." },
+    "tontines": { "title": "Tontines & Associations", "description": "Automatic contributions, transparent payouts, loans, and built-in governance." },
+    "enterprise": { "title": "B2B Enterprise", "description": "Business accounts, automated payroll, billing, and rental management." },
+    "shop": { "title": "ZekoraPay Shop", "description": "Individual or business online shop, with payments built right in." },
+    "donations": { "title": "Donations & Fundraising", "description": "Create fundraising campaigns and track donations in real time." },
+    "events": { "title": "Events & Ticketing", "description": "Sell tickets online and control entry with a scan." },
+    "cash": { "title": "Local agents", "description": "A network of local agents for cash deposits and withdrawals, no bank account needed." },
+    "video": { "title": "Meetings & Messaging", "description": "Built-in messaging and video meetings for your teams and associations." },
+    "ai": { "title": "AI Assistant", "description": "A smart assistant to automate alerts, reminders, and reports." },
+    "learnMore": "Learn more",
+    "detail": {
+      "back": "Back to home",
+      "highlightsHeading": "What you get",
+      "ctaTitle": "Ready to simplify your finances?"
+    }
+  },
+  "cta": {
+    "title": "Ready to simplify your finances?",
+    "subtitle": "Open a free account and manage your money securely with ZekoraPay."
+  },
+  "howItWorks": {
+    "heading": "How it works",
+    "subheading": "Getting started takes three steps.",
+    "step1": { "title": "Create your account", "description": "Sign up for free in minutes, no bank card required." },
+    "step2": { "title": "Set up your profile", "description": "Verify your identity, set your PIN, and open your first wallets." },
+    "step3": { "title": "Start using ZekoraPay", "description": "Send money, create a tontine, open a shop, or manage your business." }
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "subheading": "Everything you need to know before you get started.",
+    "q1": { "question": "How much does ZekoraPay cost?", "answer": "Creating an account and basic use are free. Transparent transaction fees apply to certain operations (transfers, exchange), always shown before you confirm." },
+    "q2": { "question": "Do I need to create an account?", "answer": "Yes, an account is required to use ZekoraPay, unlike a simple showcase site — it's a financial platform that moves real money and needs to verify your identity." },
+    "q3": { "question": "Which countries does ZekoraPay cover?", "answer": "ZekoraPay covers several countries in West and Central Africa, with transfer corridors to the diaspora worldwide. Coverage keeps expanding." },
+    "q4": { "question": "How are my funds and data protected?", "answer": "Every sensitive operation (withdrawal, payment, transfer) is protected by your personal PIN, with end-to-end encryption on your data." },
+    "q5": { "question": "Can I use ZekoraPay for my business?", "answer": "Yes. The B2B Enterprise module supports multi-employee management, automated payroll, billing, and even rental management for real-estate businesses." },
+    "q6": { "question": "What languages is the app available in?", "answer": "French and English." },
+    "q7": { "question": "How do I create my first tontine?", "answer": "From the web app, create your group, invite members by phone or shared link, and set the contribution amount and frequency — ready in minutes." }
+  },
+  "contact": {
+    "heading": "Still have questions?",
+    "subtitle": "Reach out and our team will get back to you quickly.",
+    "emailLabel": "Email us",
+    "comingSoon": "Contact details coming soon"
+  },
+  "footer": {
+    "rights": "© {year} ZekoraPay. All rights reserved.",
+    "tagline": "The financial platform for individuals, associations, and businesses worldwide.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact"
+  },
+  "language": { "label": "Language" },
+  "backToTop": { "label": "Back to top" },
+  "about": {
+    "badge": "Our mission",
+    "title": "About ZekoraPay",
+    "subtitle": "Discover our mission, our values, and the team behind tomorrow's financial platform.",
+    "missionTitle": "Our Mission",
+    "missionText": "Our mission is to democratize access to quality financial services for everyone. We build innovative tools to simplify daily transactions for individuals, associations, and businesses.",
+    "valuesTitle": "Our Values",
+    "values": {
+      "verified": { "title": "Innovation", "text": "We constantly push technological boundaries to deliver cutting-edge, secure, and intuitive solutions." },
+      "free": { "title": "Transparency", "text": "No hidden fees, no unnecessary jargon. We build trust through clarity." },
+      "private": { "title": "Security", "text": "Protecting your funds and personal data is our absolute priority, with bank-grade security systems." },
+      "accessible": { "title": "Inclusion", "text": "We believe finance should be accessible to everyone, regardless of income, location, or education." }
+    },
+    "ctaTitle": "Ready to join us?",
+    "ctaSubtitle": "Founded by a team passionate about finance and technology, ZekoraPay now counts dozens of experts dedicated to securing your transactions and continuously improving our ecosystem."
+  },
+  "contactPage": {
+    "heading": "Get in touch",
+    "subtitle": "Questions, feedback, or a partnership in mind? We'd love to hear from you.",
+    "emailLabel": "Email us",
+    "comingSoon": "Contact details coming soon",
+    "reportTitle": "Need help with your account?",
+    "reportText": "For any question about your account or a transaction, the support built into the web app remains the fastest way to reach us."
+  },
+  "errorPage": {
+    "title404": "Page not found",
+    "body404": "The page you're looking for doesn't exist or may have moved.",
+    "titleGeneric": "Something went wrong",
+    "bodyGeneric": "An unexpected error occurred. Please try again.",
+    "genericCode": "Error",
+    "backHome": "Back to home"
+  },
+  "blog": {
+    "heading": "The ZekoraPay Blog",
+    "subtitle": "Guides and updates to help you get the most out of your finances with ZekoraPay.",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "minRead": "{min} min read"
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms of Service",
+    "lastUpdated": "Last updated: {date}",
+    "contactHeading": "Contact",
+    "contactPrivacyBody": "Questions about this policy? Reach out via our",
+    "contactTermsBody": "Questions about these terms? Reach out via our",
+    "contactLinkText": "contact page",
+    "contactOr": "or at"
+  },
+  "blogCategories": {
+    "news": "News",
+    "education": "Financial Education",
+    "finance": "Finance"
+  }
+}
