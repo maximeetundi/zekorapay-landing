@@ -3,6 +3,7 @@ import { getGuideTopic, getGuideTopics } from "~/content/guide/guide";
 
 const route = useRoute();
 const { t, locale } = useI18n();
+const config = useRuntimeConfig();
 
 const topic = computed(() => getGuideTopic(String(route.params.slug), locale.value));
 if (!topic.value) {
@@ -17,6 +18,28 @@ usePageSeo({
   description: topic.value.tagline,
   path: `/guide/${topic.value.slug}`,
 });
+
+useHead(() => ({
+  script: topic.value
+    ? [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            headline: topic.value!.title,
+            description: topic.value!.tagline,
+            author: { "@id": `${config.public.siteUrl}/#organization` },
+            publisher: { "@id": `${config.public.siteUrl}/#organization` },
+            mainEntityOfPage: `${config.public.siteUrl}/guide/${topic.value!.slug}`,
+            inLanguage: locale.value,
+          }),
+        },
+      ]
+    : [],
+}));
+
+const lightbox = ref<{ src: string; alt: string } | null>(null);
 </script>
 
 <template>
@@ -68,8 +91,13 @@ usePageSeo({
             </ul>
 
             <div v-if="section.images" class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <figure v-for="(image, imgIndex) in section.images" :key="imgIndex" class="overflow-hidden rounded-xl border border-slate-100">
-                <img :src="image.src" :alt="image.alt" loading="lazy" class="w-full object-cover">
+              <figure
+                v-for="(image, imgIndex) in section.images"
+                :key="imgIndex"
+                class="group cursor-zoom-in overflow-hidden rounded-xl border border-slate-100"
+                @click="lightbox = { src: image.src, alt: image.alt }"
+              >
+                <img :src="image.src" :alt="image.alt" loading="lazy" class="w-full object-cover transition duration-300 group-hover:scale-[1.03]">
                 <figcaption class="px-3 py-2 text-center text-xs text-slate-400">{{ image.alt }}</figcaption>
               </figure>
             </div>
@@ -77,5 +105,7 @@ usePageSeo({
         </div>
       </div>
     </div>
+
+    <ImageLightbox :src="lightbox?.src ?? null" :alt="lightbox?.alt" @close="lightbox = null" />
   </section>
 </template>

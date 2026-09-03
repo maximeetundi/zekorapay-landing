@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
   Building2,
+  Code2,
   CreditCard,
   Heart,
   Landmark,
@@ -86,71 +87,52 @@ useHead(() => ({
 
 <template>
   <div>
-    <section class="hero-section relative isolate overflow-hidden">
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-[#1e1b4b] via-[#312e81] to-[#4c1d95]"
-      />
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute -right-24 -top-32 -z-10 h-[30rem] w-[30rem] rounded-full bg-brand/40 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute -left-32 top-32 -z-10 h-[26rem] w-[26rem] rounded-full bg-secondary/30 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)] bg-[length:28px_28px]"
-      />
-
+    <section class="hero-section dot-grid relative isolate overflow-hidden bg-white">
       <div class="mx-auto max-w-6xl px-6 pb-16 pt-16 sm:pb-24 sm:pt-24">
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
           <div>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white/90 backdrop-blur">
-              <span class="h-2 w-2 rounded-full bg-emerald-400" />
+            <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700">
+              <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
               {{ t("hero.badge") }}
             </span>
-            <h1 class="mt-5 text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+            <h1 class="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-deep sm:text-5xl lg:text-[3.25rem]">
               {{ t("hero.title") }}
+              <span class="gradient-text block">{{ t("hero.titleAccent") }}</span>
             </h1>
-            <p class="mt-5 max-w-lg text-lg leading-relaxed text-white/70">
+            <p class="mt-5 max-w-lg text-lg leading-relaxed text-slate-600">
               {{ t("hero.subtitle") }}
             </p>
             <div id="open-app" class="mt-8 flex flex-col gap-3 sm:flex-row">
               <OpenAppButton />
-              <a
-                href="#features"
-                class="inline-flex items-center justify-center gap-2 rounded-xl border-[1.5px] border-white/30 px-6 py-3.5 text-base font-bold text-white transition hover:bg-white/10"
-              >
+              <a href="#features" class="btn-outline-dark text-base px-6 py-3.5">
                 {{ t("hero.ctaSecondary") }}
               </a>
             </div>
-            <p class="mt-3 text-sm font-semibold text-white/60">
+            <p class="mt-3 text-sm font-semibold text-slate-400">
               {{ priceLine }}
             </p>
           </div>
           <PhoneMockup />
         </div>
 
-        <div class="glass-card mt-16 grid grid-cols-2 gap-4 rounded-3xl p-6 sm:mt-20 sm:grid-cols-4 sm:p-8">
+        <div class="glass-card-light mt-16 grid grid-cols-2 gap-4 rounded-3xl p-6 sm:mt-20 sm:grid-cols-4 sm:p-8">
           <div
             v-for="stat in stats"
             :key="stat.key"
             class="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left"
           >
-            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50 text-brand">
               <component :is="stat.icon" class="h-[18px] w-[18px]" stroke-width="2.25" />
             </span>
-            <span class="text-2xl font-black tracking-tight text-white sm:text-3xl"><CountUp :value="stat.value" /></span>
-            <span class="text-xs font-semibold leading-tight text-white/60">{{ t(`stats.${stat.key}`) }}</span>
+            <span class="text-2xl font-black tracking-tight text-deep sm:text-3xl"><CountUp :value="stat.value" /></span>
+            <span class="text-xs font-semibold leading-tight text-slate-500">{{ t(`stats.${stat.key}`) }}</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="bg-slate-50/60">
-      <div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+    <section id="features" class="bg-gray-50 py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-6">
         <div class="mx-auto max-w-2xl text-center">
           <span class="text-xs font-bold uppercase tracking-widest text-brand">{{ t("features.kicker") }}</span>
           <h2 class="mt-2 text-3xl font-black text-balance text-deep">{{ t("features.heading") }}</h2>
@@ -192,27 +174,57 @@ useHead(() => ({
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-6 pb-16 sm:pb-24">
-      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-deep via-[#312e81] to-brand px-8 py-14 text-center shadow-2xl shadow-deep/30 sm:px-16">
-        <div
-          aria-hidden="true"
-          class="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          class="pointer-events-none absolute -bottom-24 -left-10 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-        />
-        <div class="relative flex flex-col items-center gap-6">
-          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/20">
-            <Rocket class="h-6 w-6" stroke-width="2.25" />
-          </span>
-          <h2 class="max-w-lg text-3xl font-black text-white">{{ t("cta.title") }}</h2>
-          <p class="max-w-md text-white/70">{{ t("cta.subtitle") }}</p>
-          <div class="mt-2 flex flex-col gap-3 sm:flex-row">
-            <OpenAppButton variant="outline" />
+    <section class="py-20" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div class="text-white">
+            <span class="badge-pill border border-white/20 bg-white/10 text-white/80">{{ t("apiCta.badge") }}</span>
+            <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">
+              {{ t("apiCta.title") }}
+              <span class="text-primary-300">{{ t("apiCta.titleAccent") }}</span>
+            </h2>
+            <p class="mt-4 leading-relaxed text-white/70">{{ t("apiCta.description") }}</p>
+            <NuxtLink to="/docs" class="btn-primary mt-8 text-base px-8 py-4">
+              <Code2 class="h-5 w-5" stroke-width="2.25" />
+              {{ t("apiCta.link") }}
+            </NuxtLink>
           </div>
-          <p class="text-sm font-semibold text-white/70">{{ priceLine }}</p>
+          <div class="glass-card overflow-hidden rounded-2xl">
+            <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+              <div class="h-3 w-3 rounded-full bg-red-400" />
+              <div class="h-3 w-3 rounded-full bg-yellow-400" />
+              <div class="h-3 w-3 rounded-full bg-green-400" />
+              <span class="ml-2 text-xs text-white/40">API Example</span>
+            </div>
+            <pre class="overflow-x-auto p-6 text-sm leading-relaxed"><code class="text-emerald-300">POST</code><code class="text-white/70"> /v1/payments/requests</code>
+<code class="text-white/40">{</code>
+  <code class="text-sky-300">"amount"</code><code class="text-white/70">: </code><code class="text-orange-300">50000</code><code class="text-white/40">,</code>
+  <code class="text-sky-300">"currency"</code><code class="text-white/70">: </code><code class="text-yellow-300">"XAF"</code>
+<code class="text-white/40">}</code>
+<code class="text-white/30">// Response</code>
+<code class="text-white/40">{</code>
+  <code class="text-sky-300">"status"</code><code class="text-white/70">: </code><code class="text-yellow-300">"success"</code><code class="text-white/40">,</code>
+  <code class="text-sky-300">"payment_id"</code><code class="text-white/70">: </code><code class="text-yellow-300">"pay_..."</code>
+<code class="text-white/40">}</code></pre>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-br from-gray-50 to-primary-50 py-20 sm:py-24">
+      <div class="mx-auto max-w-2xl px-6 text-center">
+        <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl" style="background: linear-gradient(135deg,#6366f1,#a855f7)">
+          <Rocket class="h-6 w-6 text-white" stroke-width="2.25" />
+        </span>
+        <h2 class="mt-6 text-3xl font-black text-deep sm:text-4xl">{{ t("cta.title") }}</h2>
+        <p class="mt-3 text-lg text-slate-500">{{ t("cta.subtitle") }}</p>
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <OpenAppButton />
+          <NuxtLink to="/docs" class="btn-outline-dark text-base px-8 py-4">
+            {{ t("apiCta.link") }}
+          </NuxtLink>
+        </div>
+        <p class="mt-4 text-sm font-semibold text-slate-400">{{ priceLine }}</p>
       </div>
     </section>
   </div>

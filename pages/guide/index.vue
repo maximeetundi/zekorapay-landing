@@ -2,6 +2,7 @@
 import { getGuideTopics } from "~/content/guide/guide";
 
 const { t, locale } = useI18n();
+const config = useRuntimeConfig();
 
 usePageSeo({
   title: "Guide utilisateur — ZekoraPay",
@@ -10,6 +11,24 @@ usePageSeo({
 });
 
 const topics = computed(() => getGuideTopics(locale.value));
+
+useHead(() => ({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: topics.value.map((topic, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: topic.title,
+          url: `${config.public.siteUrl}/guide/${topic.slug}`,
+        })),
+      }),
+    },
+  ],
+}));
 </script>
 
 <template>

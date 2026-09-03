@@ -12,15 +12,12 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <NuxtLink
-    :to="`/features/${slug}`"
-    class="group relative block overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-100 transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-xl hover:shadow-brand/10"
-  >
+  <NuxtLink :to="`/features/${slug}`" class="feature-card group block">
     <div
       aria-hidden="true"
-      class="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-brand-tint opacity-0 transition duration-300 group-hover:opacity-60"
+      class="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-primary-50 opacity-0 transition duration-300 group-hover:opacity-60"
     />
-    <span class="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand to-deep text-white shadow-md shadow-brand/20 transition-transform duration-300 group-hover:scale-110">
+    <span class="relative flex h-11 w-11 items-center justify-center rounded-xl text-white shadow-glow-sm transition-transform duration-300 group-hover:scale-110" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
       <component
         :is="icon"
         class="h-[22px] w-[22px]"

@@ -8,11 +8,16 @@ export const en: Record<string, LocalizedGuide> = {
     tagline: "Sign-up, identity verification (KYC), and PIN security.",
     sections: [
       {
-        heading: "Sign-up",
+        heading: "Sign-up — 3 steps",
+        intro: "A 3-step wizard: Identity, Contact, then Security.",
         steps: [
-          { title: "Phone or email", description: "Enter your phone number (international format) or email address." },
-          { title: "OTP code", description: "A one-time code is sent by SMS or email. Confirm it." },
-          { title: "PIN code", description: "Create your 5-digit secret PIN using an anti-keylogger virtual keypad: key positions are shuffled randomly every time it's shown.", pinRequired: true },
+          { title: "1. Identity", description: "First name, last name and date of birth." },
+          { title: "2. Contact", description: "Choose Email or Phone as your contact method, then your country." },
+          { title: "3. Security", description: "Confirm the OTP code sent by email or SMS, then create your 5-digit secret PIN using an anti-keylogger virtual keypad.", pinRequired: true },
+        ],
+        images: [
+          { src: "/guide/demarrage/register_identity.png", alt: "Step 1 — Identity" },
+          { src: "/guide/demarrage/register_contact_email.png", alt: "Step 2 — Contact by email" },
         ],
       },
       {
@@ -63,19 +68,45 @@ export const en: Record<string, LocalizedGuide> = {
 
   portefeuilles: {
     title: "Wallets",
-    tagline: "A multi-currency wallet for your local currencies and cryptocurrencies.",
+    tagline: "A multi-currency wallet for your local currencies and cryptocurrencies, with interest-bearing savings.",
     sections: [
       {
         heading: "Overview",
         intro: "The \"My Wallets\" page brings together every account: fiat currencies (XAF, EUR…) and cryptocurrencies (BTC, USDC, XRP…), each with its balance, deposit address for crypto, and quick actions.",
         bullets: [
           "Protected balance — the main wallet's balance can be hidden and requires clicking \"Unlock\" to reveal.",
-          "Top up — funds the wallet (Mobile Money, card, agent, or crypto deposit depending on the wallet type).",
+          "Top up — funds the wallet.",
           "Send — opens the transfer form with this wallet pre-selected as the source.",
           "Manage — rename, view detailed history, or configure a wallet.",
-          "+ New — creates an additional wallet (another currency, or a dedicated savings wallet).",
+          "+ New — creates an additional wallet (another currency, or a dedicated savings account).",
         ],
         images: [{ src: "/guide/portefeuilles/overview.png", alt: "My Wallets — multi-currency view" }],
+      },
+      {
+        heading: "Topping up a wallet",
+        intro: "The \"Top up\" button offers two funding methods, depending on the wallet type:",
+        bullets: [
+          "External crypto wallet — an on-chain deposit via a dedicated receiving address (QR code provided), for a crypto wallet.",
+          "Mobile Money / Card / Bank transfer / PayPal — buy with your local currency; for a crypto wallet, the credit is automatically converted into that wallet's cryptocurrency.",
+        ],
+        images: [
+          { src: "/guide/portefeuilles/recharge_options.png", alt: "Choosing a top-up method" },
+        ],
+      },
+      {
+        heading: "Savings accounts",
+        intro: "A savings account is created from the \"Savings\" button and earns real interest, with a 12-month projection shown.",
+        bullets: [
+          "Locked — funds are held until the chosen maturity date, to secure a savings goal.",
+          "Unlocked — deposit and withdraw freely at any time.",
+          "Interest rate — currently 2.50% per year on the accounts observed; earned interest and the 12-month projection are recalculated in real time.",
+        ],
+        images: [{ src: "/guide/portefeuilles/savings_accounts.png", alt: "Savings accounts" }],
+      },
+      {
+        heading: "Transferring between your own wallets",
+        intro: "Clicking \"Deposit\" on a savings account (or any secondary wallet) shows a \"Payment source\" menu listing your other wallets: the transfer happens directly from one of your accounts to another, without going through a regular transfer.",
+        images: [{ src: "/guide/portefeuilles/internal_transfer.png", alt: "Transfer between wallets" }],
       },
     ],
   },
@@ -150,6 +181,26 @@ export const en: Record<string, LocalizedGuide> = {
           "Buy / Sell Crypto — buy or sell cryptocurrencies instantly against your wallet balance.",
         ],
         images: [{ src: "/guide/conversion/overview.png", alt: "Convert page" }],
+      },
+      {
+        heading: "Converting between local currencies",
+        intro: "Pick the currency and source wallet (\"From\"), then the currency and destination wallet (\"To\") — a central button (⇄) swaps the direction in one click.",
+        bullets: [
+          "Converted amount — computed in real time at the displayed rate (e.g. 1 EUR = 655.957 XAF).",
+          "Service fee — a fixed percentage is charged on every conversion (0.25% observed) and shown before you confirm.",
+          "24h change — shows whether the rate has moved since the previous day.",
+          "The confirm button stays disabled and an \"Insufficient balance\" message appears if the source wallet doesn't have enough funds — an uncovered conversion can't be submitted.",
+        ],
+        images: [{ src: "/guide/conversion/fiat_form.png", alt: "Converting between fiat currencies" }],
+      },
+      {
+        heading: "Buying / selling crypto",
+        intro: "Two tabs, Buy and Sell. When buying: choose the currency and wallet to pay with (\"You pay with\"), the amount, then the cryptocurrency and destination crypto wallet (\"You receive\") — the received amount is computed automatically.",
+        bullets: [
+          "A \"Market prices\" panel shows live quotes and 24h change for a wide range of cryptocurrencies (ADA, ALGO, ATOM, AVAX, BCH, BNB…), even ones you don't hold yet.",
+          "The ⇄ button flips the direction (buy ↔ sell) without re-entering the currencies.",
+        ],
+        images: [{ src: "/guide/conversion/crypto_form.png", alt: "Buying/selling cryptocurrencies" }],
       },
     ],
   },

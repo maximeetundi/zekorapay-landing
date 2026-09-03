@@ -3,6 +3,7 @@ import { getDocPage, getDocPages } from "~/content/docs/docs";
 
 const route = useRoute();
 const { t, locale } = useI18n();
+const config = useRuntimeConfig();
 
 const page = computed(() => getDocPage(String(route.params.slug), locale.value));
 if (!page.value) {
@@ -17,6 +18,26 @@ usePageSeo({
   description: page.value.tagline,
   path: `/docs/${page.value.slug}`,
 });
+
+useHead(() => ({
+  script: page.value
+    ? [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            headline: page.value!.title,
+            description: page.value!.tagline,
+            author: { "@id": `${config.public.siteUrl}/#organization` },
+            publisher: { "@id": `${config.public.siteUrl}/#organization` },
+            mainEntityOfPage: `${config.public.siteUrl}/docs/${page.value!.slug}`,
+            inLanguage: locale.value,
+          }),
+        },
+      ]
+    : [],
+}));
 
 const methodClass: Record<string, string> = {
   GET: "bg-ok-bg text-ok",

@@ -13,11 +13,14 @@
     "apiSubtitle": "Integrate wallets, payments, shop and more directly into your systems.",
     "guideCallout": "Looking for how to use the app itself instead?",
     "guideCalloutLink": "Check out the user guide",
-    "pinRequired": "PIN required"
+    "pinRequired": "PIN required",
+    "menuToggle": "Contents",
+    "menuCollapse": "Collapse menu"
   },
   "hero": {
     "badge": "Global Financial Platform",
-    "title": "Your financial world, simplified.",
+    "title": "Your financial world,",
+    "titleAccent": "simplified.",
     "subtitle": "Manage your tontines, businesses, and personal finances. Send money, pay, and invest securely with ZekoraPay.",
     "ctaPrimary": "Open the web app",
     "ctaSecondary": "Explore features"
@@ -62,6 +65,13 @@
       "highlightsHeading": "What you get",
       "ctaTitle": "Ready to simplify your finances?"
     }
+  },
+  "apiCta": {
+    "badge": "Developer API",
+    "title": "Integrate ZekoraPay into",
+    "titleAccent": "your application",
+    "description": "A complete RESTful API with API-key authentication, signed webhooks and granular scopes. Integrate payments, wallets and shops in a few hours.",
+    "link": "Explore the documentation"
   },
   "cta": {
     "title": "Ready to simplify your finances?",

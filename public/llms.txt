@@ -1,0 +1,29 @@
+# ZekoraPay
+
+> ZekoraPay is a global financial platform for Africa: multi-currency wallets, instant transfers, prepaid cards, currency exchange, QR-code merchant payments, digital tontines/associations, enterprise accounts, an online shop, donation campaigns, event ticketing, a cash-in/cash-out agent network, video meetings and an AI assistant — all in one web app.
+
+The web app is live today at https://app.zekorapay.com. Mobile apps are not yet published.
+
+## Product
+
+- [Home](https://zekorapay.com/): overview of the platform and its 13 core features
+- [About](https://zekorapay.com/about): mission, values, team
+- [Features](https://zekorapay.com/#features): detail page for each feature (wallets, transfers, cards, exchange, QR payments, tontines, enterprise, shop, donations, events, agents, meetings, AI assistant)
+
+## User guide
+
+- [Guide](https://zekorapay.com/guide): how to use the app, step by step, with real screenshots — account creation & KYC, wallets, transfers, cash deposits/withdrawals, currency conversion, cards, merchant payments, tontines & associations, events & ticketing, the enterprise module, rentals & real estate, the shop, donations, video meetings, and becoming an agent.
+
+## Developer API
+
+- [API documentation](https://zekorapay.com/docs): public REST API for third-party integrations — authentication (API keys, scopes, rate limits), wallets, merchant payments, exchange, shop, donations, events, cards, users, and webhooks. Base URL: `https://api.app.zekorapay.com/public-api-gateway/v1`.
+
+## Other
+
+- [Blog](https://zekorapay.com/blog): product news and guides
+- [FAQ](https://zekorapay.com/faq)
+- [Contact](https://zekorapay.com/contact)
+- [Privacy policy](https://zekorapay.com/privacy)
+- [Terms of service](https://zekorapay.com/terms)
+
+Content is available in French (default) and English.

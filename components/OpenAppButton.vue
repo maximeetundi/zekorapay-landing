@@ -22,12 +22,7 @@ const { t } = useI18n();
     :href="config.public.webAppUrl"
     target="_blank"
     rel="noopener noreferrer"
-    :class="[
-      'inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-bold shadow-lg transition hover:-translate-y-0.5',
-      variant === 'solid'
-        ? 'bg-gradient-to-r from-brand to-secondary text-white shadow-brand/30 hover:shadow-brand/40'
-        : 'border-[1.5px] border-white/30 text-white hover:bg-white/10',
-    ]"
+    :class="variant === 'solid' ? 'btn-primary text-base px-6 py-3.5' : 'btn-outline text-base px-6 py-3.5'"
   >
     {{ t("hero.ctaPrimary") }}
     <ArrowUpRight class="h-5 w-5" stroke-width="2.5" />

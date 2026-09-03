@@ -2,6 +2,7 @@
 import { getDocPages } from "~/content/docs/docs";
 
 const { t, locale } = useI18n();
+const config = useRuntimeConfig();
 
 usePageSeo({
   title: "Documentation API — ZekoraPay",
@@ -10,6 +11,24 @@ usePageSeo({
 });
 
 const pages = computed(() => getDocPages(locale.value));
+
+useHead(() => ({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: pages.value.map((page, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: page.title,
+          url: `${config.public.siteUrl}/docs/${page.slug}`,
+        })),
+      }),
+    },
+  ],
+}));
 </script>
 
 <template>

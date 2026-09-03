@@ -13,11 +13,14 @@
     "apiSubtitle": "Intégrez portefeuilles, paiements, boutique et plus directement dans vos systèmes.",
     "guideCallout": "Vous cherchez plutôt comment utiliser l'application elle-même ?",
     "guideCalloutLink": "Consultez le guide utilisateur",
-    "pinRequired": "PIN requis"
+    "pinRequired": "PIN requis",
+    "menuToggle": "Sommaire",
+    "menuCollapse": "Réduire le menu"
   },
   "hero": {
     "badge": "Plateforme financière globale",
-    "title": "Votre monde financier, simplifié.",
+    "title": "Votre monde financier,",
+    "titleAccent": "simplifié.",
     "subtitle": "Gérez vos tontines, entreprises et finances personnelles. Envoyez de l'argent, payez et investissez en toute sécurité avec ZekoraPay.",
     "ctaPrimary": "Ouvrir l'app web",
     "ctaSecondary": "Découvrir les fonctionnalités"
@@ -62,6 +65,13 @@
       "highlightsHeading": "Ce que vous obtenez",
       "ctaTitle": "Prêt à simplifier vos finances ?"
     }
+  },
+  "apiCta": {
+    "badge": "API Développeurs",
+    "title": "Intégrez ZekoraPay dans",
+    "titleAccent": "votre application",
+    "description": "Une API RESTful complète avec authentification par clé API, webhooks signés et scopes granulaires. Intégrez les paiements, portefeuilles et boutiques en quelques heures.",
+    "link": "Explorer la documentation"
   },
   "cta": {
     "title": "Prêt à simplifier vos finances ?",

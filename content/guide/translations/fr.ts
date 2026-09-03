@@ -36,11 +36,16 @@ export const fr: Record<string, LocalizedGuide> = {
     tagline: "Inscription, vérification d'identité (KYC) et sécurité du code PIN.",
     sections: [
       {
-        heading: "Inscription",
+        heading: "Inscription — 3 étapes",
+        intro: "Un assistant en 3 étapes : Identité, Contact, puis Sécurité.",
         steps: [
-          { title: "Numéro ou email", description: "Saisissez votre numéro de téléphone (format international) ou votre adresse email." },
-          { title: "Code OTP", description: "Un code à usage unique vous est envoyé par SMS ou email. Validez-le." },
-          { title: "Code PIN", description: "Créez votre code PIN secret à 5 chiffres via un clavier virtuel anti-keylogger : l'ordre des touches est mélangé aléatoirement à chaque affichage.", pinRequired: true },
+          { title: "1. Identité", description: "Prénom, nom et date de naissance." },
+          { title: "2. Contact", description: "Choisissez Email ou Téléphone comme méthode de contact, puis indiquez votre pays." },
+          { title: "3. Sécurité", description: "Validez le code OTP reçu par email ou SMS, puis créez votre code PIN secret à 5 chiffres via un clavier virtuel anti-keylogger.", pinRequired: true },
+        ],
+        images: [
+          { src: "/guide/demarrage/register_identity.png", alt: "Étape 1 — Identité" },
+          { src: "/guide/demarrage/register_contact_email.png", alt: "Étape 2 — Contact par email" },
         ],
       },
       {
@@ -91,19 +96,45 @@ export const fr: Record<string, LocalizedGuide> = {
 
   portefeuilles: {
     title: "Portefeuilles",
-    tagline: "Un portefeuille multi-devises pour vos monnaies locales et vos cryptomonnaies.",
+    tagline: "Un portefeuille multi-devises pour vos monnaies locales et vos cryptomonnaies, avec épargne rémunérée.",
     sections: [
       {
         heading: "Vue d'ensemble",
         intro: "La page « Mes Portefeuilles » regroupe tous vos comptes : devises fiduciaires (XAF, EUR…) et cryptomonnaies (BTC, USDC, XRP…), chacun avec son solde, son adresse de dépôt pour les cryptos, et ses actions rapides.",
         bullets: [
           "Solde protégé — le solde du portefeuille principal peut être masqué et nécessite de cliquer sur « Déverrouiller » pour s'afficher.",
-          "Recharger — alimente le portefeuille (Mobile Money, carte, agent ou dépôt crypto selon le type de portefeuille).",
+          "Recharger — alimente le portefeuille.",
           "Envoyer — ouvre le formulaire de transfert avec ce portefeuille pré-sélectionné comme source.",
           "Gérer — renommer, voir l'historique détaillé ou configurer un portefeuille.",
-          "+ Nouveau — crée un portefeuille supplémentaire (autre devise, ou portefeuille d'épargne dédié).",
+          "+ Nouveau — crée un portefeuille supplémentaire (autre devise, ou compte d'épargne dédié).",
         ],
         images: [{ src: "/guide/portefeuilles/overview.png", alt: "Mes Portefeuilles — vue multi-devises" }],
+      },
+      {
+        heading: "Recharger un portefeuille",
+        intro: "Le bouton « Recharger » propose deux méthodes d'approvisionnement, selon le type de portefeuille :",
+        bullets: [
+          "Wallet crypto externe — dépôt on-chain via une adresse de réception dédiée (QR code fourni), pour un portefeuille crypto.",
+          "Mobile Money / Carte / Virement / PayPal — achetez avec votre monnaie locale ; pour un portefeuille crypto, le crédit est automatiquement converti dans la cryptomonnaie du portefeuille.",
+        ],
+        images: [
+          { src: "/guide/portefeuilles/recharge_options.png", alt: "Choix de la méthode de recharge" },
+        ],
+      },
+      {
+        heading: "Comptes d'épargne",
+        intro: "Un compte d'épargne se crée depuis le bouton « Épargne » et génère de vrais intérêts, avec une projection affichée sur 12 mois.",
+        bullets: [
+          "Verrouillé — les fonds sont bloqués jusqu'à l'échéance choisie, pour sécuriser un objectif d'épargne.",
+          "Déverrouillé — dépôts et retraits libres à tout moment.",
+          "Taux d'intérêt — actuellement 2,50 % par an sur les comptes observés ; les intérêts gagnés et la projection à 12 mois sont recalculés en temps réel.",
+        ],
+        images: [{ src: "/guide/portefeuilles/savings_accounts.png", alt: "Comptes d'épargne" }],
+      },
+      {
+        heading: "Virement entre vos propres portefeuilles",
+        intro: "En cliquant « Déposer » sur un compte d'épargne (ou tout portefeuille secondaire), un menu « Source de paiement » liste vos autres portefeuilles : le virement se fait directement d'un de vos comptes vers un autre, sans passer par un transfert classique.",
+        images: [{ src: "/guide/portefeuilles/internal_transfer.png", alt: "Virement entre portefeuilles" }],
       },
     ],
   },
@@ -178,6 +209,26 @@ export const fr: Record<string, LocalizedGuide> = {
           "Acheter / Vendre Crypto — achète ou vend des cryptomonnaies instantanément contre le solde de votre portefeuille.",
         ],
         images: [{ src: "/guide/conversion/overview.png", alt: "Page Convertir" }],
+      },
+      {
+        heading: "Conversion entre devises locales",
+        intro: "Choisissez la devise et le portefeuille de départ (« Depuis »), puis la devise et le portefeuille d'arrivée (« Vers ») — un bouton central (⇄) permet d'inverser le sens en un clic.",
+        bullets: [
+          "Montant converti — calculé en temps réel au taux affiché (ex. 1 EUR = 655,957 XAF).",
+          "Frais de service — un pourcentage fixe est prélevé sur chaque conversion (0,25 % observé) et affiché avant de confirmer.",
+          "Variation 24h — indique si le taux a bougé depuis la veille.",
+          "Le bouton de confirmation reste désactivé et un message « Solde insuffisant » s'affiche si le portefeuille source n'a pas assez de fonds — impossible de valider une conversion non couverte.",
+        ],
+        images: [{ src: "/guide/conversion/fiat_form.png", alt: "Conversion entre devises fiduciaires" }],
+      },
+      {
+        heading: "Acheter / vendre des cryptomonnaies",
+        intro: "Deux onglets, Acheter et Vendre. À l'achat : choisissez la devise et le portefeuille avec lesquels payer (« Vous payez avec »), le montant, puis la cryptomonnaie et le portefeuille crypto de destination (« Vous recevez ») — le montant reçu est calculé automatiquement.",
+        bullets: [
+          "Un panneau « Prix du marché » affiche en direct la cotation et la variation 24h d'une large liste de cryptomonnaies (ADA, ALGO, ATOM, AVAX, BCH, BNB…), même celles que vous ne détenez pas encore.",
+          "Le bouton ⇄ inverse le sens de l'opération (achat ↔ vente) sans avoir à ressaisir les devises.",
+        ],
+        images: [{ src: "/guide/conversion/crypto_form.png", alt: "Achat/vente de cryptomonnaies" }],
       },
     ],
   },
