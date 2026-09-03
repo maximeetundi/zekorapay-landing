@@ -35,6 +35,11 @@ export const en: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/demarrage/settings.png", alt: "Settings page" }],
       },
       {
+        heading: "Pending actions",
+        intro: "A single approval hub gathers every decision waiting on you, across every module: enterprises, associations, invitations and rentals.",
+        images: [{ src: "/guide/demarrage/pending_actions.png", alt: "Pending actions" }],
+      },
+      {
         heading: "Profile types",
         bullets: [
           "Individual — standard profile, for personal use.",
@@ -368,11 +373,43 @@ export const en: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/entreprises/employees.png", alt: "Employee directory" }],
       },
       {
-        heading: "Payroll, finances and stock",
+        heading: "Payroll",
+        intro: "The Payroll page picks a period (month/year) and shows total employees, total payroll, payments already made this month, and pending ones, along with the full history of past runs.",
+        steps: [
+          { title: "Pick the period", description: "Select the month and year to process." },
+          { title: "Check the amounts", description: "Review the payroll total computed from each active employee's net salary." },
+          { title: "Run Payroll", description: "One click triggers a batch payment to each employee's wallet or Mobile Money.", pinRequired: true },
+        ],
+        images: [{ src: "/guide/entreprises/payroll.png", alt: "Payroll management" }],
+      },
+      {
+        heading: "Bulk billing",
+        intro: "For subscription-based service businesses: import or enter consumption data for a group of services to generate the corresponding invoices in one go.",
+      },
+      {
+        heading: "Security and approvals — multi-signature",
+        intro: "Beyond the per-admin permission ceiling (see above), an enterprise can require a sensitive action to be validated by several admins at once before it executes.",
         bullets: [
-          "One-click batch salary payments (\"Run Payroll\").",
-          "Track the enterprise's accounts, transactions and billing.",
-          "Built-in stock management for enterprises selling physical products.",
+          "Roles & Permissions — create custom roles (e.g. \"Customer Service\") and assign them to several employees at once.",
+          "Security rules — require validation from multiple admins for sensitive actions (payments, terminations, role changes…).",
+          "Pending approvals — requests still waiting for validation.",
+          "How it works — when a sensitive action is initiated, every designated admin gets a notification; the action only executes once the required number of approvals is reached (each confirmed with a PIN or password).",
+        ],
+        images: [{ src: "/guide/entreprises/security.png", alt: "Security & Approvals" }],
+      },
+      {
+        heading: "Enterprise Agency — running your own agents",
+        intro: "A dedicated module for enterprises managing several deposit/withdrawal agents on their own behalf: active agent count, deposit/withdrawal limits per zone, daily volume processed, success rate, and a best-agent leaderboard.",
+        images: [{ src: "/guide/entreprises/agency.png", alt: "Enterprise Agency" }],
+      },
+      {
+        heading: "Other workspace modules",
+        bullets: [
+          "Finances — a consolidated view of the enterprise's accounts and transactions.",
+          "Stock management — quantity tracking for enterprises selling physical products.",
+          "KYC verification — the enterprise's own verification status.",
+          "Developer API — API keys dedicated to the enterprise (see the API documentation).",
+          "Danger zone — irreversible actions (deletion, ownership transfer).",
         ],
       },
     ],
@@ -481,12 +518,27 @@ export const en: Record<string, LocalizedGuide> = {
 
   agents: {
     title: "Becoming an agent",
-    tagline: "Join the ZekoraPay agent network to handle cash deposits and withdrawals.",
+    tagline: "Join the ZekoraPay agent network to handle cash deposits and withdrawals — for yourself or on behalf of an enterprise.",
     sections: [
       {
-        heading: "Activation",
-        intro: "From Settings → Individual agent (or Enterprise agent for a business), activate your agent portal. You get a unique agent code to share with your customers.",
-        images: [{ src: "/guide/agents/portal.png", alt: "Agent Portal" }],
+        heading: "Two ways to be an agent",
+        bullets: [
+          "Individual agent — anyone can activate this from Settings → Individual agent. You manage your own float and your own commissions.",
+          "Enterprise agent (sub-agent) — you operate on behalf of an enterprise that designated you. The interface is close to an individual agent's, but the float, limits and activity zones are controlled by the enterprise, not by you.",
+        ],
+      },
+      {
+        heading: "Individual agent portal",
+        intro: "You get a unique agent code to share with your customers.",
+        images: [{ src: "/guide/agents/portal.png", alt: "Individual Agent Portal" }],
+      },
+      {
+        heading: "Enterprise agent portal",
+        intro: "If you're an agent for several enterprises, you first pick which one to work with — each with its own agent code and its own agent PIN, which must be set up before you can process operations.",
+        images: [
+          { src: "/guide/agents/enterprise_select.png", alt: "Choosing the agent enterprise" },
+          { src: "/guide/agents/enterprise_portal.png", alt: "Enterprise agent portal" },
+        ],
       },
       {
         heading: "Processing an operation",

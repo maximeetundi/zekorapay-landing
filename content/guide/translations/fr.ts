@@ -63,6 +63,11 @@ export const fr: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/demarrage/settings.png", alt: "Page Paramètres" }],
       },
       {
+        heading: "Actions en attente",
+        intro: "Un centre d'approbation unique regroupe toutes les décisions qui vous attendent, quel que soit le module concerné : entreprises, associations, invitations et locations.",
+        images: [{ src: "/guide/demarrage/pending_actions.png", alt: "Actions en attente" }],
+      },
+      {
         heading: "Types de profils",
         bullets: [
           "Particulier — profil standard, pour un usage personnel.",
@@ -396,11 +401,43 @@ export const fr: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/entreprises/employees.png", alt: "Annuaire des employés" }],
       },
       {
-        heading: "Paie, finances et stock",
+        heading: "Gestion de la paie",
+        intro: "La page Paie sélectionne une période (mois/année) et affiche le total d'employés, la masse salariale, les versements déjà effectués ce mois et ceux en attente, avec l'historique complet des exécutions passées.",
+        steps: [
+          { title: "Choisir la période", description: "Sélectionnez le mois et l'année à traiter." },
+          { title: "Vérifier les montants", description: "Contrôlez la masse salariale calculée à partir du salaire net de chaque employé actif." },
+          { title: "Exécuter la Paie", description: "Un clic déclenche le versement groupé vers le portefeuille ou le Mobile Money de chaque employé.", pinRequired: true },
+        ],
+        images: [{ src: "/guide/entreprises/payroll.png", alt: "Gestion de la Paie" }],
+      },
+      {
+        heading: "Facturation en masse",
+        intro: "Pour les entreprises de services par abonnement : importez ou saisissez les données de consommation d'un groupe de services pour générer les factures correspondantes en une fois.",
+      },
+      {
+        heading: "Sécurité et approbations — le multi-signatures",
+        intro: "Au-delà du plafond de permissions par administrateur (voir plus haut), une entreprise peut exiger qu'une action sensible soit validée par plusieurs administrateurs à la fois avant de s'exécuter.",
         bullets: [
-          "Paiement groupé des salaires en un clic (« Lancer Paie »).",
-          "Suivi des comptes, transactions et facturation de l'entreprise.",
-          "Gestion de stock intégrée pour les entreprises qui vendent des produits physiques.",
+          "Rôles & Permissions — créez des rôles personnalisés (ex. « Service Client ») et assignez-les à plusieurs employés à la fois.",
+          "Règles de sécurité — exigez la validation de plusieurs administrateurs pour les actions sensibles (paiements, licenciements, changements de rôle…).",
+          "Approbations en attente — liste des demandes qui attendent encore leur validation.",
+          "Fonctionnement — quand une action sensible est initiée, tous les administrateurs désignés reçoivent une notification ; l'action n'est exécutée qu'une fois le nombre requis d'approbations atteint (chacune confirmée par PIN ou mot de passe).",
+        ],
+        images: [{ src: "/guide/entreprises/security.png", alt: "Sécurité & Approbations" }],
+      },
+      {
+        heading: "Agence Entreprise — piloter ses propres agents",
+        intro: "Module dédié aux entreprises qui gèrent plusieurs agents de dépôt/retrait pour leur propre compte : nombre d'agents actifs, limites de dépôt/retrait par zone, volume traité par jour, taux de réussite, et classement du meilleur agent.",
+        images: [{ src: "/guide/entreprises/agency.png", alt: "Agence Entreprise" }],
+      },
+      {
+        heading: "Autres modules du workspace",
+        bullets: [
+          "Finances — vue consolidée des comptes et transactions de l'entreprise.",
+          "Gestion de stock — suivi des quantités pour les entreprises qui vendent des produits physiques.",
+          "Vérification KYC — statut de vérification de l'entreprise elle-même.",
+          "API Développeur — clés API dédiées à l'entreprise (voir la documentation API).",
+          "Zone de danger — actions irréversibles (suppression, transfert de propriété).",
         ],
       },
     ],
@@ -509,12 +546,27 @@ export const fr: Record<string, LocalizedGuide> = {
 
   agents: {
     title: "Devenir agent",
-    tagline: "Rejoindre le réseau d'agents ZekoraPay pour traiter des dépôts et retraits en espèces.",
+    tagline: "Rejoindre le réseau d'agents ZekoraPay pour traiter des dépôts et retraits en espèces — à titre personnel ou pour une entreprise.",
     sections: [
       {
-        heading: "Activation",
-        intro: "Depuis Paramètres → Agent particulier (ou Agent entreprise pour une structure), activez votre portail agent. Un code agent unique vous est attribué, à partager avec vos clients.",
-        images: [{ src: "/guide/agents/portal.png", alt: "Portail Agent" }],
+        heading: "Deux façons d'être agent",
+        bullets: [
+          "Agent particulier — activable par n'importe quel utilisateur depuis Paramètres → Agent particulier. Vous gérez votre propre float et vos propres commissions.",
+          "Agent d'entreprise (sous-agent) — vous opérez pour le compte d'une entreprise qui vous a désigné. L'interface est proche de celle d'un agent particulier, mais le float, les limites et les zones d'activité sont contrôlés par l'entreprise, pas par vous.",
+        ],
+      },
+      {
+        heading: "Portail agent particulier",
+        intro: "Un code agent unique vous est attribué, à partager avec vos clients.",
+        images: [{ src: "/guide/agents/portal.png", alt: "Portail Agent particulier" }],
+      },
+      {
+        heading: "Portail agent d'entreprise",
+        intro: "Si vous êtes agent pour plusieurs entreprises, vous choisissez d'abord celle avec laquelle travailler — chacune avec son propre code agent et son propre code PIN agent, à configurer avant de pouvoir traiter des opérations.",
+        images: [
+          { src: "/guide/agents/enterprise_select.png", alt: "Sélection de l'entreprise agent" },
+          { src: "/guide/agents/enterprise_portal.png", alt: "Portail agent d'entreprise" },
+        ],
       },
       {
         heading: "Traiter une opération",
