@@ -38,7 +38,7 @@ export const fr: Record<string, LocalizedDoc> = {
         heading: "Vue d'ensemble",
         intro: "L'API publique ZekoraPay permet à des partenaires (sites e-commerce, ERP, applications de gestion) d'intégrer nos services : portefeuilles, paiements marchands par QR code, change, boutique, dons, événements et plus. Elle est distincte du guide utilisateur, qui couvre l'usage de l'application elle-même.",
         code: [
-          { label: "URL de base", lang: "text", content: "https://api.app.zekorapay.com/public-api-gateway/v1" },
+          { label: "URL de base", lang: "text", content: "https://api.zekorapay.com/v1" },
         ],
       },
       {

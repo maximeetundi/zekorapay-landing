@@ -10,7 +10,7 @@ export const en: Record<string, LocalizedDoc> = {
         heading: "Overview",
         intro: "The ZekoraPay public API lets partners (e-commerce sites, ERPs, management applications) integrate our services: wallets, QR-code merchant payments, exchange, shop, donations, events and more. It's distinct from the user guide, which covers using the application itself.",
         code: [
-          { label: "Base URL", lang: "text", content: "https://api.app.zekorapay.com/public-api-gateway/v1" },
+          { label: "Base URL", lang: "text", content: "https://api.zekorapay.com/v1" },
         ],
       },
       {
