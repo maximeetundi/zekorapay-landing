@@ -485,10 +485,11 @@ export const en: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/location-immobilier/personal_overview.png", alt: "Rental Space — catalog" }],
       },
       {
-        heading: "Two roles",
+        heading: "Catalog & Video Reels view",
+        intro: "Browse available listings in list mode or full-screen Video Reels view. Only currently available housing, vehicles, and equipment are displayed, with an enhanced presentation video player on every detail page.",
         bullets: [
           "My Rentals — what you're renting as a tenant.",
-          "My Spaces — the properties you list as an owner/manager, with their availability (e.g. \"6/7 free\") and monthly price.",
+          "My Spaces — the properties you list as an owner/manager, with their availability and monthly price.",
         ],
       },
       {
@@ -520,11 +521,21 @@ export const en: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/boutique/create_shop.png", alt: "Creating a shop" }],
       },
       {
-        heading: "Selling",
+        heading: "Selling & Management Dashboard",
         bullets: [
-          "Receive orders directly in your shop space.",
+          "Executive shop dashboard — revenue, today's & pending orders, stock health alerts, and quick actions.",
           "Track each order's status through to delivery.",
           "Payments are collected directly into your ZekoraPay wallet.",
+        ],
+      },
+      {
+        heading: "Pro Suite for Enterprise Shops",
+        intro: "Enterprise-owned shops unlock advanced retail and inventory management tools across Web and Mobile:",
+        bullets: [
+          "Fast POS Checkout — accept in-store payments (cash, wallet, QR code, customer credit) with barcode scanning.",
+          "Inline Pro Stock Matrix — edit quantities, purchase prices, selling prices, and margins inline across multiple warehouses, with CSV import/export and undo history.",
+          "Dedicated Seller Workspace — sellers monitor their assigned warehouse, personal revenue (today, 48h, 30 days), profit, customer debt recovery, and exportable reports.",
+          "Mobile offline queue — record sales and stock adjustments offline with automatic sync once connectivity returns.",
         ],
       },
     ],

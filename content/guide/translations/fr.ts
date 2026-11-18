@@ -513,10 +513,11 @@ export const fr: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/location-immobilier/personal_overview.png", alt: "Espace Location — catalogue" }],
       },
       {
-        heading: "Deux rôles",
+        heading: "Catalogue & Vue Réels vidéo",
+        intro: "Parcourez les biens disponibles en mode liste ou en vue Réels vidéo plein écran. Seuls les logements, véhicules et matériels actuellement disponibles à la location sont affichés, avec un lecteur vidéo de présentation sur chaque fiche détaillée.",
         bullets: [
           "Mes Locations — ce que vous louez en tant que locataire.",
-          "Mes Espaces — les biens que vous proposez en tant que propriétaire/gérant, avec leur disponibilité (ex. « 6/7 libre(s) ») et leur prix mensuel.",
+          "Mes Espaces — les biens que vous proposez en tant que propriétaire/gérant, avec leur disponibilité et leur prix mensuel.",
         ],
       },
       {
@@ -548,11 +549,21 @@ export const fr: Record<string, LocalizedGuide> = {
         images: [{ src: "/guide/boutique/create_shop.png", alt: "Créer une boutique" }],
       },
       {
-        heading: "Vendre",
+        heading: "Vendre & Tableau de bord",
         bullets: [
-          "Recevez les commandes directement dans votre espace boutique.",
+          "Tableau de bord complet — chiffre d'affaires, commandes en attente/du jour, santé du stock et accès rapides.",
           "Suivez le statut de chaque commande jusqu'à sa livraison.",
           "Les paiements sont encaissés directement dans votre portefeuille ZekoraPay.",
+        ],
+      },
+      {
+        heading: "Suite Pro pour Boutiques Entreprise",
+        intro: "Les boutiques rattachées à une entreprise disposent d'outils de gestion commerciale avancés sur Web et Mobile :",
+        bullets: [
+          "Caisse POS rapide — encaissez en magasin (espèces, portefeuille, QR Code, crédit client) avec scan code-barres.",
+          "Tableau Stock Pro Inline — modifiez directement en ligne vos quantités, prix d'achat, prix de vente et marges sur tous vos entrepôts, avec import/export CSV et historique d'annulation.",
+          "Espace Vendeur dédié — chaque vendeur suit son entrepôt, son CA (jour, 48h, 30 jours), son bénéfice, ses crédits clients à recouvrer et génère son rapport.",
+          "Mode hors-ligne mobile — enregistrez vos ventes et mouvements de stock même sans connexion, avec synchronisation automatique dès le retour du réseau.",
         ],
       },
     ],

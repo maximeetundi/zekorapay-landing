@@ -9,37 +9,37 @@ const tabs = [
     key: "dashboard",
     icon: LayoutDashboard,
     imgDesktop: "/guide/demarrage/dashboard.png",
-    imgMobile: "/guide/association/association_mobile_explorer_fr.png",
+    imgMobile: "/guide/demarrage/dashboard_mobile.png",
   },
   {
     key: "wallets",
     icon: Wallet,
     imgDesktop: "/guide/portefeuilles/overview.png",
-    imgMobile: "/guide/association/association_mobile_my_fr.png",
+    imgMobile: "/guide/portefeuilles/overview_mobile.png",
   },
   {
     key: "cards",
     icon: CreditCard,
     imgDesktop: "/guide/cartes/overview.png",
-    imgMobile: "/guide/association/association_mobile_workspace_fr.png",
+    imgMobile: "/guide/cartes/overview_mobile.png",
   },
   {
     key: "tontines",
     icon: Users,
     imgDesktop: "/guide/association/association_desktop_workspace_detail.png",
-    imgMobile: "/guide/association/association_mobile_workspace_fr.png",
+    imgMobile: "/guide/association/association_mobile_explorer_fr.png",
   },
   {
     key: "shop",
     icon: ShoppingBag,
     imgDesktop: "/guide/boutique/marketplace.png",
-    imgMobile: "/guide/association/association_mobile_explorer_fr.png",
+    imgMobile: "/guide/boutique/marketplace_mobile.png",
   },
   {
     key: "enterprise",
     icon: Building2,
     imgDesktop: "/guide/entreprises/dashboard.png",
-    imgMobile: "/guide/association/association_mobile_create_fr.png",
+    imgMobile: "/guide/entreprises/dashboard_mobile.png",
   },
 ] as const;
 
