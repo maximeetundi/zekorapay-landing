@@ -63,19 +63,19 @@ function formatMoney(val: number, cur: Currency): string {
 </script>
 
 <template>
-  <section class="bg-slate-50 py-16 sm:py-24">
+  <section class="bg-slate-50 py-16 dark:bg-slate-900 sm:py-24">
     <div class="mx-auto max-w-6xl px-6">
       <div class="grid items-center gap-12 lg:grid-cols-12">
         <!-- Left narrative -->
         <div class="lg:col-span-5">
-          <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700">
+          <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700 dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300">
             <Calculator class="h-3.5 w-3.5" />
             {{ t("calculator.kicker") }}
           </span>
-          <h2 class="mt-4 text-3xl font-black tracking-tight text-deep sm:text-4xl">
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-deep dark:text-white sm:text-4xl">
             {{ t("calculator.heading") }}
           </h2>
-          <p class="mt-4 text-base leading-relaxed text-slate-600">
+          <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
             {{ t("calculator.subheading") }}
           </p>
 
@@ -83,9 +83,9 @@ function formatMoney(val: number, cur: Currency): string {
             <li
               v-for="idx in [1, 2, 3]"
               :key="idx"
-              class="flex items-center gap-2.5 text-sm font-semibold text-slate-700"
+              class="flex items-center gap-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200"
             >
-              <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+              <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300">
                 <Check class="h-3.5 w-3.5" stroke-width="2.75" />
               </span>
               {{ t(`calculator.points.p${idx}`) }}
@@ -95,7 +95,7 @@ function formatMoney(val: number, cur: Currency): string {
 
         <!-- Right interactive calculator -->
         <div class="lg:col-span-7">
-          <div class="rounded-3xl border border-slate-200/90 bg-white p-6 shadow-xl shadow-slate-200/50 sm:p-8">
+          <div class="rounded-3xl border border-slate-200/90 bg-white p-6 shadow-xl shadow-slate-200/50 dark:border-slate-800 dark:bg-slate-950 dark:shadow-black/40 sm:p-8">
             <div class="grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-end">
               <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-500">

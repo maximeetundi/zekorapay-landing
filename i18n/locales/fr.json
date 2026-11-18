@@ -59,7 +59,7 @@
     "subheading": "Une plateforme complète réunissant services bancaires, gestion communautaire et inclusion financière.",
     "wallet": {
       "title": "Portefeuilles multi-devises",
-      "description": "Devises locales et crypto-monnaies centralisées dans un seul portefeuille sécurisé."
+      "description": "Gérez vos devises locales (XAF, XOF, EUR, USD...) et crypto (USDT, BTC, ETH, SOL, BNB) dans un portefeuille sécurisé avec dépôts Mobile Money (Orange Money, MTN MoMo, Wave...)."
     },
     "transfer": {
       "title": "Transferts instantanés",
@@ -79,15 +79,15 @@
     },
     "tontines": {
       "title": "Tontines & Associations",
-      "description": "Cotisations automatiques, décaissements transparents, prêts et gouvernance intégrée."
+      "description": "Cotisations automatiques, décaissements transparents, prêts avec intérêts, amendes, votes et réunions vidéo intégrées."
     },
     "enterprise": {
       "title": "Entreprises B2B",
-      "description": "Comptes professionnels, paie automatisée, facturation et gestion locative."
+      "description": "Comptes professionnels multi-employés, paie automatisée, facturation, approbations et gestion locative immobilière."
     },
     "shop": {
       "title": "ZekoraPay Shop",
-      "description": "Boutique en ligne individuelle ou d'entreprise, avec paiements intégrés."
+      "description": "Créez une boutique personnelle ou entreprise avec caisse POS, gestion de stock Pro multi-entrepôts, espace vendeur et paiements intégrés."
     },
     "donations": {
       "title": "Dons & Solidarité",
@@ -504,5 +504,22 @@
     "p4": "Messagerie chiffrée & appels vidéo",
     "webCardLabel": "Plateforme active",
     "statusLive": "Disponible maintenant"
+  },
+  "screenshotTabs": {
+    "dashboard": "Tableau de bord",
+    "wallets": "Portefeuilles",
+    "cards": "Cartes",
+    "tontines": "Tontines",
+    "shop": "Boutique",
+    "enterprise": "Entreprises",
+    "zoom": "Agrandir",
+    "captions": {
+      "dashboard": "Vue d'ensemble réelle de l'app ZekoraPay : soldes, actions rapides et suivi d'activité.",
+      "wallets": "Portefeuilles multi-devises (XAF, XOF, EUR, USD...) et crypto avec conversion et rechargement Mobile Money.",
+      "cards": "Cartes prépayées virtuelles et physiques avec contrôle des plafonds et gel instantané.",
+      "tontines": "Espace complet de gestion des tontines et associations : membres, cotisations, prêts et réunions vidéo.",
+      "shop": "ZekoraPay Shop : catalogue produits, panier, paiements intégrés, caisse POS et stock multi-entrepôts.",
+      "enterprise": "Portail B2B Entreprises : paie automatisée, facturation, multi-employés et gestion locative."
+    }
   }
 }

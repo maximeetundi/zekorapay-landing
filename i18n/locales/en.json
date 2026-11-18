@@ -59,7 +59,7 @@
     "subheading": "A complete platform bringing together banking services, community management, and financial inclusion.",
     "wallet": {
       "title": "Multi-currency wallets",
-      "description": "Local currencies and crypto centralized in one secure wallet."
+      "description": "Manage local currencies (XAF, XOF, EUR, USD...) and crypto (USDT, BTC, ETH, SOL, BNB) in one secure wallet with Mobile Money deposits."
     },
     "transfer": {
       "title": "Instant transfers",
@@ -79,15 +79,15 @@
     },
     "tontines": {
       "title": "Tontines & Associations",
-      "description": "Automatic contributions, transparent payouts, loans, and built-in governance."
+      "description": "Automatic contributions, transparent payouts, loans with interest, fines, voting, and built-in video meetings."
     },
     "enterprise": {
       "title": "B2B Enterprise",
-      "description": "Business accounts, automated payroll, billing, and rental management."
+      "description": "Multi-employee business accounts, automated payroll, invoicing, approval workflows, and real-estate rental management."
     },
     "shop": {
       "title": "ZekoraPay Shop",
-      "description": "Individual or business online shop, with payments built right in."
+      "description": "Run an individual or enterprise online shop with POS checkout, multi-warehouse Pro Stock, seller workspace, and built-in payments."
     },
     "donations": {
       "title": "Donations & Fundraising",
@@ -504,5 +504,22 @@
     "p4": "Encrypted messaging & video calls",
     "webCardLabel": "Active platform",
     "statusLive": "Available now"
+  },
+  "screenshotTabs": {
+    "dashboard": "Dashboard",
+    "wallets": "Wallets",
+    "cards": "Cards",
+    "tontines": "Tontines",
+    "shop": "Shop",
+    "enterprise": "Business",
+    "zoom": "Expand",
+    "captions": {
+      "dashboard": "Real ZekoraPay web app overview: balances, quick actions, and live activity tracking.",
+      "wallets": "Multi-currency (XAF, XOF, EUR, USD...) and crypto wallets with instant conversion and Mobile Money top-ups.",
+      "cards": "Virtual and physical prepaid cards with spending limits and one-tap freeze.",
+      "tontines": "Full tontine & association workspace: members, contributions, loans, governance, and video meetings.",
+      "shop": "ZekoraPay Shop: storefront, cart, built-in checkout, POS terminal, and multi-warehouse Pro Stock.",
+      "enterprise": "B2B Enterprise portal: automated payroll, billing, role-based approvals, and rental management."
+    }
   }
 }

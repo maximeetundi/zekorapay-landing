@@ -7,6 +7,7 @@ import type { Config } from "tailwindcss";
 // dégradé), pas juste ses 3 couleurs de base sur un habillage plat façon
 // template de référence.
 export default {
+  darkMode: "class",
   content: ["./app.vue", "./components/**/*.vue", "./pages/**/*.vue", "./layouts/**/*.vue"],
   theme: {
     extend: {

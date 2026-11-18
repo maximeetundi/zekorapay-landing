@@ -32,10 +32,10 @@ onUnmounted(() => {
 
 useHead(() => ({
   htmlAttrs: { lang: locale.value },
-}));
-
-useHead(() => ({
   script: [
+    {
+      innerHTML: `(function(){try{var t=localStorage.getItem('zekorapay_landing_theme');if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');}catch(e){}})();`,
+    },
     {
       type: "application/ld+json",
       innerHTML: JSON.stringify({
@@ -79,38 +79,42 @@ function isActive(to: string): boolean {
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col bg-white">
+  <div class="flex min-h-screen flex-col bg-white text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100">
     <header
       class="sticky top-0 z-30 border-b transition-all duration-200"
       :class="
         scrolled
-          ? 'border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-xl'
-          : 'border-slate-100 bg-white/95 backdrop-blur-sm'
+          ? 'border-slate-200/90 bg-white/90 shadow-sm backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/90'
+          : 'border-slate-100 bg-white/95 backdrop-blur-sm dark:border-slate-800/80 dark:bg-slate-950/90'
       "
     >
       <div class="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-3 px-6 py-3.5">
         <NuxtLink to="/" class="flex items-center gap-2.5">
-          <img src="/logo.png" alt="ZekoraPay" class="h-9 w-auto">
+          <img src="/logo.png" alt="ZekoraPay" class="h-9 w-auto dark:brightness-110">
         </NuxtLink>
 
         <div class="flex items-center justify-center">
-          <nav class="hidden items-center gap-1 text-sm font-semibold text-slate-600 lg:flex">
+          <nav class="hidden items-center gap-1 text-sm font-semibold text-slate-600 dark:text-slate-300 lg:flex">
             <NuxtLink
               v-for="link in navLinks"
               :key="link.to"
               :to="link.to"
-              class="flex items-center gap-1.5 rounded-lg px-3 py-1.5 transition hover:bg-slate-100/80 hover:text-deep"
-              :class="isActive(link.to) ? 'bg-primary-50/80 text-brand' : ''"
+              class="flex items-center gap-1.5 rounded-lg px-3 py-1.5 transition hover:bg-slate-100 hover:text-deep dark:hover:bg-slate-800 dark:hover:text-white"
+              :class="isActive(link.to) ? 'bg-primary-50 text-brand dark:bg-indigo-500/15 dark:text-indigo-300' : ''"
             >
               <component :is="navIconMap[link.key]" class="h-4 w-4" stroke-width="2.2" />
               {{ t(`nav.${link.key}`) }}
             </NuxtLink>
           </nav>
-          <LanguageSwitcher class="lg:hidden" />
+          <div class="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2.5">
           <LanguageSwitcher class="hidden lg:flex" />
+          <ThemeToggle class="hidden lg:inline-flex" />
           <a
             :href="config.public.webAppUrl"
             target="_blank"
@@ -121,7 +125,7 @@ function isActive(to: string): boolean {
           </a>
           <button
             type="button"
-            class="flex h-10 w-10 items-center justify-center rounded-lg text-deep transition hover:bg-slate-100 lg:hidden"
+            class="flex h-10 w-10 items-center justify-center rounded-lg text-deep transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 lg:hidden"
             :aria-label="t('nav.openMenu')"
             @click="mobileMenuOpen = true"
           >
@@ -137,74 +141,74 @@ function isActive(to: string): boolean {
       <slot />
     </main>
 
-    <footer class="border-t border-slate-200/80 bg-slate-950 text-slate-300">
+    <footer class="border-t border-slate-200 bg-slate-50 text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
       <div class="mx-auto max-w-6xl px-6 py-14">
         <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
           <!-- Brand -->
           <div class="lg:col-span-5">
             <NuxtLink to="/" class="inline-flex items-center gap-2.5">
-              <img src="/logo.png" alt="ZekoraPay" class="h-9 w-auto brightness-0 invert">
+              <img src="/logo.png" alt="ZekoraPay" class="h-9 w-auto">
             </NuxtLink>
-            <p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
+            <p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               {{ t("footer.tagline") }}
             </p>
-            <div class="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-emerald-300">
+            <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300">
               <ShieldCheck class="h-4 w-4" />
               {{ t("footer.securityBadge") }}
             </div>
             <div class="mt-5 flex flex-wrap gap-2.5">
-              <StoreButton store="apple" :url="config.public.appStoreUrl" theme="dark" />
-              <StoreButton store="google" :url="config.public.playStoreUrl" theme="dark" />
+              <StoreButton store="apple" :url="config.public.appStoreUrl" theme="light" />
+              <StoreButton store="google" :url="config.public.playStoreUrl" theme="light" />
             </div>
           </div>
 
           <!-- Platform -->
           <div class="lg:col-span-2">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-white">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               {{ t("footer.colPlatform") }}
             </h3>
             <ul class="mt-4 space-y-2.5 text-sm">
-              <li><NuxtLink to="/features/portefeuilles-multi-devises" class="transition hover:text-white">{{ t("features.wallet.title") }}</NuxtLink></li>
-              <li><NuxtLink to="/features/tontines-associations" class="transition hover:text-white">{{ t("features.tontines.title") }}</NuxtLink></li>
-              <li><NuxtLink to="/features/entreprises-b2b" class="transition hover:text-white">{{ t("features.enterprise.title") }}</NuxtLink></li>
-              <li><NuxtLink to="/features/zekorapay-shop" class="transition hover:text-white">{{ t("features.shop.title") }}</NuxtLink></li>
+              <li><NuxtLink to="/features/portefeuilles-multi-devises" class="transition hover:text-brand dark:hover:text-white">{{ t("features.wallet.title") }}</NuxtLink></li>
+              <li><NuxtLink to="/features/tontines-associations" class="transition hover:text-brand dark:hover:text-white">{{ t("features.tontines.title") }}</NuxtLink></li>
+              <li><NuxtLink to="/features/entreprises-b2b" class="transition hover:text-brand dark:hover:text-white">{{ t("features.enterprise.title") }}</NuxtLink></li>
+              <li><NuxtLink to="/features/zekorapay-shop" class="transition hover:text-brand dark:hover:text-white">{{ t("features.shop.title") }}</NuxtLink></li>
             </ul>
           </div>
 
           <!-- Resources -->
           <div class="lg:col-span-2">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-white">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               {{ t("footer.colResources") }}
             </h3>
             <ul class="mt-4 space-y-2.5 text-sm">
-              <li><NuxtLink to="/guide" class="transition hover:text-white">{{ t("nav.guide") }}</NuxtLink></li>
-              <li><NuxtLink to="/docs" class="transition hover:text-white">{{ t("nav.docs") }}</NuxtLink></li>
-              <li><NuxtLink to="/blog" class="transition hover:text-white">{{ t("nav.blog") }}</NuxtLink></li>
-              <li><NuxtLink to="/faq" class="transition hover:text-white">{{ t("nav.faq") }}</NuxtLink></li>
+              <li><NuxtLink to="/guide" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.guide") }}</NuxtLink></li>
+              <li><NuxtLink to="/docs" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.docs") }}</NuxtLink></li>
+              <li><NuxtLink to="/blog" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.blog") }}</NuxtLink></li>
+              <li><NuxtLink to="/faq" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.faq") }}</NuxtLink></li>
             </ul>
           </div>
 
           <!-- Legal & Contact -->
           <div class="lg:col-span-3">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-white">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               {{ t("footer.colCompany") }}
             </h3>
             <ul class="mt-4 space-y-2.5 text-sm">
-              <li><NuxtLink to="/about" class="transition hover:text-white">{{ t("nav.about") }}</NuxtLink></li>
-              <li><NuxtLink to="/contact" class="transition hover:text-white">{{ t("footer.contact") }}</NuxtLink></li>
-              <li><NuxtLink to="/privacy" class="transition hover:text-white">{{ t("footer.privacy") }}</NuxtLink></li>
-              <li><NuxtLink to="/terms" class="transition hover:text-white">{{ t("footer.terms") }}</NuxtLink></li>
+              <li><NuxtLink to="/about" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.about") }}</NuxtLink></li>
+              <li><NuxtLink to="/contact" class="transition hover:text-brand dark:hover:text-white">{{ t("footer.contact") }}</NuxtLink></li>
+              <li><NuxtLink to="/privacy" class="transition hover:text-brand dark:hover:text-white">{{ t("footer.privacy") }}</NuxtLink></li>
+              <li><NuxtLink to="/terms" class="transition hover:text-brand dark:hover:text-white">{{ t("footer.terms") }}</NuxtLink></li>
             </ul>
           </div>
         </div>
 
-        <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">
+        <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 text-xs text-slate-500 dark:border-slate-800 sm:flex-row">
           <p>{{ t("footer.rights", { year: new Date().getFullYear() }) }}</p>
           <a
             :href="config.public.webAppUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="font-semibold text-indigo-300 transition hover:text-white"
+            class="font-semibold text-brand transition hover:underline dark:text-indigo-400"
           >
             app.zekorapay.com
           </a>

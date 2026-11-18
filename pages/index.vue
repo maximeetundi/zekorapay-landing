@@ -30,7 +30,7 @@ const { t } = useI18n();
 usePageSeo({
   title: "ZekoraPay — La plateforme financière globale",
   description:
-    "Gérez vos tontines, entreprises, boutiques POS, cartes prépayées et portefeuilles multi-devises & crypto en toute sécurité avec ZekoraPay.",
+    "Portefeuilles multi-devises & crypto, dépôts Mobile Money, cartes prépayées, tontines digitales, entreprises B2B, boutiques POS et messagerie sécurisée.",
   path: "/",
 });
 
@@ -110,97 +110,89 @@ useHead(() => ({
 
 <template>
   <div>
-    <!-- Dark Immersive Fintech Hero -->
-    <section class="relative isolate overflow-hidden bg-[#09081b] text-white">
+    <!-- Clean White Fintech Hero (Dark mode matches app slate-950) -->
+    <section class="relative isolate overflow-hidden bg-white dark:bg-slate-950">
       <div
         aria-hidden="true"
-        class="dot-grid-dark pointer-events-none absolute inset-0 opacity-60"
+        class="dot-grid pointer-events-none absolute inset-0 opacity-40 dark:opacity-15"
       />
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute -left-32 top-0 h-[34rem] w-[34rem] rounded-full bg-indigo-600/25 blur-[120px]"
-      />
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute -right-24 bottom-0 h-[30rem] w-[30rem] rounded-full bg-purple-600/20 blur-[120px]"
-      />
-
-      <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pb-24 sm:pt-20">
-        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-10">
-          <div>
-            <span class="badge-pill border border-indigo-400/30 bg-indigo-500/15 text-indigo-200">
-              <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+      <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-12 sm:pb-24 sm:pt-18">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          <div class="lg:col-span-6">
+            <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700 dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300">
+              <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
               {{ t("hero.badge") }}
             </span>
-            <h1 class="mt-6 text-4xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+            <h1 class="mt-5 text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-[3.25rem]">
               {{ t("hero.title") }}
-              <span class="bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent block">
-                {{ t("hero.titleAccent") }}
-              </span>
+              <span class="gradient-text block">{{ t("hero.titleAccent") }}</span>
             </h1>
-            <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
               {{ t("hero.subtitle") }}
             </p>
 
             <!-- Primary CTAs -->
             <div id="open-app" class="mt-8 flex flex-col gap-3 sm:flex-row">
               <OpenAppButton />
-              <a href="#features" class="btn-outline px-6 py-3.5 text-base">
+              <a href="#features" class="btn-outline-dark px-6 py-3.5 text-base dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
                 {{ t("hero.ctaSecondary") }}
               </a>
             </div>
 
             <!-- App Store & Google Play Badges -->
             <div class="mt-5 flex flex-wrap items-center gap-3">
-              <StoreButton store="apple" :url="config.public.appStoreUrl" theme="dark" />
-              <StoreButton store="google" :url="config.public.playStoreUrl" theme="dark" />
+              <StoreButton store="apple" :url="config.public.appStoreUrl" theme="light" />
+              <StoreButton store="google" :url="config.public.playStoreUrl" theme="light" />
             </div>
 
-            <p class="mt-4 text-xs font-semibold text-slate-400">
+            <p class="mt-4 text-xs font-semibold text-slate-400 dark:text-slate-500">
               {{ priceLine }}
             </p>
           </div>
 
-          <PhoneMockup />
+          <!-- Real App Screenshots Showcase -->
+          <div class="lg:col-span-6">
+            <AppScreenshotShowcase />
+          </div>
         </div>
 
-        <!-- Dark Glass Stats Strip -->
-        <div class="mt-16 grid grid-cols-2 gap-4 rounded-3xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl sm:mt-20 sm:grid-cols-4 sm:p-8">
+        <!-- Clean Stats Strip -->
+        <div class="mt-16 grid grid-cols-2 gap-4 rounded-3xl border border-slate-200/80 bg-slate-50/70 p-6 dark:border-slate-800 dark:bg-slate-900/70 sm:mt-20 sm:grid-cols-4 sm:p-8">
           <div
             v-for="stat in stats"
             :key="stat.key"
             class="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left"
           >
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-400/25">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-50 text-brand dark:bg-indigo-500/15 dark:text-indigo-300">
               <component :is="stat.icon" class="h-[18px] w-[18px]" stroke-width="2.25" />
             </span>
-            <span class="text-2xl font-black tracking-tight text-white sm:text-3xl"><CountUp :value="stat.value" /></span>
-            <span class="text-xs font-semibold leading-tight text-slate-400">{{ t(`stats.${stat.key}`) }}</span>
+            <span class="text-2xl font-black tracking-tight text-slate-900 dark:text-white sm:text-3xl"><CountUp :value="stat.value" /></span>
+            <span class="text-xs font-semibold leading-tight text-slate-500 dark:text-slate-400">{{ t(`stats.${stat.key}`) }}</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Payment Rails Trust Strip -->
-    <section class="border-b border-slate-100 bg-slate-50/80 py-8">
+    <section class="border-y border-slate-100 bg-slate-50/70 py-8 dark:border-slate-800 dark:bg-slate-900/50">
       <div class="mx-auto max-w-6xl px-6">
-        <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-400">
+        <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
           {{ t("rails.kicker") }}
         </p>
         <div class="mt-5 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           <div
             v-for="rail in rails"
             :key="rail.key"
-            class="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-sm"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
           >
-            <component :is="rail.icon" class="h-4 w-4 text-brand" stroke-width="2.2" />
+            <component :is="rail.icon" class="h-4 w-4 text-brand dark:text-indigo-400" stroke-width="2.2" />
             {{ t(`rails.items.${rail.key}`) }}
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bento Real App Ecosystem -->
+    <!-- Bento Real App Ecosystem with Real Screenshots -->
     <BentoEcosystem />
 
     <!-- Interactive Solution Showcase -->
@@ -209,16 +201,16 @@ useHead(() => ({
     <!-- Interactive Currency & Fee Calculator -->
     <FeeCalculatorWidget />
 
-    <!-- Web & Mobile Apps (App Store / Google Play) -->
+    <!-- Web & Mobile Apps (Real Mobile Screenshot + App Store / Google Play) -->
     <MobileAppsShowcase />
 
     <!-- All 13 Features Grid with Category Filter -->
-    <section id="features" class="bg-white py-16 sm:py-24">
+    <section id="features" class="bg-white py-16 dark:bg-slate-950 sm:py-24">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mx-auto max-w-2xl text-center">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand">{{ t("features.kicker") }}</span>
-          <h2 class="mt-2 text-3xl font-black text-balance text-deep sm:text-4xl">{{ t("features.heading") }}</h2>
-          <p class="mt-3 text-slate-600">{{ t("features.subheading") }}</p>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand dark:text-indigo-400">{{ t("features.kicker") }}</span>
+          <h2 class="mt-2 text-3xl font-black text-balance text-slate-900 dark:text-white sm:text-4xl">{{ t("features.heading") }}</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">{{ t("features.subheading") }}</p>
         </div>
 
         <div class="mt-8 flex flex-wrap justify-center gap-2">
@@ -230,7 +222,7 @@ useHead(() => ({
             :class="
               activeCategory === cat
                 ? 'border-brand bg-brand text-white shadow-sm'
-                : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-primary-200 hover:text-deep'
+                : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-primary-200 hover:text-deep dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white'
             "
             @click="activeCategory = cat"
           >
@@ -253,17 +245,17 @@ useHead(() => ({
     </section>
 
     <!-- Security & Architecture Band -->
-    <section class="border-y border-slate-100 bg-slate-950 py-16 text-white sm:py-20">
+    <section class="border-y border-slate-100 bg-slate-50 py-16 dark:border-slate-800 dark:bg-slate-900 sm:py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mx-auto max-w-2xl text-center">
-          <span class="badge-pill border border-emerald-400/30 bg-emerald-500/10 text-emerald-300">
+          <span class="badge-pill border border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300">
             <ShieldCheck class="h-3.5 w-3.5" />
             {{ t("securityBand.kicker") }}
           </span>
-          <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
+          <h2 class="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             {{ t("securityBand.heading") }}
           </h2>
-          <p class="mt-3 text-slate-400">
+          <p class="mt-3 text-slate-600 dark:text-slate-300">
             {{ t("securityBand.subheading") }}
           </p>
         </div>
@@ -272,15 +264,15 @@ useHead(() => ({
           <div
             v-for="pillar in securityPillars"
             :key="pillar.key"
-            class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+            class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950/60"
           >
-            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-brand dark:bg-indigo-500/15 dark:text-indigo-300">
               <component :is="pillar.icon" class="h-5 w-5" stroke-width="2.2" />
             </span>
-            <h3 class="mt-4 text-base font-extrabold text-white">
+            <h3 class="mt-4 text-base font-extrabold text-slate-900 dark:text-white">
               {{ t(`securityBand.items.${pillar.key}.title`) }}
             </h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+            <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               {{ t(`securityBand.items.${pillar.key}.description`) }}
             </p>
           </div>
@@ -289,25 +281,27 @@ useHead(() => ({
     </section>
 
     <!-- How It Works -->
-    <section class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-black text-deep sm:text-4xl">{{ t("howItWorks.heading") }}</h2>
-        <p class="mt-3 text-slate-600">{{ t("howItWorks.subheading") }}</p>
-      </div>
-      <div class="relative mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
-        <div
-          aria-hidden="true"
-          class="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent sm:block"
-        />
-        <div v-for="(step, index) in steps" :key="step.key" class="relative text-center">
-          <div class="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand shadow-md shadow-slate-200 ring-4 ring-slate-50">
-            <component :is="step.icon" class="h-6 w-6" stroke-width="2.25" />
-            <span class="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-deep text-xs font-bold text-white ring-2 ring-white">
-              {{ index + 1 }}
-            </span>
+    <section class="bg-white py-16 dark:bg-slate-950 sm:py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-black text-slate-900 dark:text-white sm:text-4xl">{{ t("howItWorks.heading") }}</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">{{ t("howItWorks.subheading") }}</p>
+        </div>
+        <div class="relative mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
+          <div
+            aria-hidden="true"
+            class="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent sm:block"
+          />
+          <div v-for="(step, index) in steps" :key="step.key" class="relative text-center">
+            <div class="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand shadow-md shadow-slate-200 ring-4 ring-slate-50 dark:bg-slate-900 dark:text-indigo-300 dark:shadow-black/30 dark:ring-slate-800">
+              <component :is="step.icon" class="h-6 w-6" stroke-width="2.25" />
+              <span class="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-deep text-xs font-bold text-white ring-2 ring-white dark:bg-indigo-600 dark:ring-slate-950">
+                {{ index + 1 }}
+              </span>
+            </div>
+            <h3 class="mt-4 text-base font-extrabold text-slate-900 dark:text-white">{{ t(`howItWorks.${step.key}.title`) }}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{{ t(`howItWorks.${step.key}.description`) }}</p>
           </div>
-          <h3 class="mt-4 text-base font-extrabold text-deep">{{ t(`howItWorks.${step.key}.title`) }}</h3>
-          <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{{ t(`howItWorks.${step.key}.description`) }}</p>
         </div>
       </div>
     </section>
@@ -316,16 +310,16 @@ useHead(() => ({
     <ApiShowcaseSection />
 
     <!-- Final CTA -->
-    <section class="bg-gradient-to-br from-gray-50 to-primary-50 py-20 sm:py-24">
+    <section class="border-t border-slate-100 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 sm:py-24">
       <div class="mx-auto max-w-3xl px-6 text-center">
         <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl shadow-glow-sm" style="background: linear-gradient(135deg,#6366f1,#a855f7)">
           <Rocket class="h-6 w-6 text-white" stroke-width="2.25" />
         </span>
-        <h2 class="mt-6 text-3xl font-black text-deep sm:text-4xl">{{ t("cta.title") }}</h2>
-        <p class="mt-3 text-lg text-slate-500">{{ t("cta.subtitle") }}</p>
+        <h2 class="mt-6 text-3xl font-black text-slate-900 dark:text-white sm:text-4xl">{{ t("cta.title") }}</h2>
+        <p class="mt-3 text-lg text-slate-500 dark:text-slate-400">{{ t("cta.subtitle") }}</p>
         <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <OpenAppButton />
-          <NuxtLink to="/docs" class="btn-outline-dark px-8 py-4 text-base">
+          <NuxtLink to="/docs" class="btn-outline-dark px-8 py-4 text-base dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
             {{ t("apiCta.link") }}
           </NuxtLink>
         </div>
@@ -333,7 +327,7 @@ useHead(() => ({
           <StoreButton store="apple" :url="config.public.appStoreUrl" theme="light" />
           <StoreButton store="google" :url="config.public.playStoreUrl" theme="light" />
         </div>
-        <p class="mt-4 text-sm font-semibold text-slate-400">{{ priceLine }}</p>
+        <p class="mt-4 text-sm font-semibold text-slate-400 dark:text-slate-500">{{ priceLine }}</p>
       </div>
     </section>
   </div>
