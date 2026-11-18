@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Heart, Lightbulb, SearchCheck, ShieldCheck, TrendingUp, Users } from "lucide-vue-next";
+import { Heart, Lightbulb, SearchCheck, ShieldCheck, Target, TrendingUp, Users } from "lucide-vue-next";
 
 const { t } = useI18n();
 
@@ -60,7 +60,10 @@ const values = [
     <section class="bg-white py-16 sm:py-24">
       <div class="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
         <div>
-          <span class="badge-pill bg-primary-50 text-primary-700">🎯 {{ t("about.missionTitle") }}</span>
+          <span class="badge-pill bg-primary-50 text-primary-700">
+            <Target class="h-3.5 w-3.5" />
+            {{ t("about.missionTitle") }}
+          </span>
           <h2 class="mt-4 text-3xl font-extrabold text-deep sm:text-4xl">{{ t("about.missionTitle") }}</h2>
           <p class="mt-5 text-lg leading-relaxed text-slate-600">{{ t("about.missionText") }}</p>
         </div>

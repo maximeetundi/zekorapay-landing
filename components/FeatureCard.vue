@@ -6,33 +6,47 @@ defineProps<{
   title: string;
   description: string;
   slug: string;
+  category?: string;
 }>();
 
 const { t } = useI18n();
 </script>
 
 <template>
-  <NuxtLink :to="`/features/${slug}`" class="feature-card group block">
+  <NuxtLink
+    :to="`/features/${slug}`"
+    class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10"
+  >
     <div
       aria-hidden="true"
-      class="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-primary-50 opacity-0 transition duration-300 group-hover:opacity-60"
+      class="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-primary-100 to-secondary-100 opacity-0 transition duration-300 group-hover:opacity-70"
     />
-    <span class="relative flex h-11 w-11 items-center justify-center rounded-xl text-white shadow-glow-sm transition-transform duration-300 group-hover:scale-110" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
-      <component
-        :is="icon"
-        class="h-[22px] w-[22px]"
-        stroke-width="2.25"
-      />
-    </span>
-    <h3 class="relative mt-4 text-base font-extrabold text-deep">
-      {{ title }}
-    </h3>
-    <p class="relative mt-1.5 text-sm leading-relaxed text-slate-600">
-      {{ description }}
-    </p>
-    <span class="relative mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand opacity-0 transition duration-300 group-hover:opacity-100">
+    <div>
+      <div class="relative flex items-center justify-between gap-2">
+        <span
+          class="flex h-11 w-11 items-center justify-center rounded-xl text-white shadow-glow-sm transition-transform duration-300 group-hover:scale-105"
+          style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);"
+        >
+          <component :is="icon" class="h-5 w-5" stroke-width="2.2" />
+        </span>
+        <span
+          v-if="category"
+          class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600 transition-colors group-hover:bg-primary-50 group-hover:text-primary-700"
+        >
+          {{ category }}
+        </span>
+      </div>
+      <h3 class="relative mt-5 text-base font-extrabold text-deep transition-colors group-hover:text-primary-700">
+        {{ title }}
+      </h3>
+      <p class="relative mt-2 text-sm leading-relaxed text-slate-600">
+        {{ description }}
+      </p>
+    </div>
+
+    <span class="relative mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-brand">
       {{ t("features.learnMore") }}
-      <ArrowRight class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+      <ArrowRight class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
     </span>
   </NuxtLink>
 </template>

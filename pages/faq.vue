@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { HelpCircle, Search } from "lucide-vue-next";
+
 const { t } = useI18n();
 
 usePageSeo({
@@ -7,17 +9,83 @@ usePageSeo({
   path: "/faq",
 });
 
-const faqItems = ["q1", "q2", "q3", "q4", "q5", "q6", "q7"] as const;
+type FaqCategory = "all" | "general" | "security" | "business";
+const activeCategory = ref<FaqCategory>("all");
+const query = ref("");
+
+const faqMeta = [
+  { id: "q1", cat: "general" },
+  { id: "q2", cat: "general" },
+  { id: "q3", cat: "general" },
+  { id: "q4", cat: "security" },
+  { id: "q5", cat: "business" },
+  { id: "q6", cat: "general" },
+  { id: "q7", cat: "business" },
+] as const;
+
+const filteredItems = computed(() => {
+  const q = query.value.trim().toLowerCase();
+  return faqMeta
+    .filter((item) => {
+      if (activeCategory.value !== "all" && item.cat !== activeCategory.value) return false;
+      if (!q) return true;
+      const question = t(`faq.${item.id}.question`).toLowerCase();
+      const answer = t(`faq.${item.id}.answer`).toLowerCase();
+      return question.includes(q) || answer.includes(q);
+    })
+    .map((item) => item.id);
+});
 </script>
 
 <template>
   <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
     <div class="mx-auto max-w-2xl text-center">
-      <h1 class="text-4xl font-black tracking-tight text-deep">{{ t("faq.heading") }}</h1>
+      <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700">
+        <HelpCircle class="h-3.5 w-3.5" />
+        {{ t("nav.faq") }}
+      </span>
+      <h1 class="mt-4 text-4xl font-black tracking-tight text-deep">{{ t("faq.heading") }}</h1>
       <p class="mt-3 text-slate-600">{{ t("faq.subheading") }}</p>
     </div>
-    <div class="mt-10">
-      <FaqAccordion :items="faqItems" />
+
+    <!-- Search & Category Filters -->
+    <div class="mt-10 space-y-4">
+      <div class="relative">
+        <Search class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+        <input
+          v-model="query"
+          type="search"
+          :placeholder="t('docsNav.search')"
+          class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm font-medium text-deep outline-none transition focus:border-brand focus:bg-white focus:ring-2 focus:ring-brand/15"
+        >
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-2">
+        <button
+          v-for="cat in (['all', 'general', 'security', 'business'] as const)"
+          :key="cat"
+          type="button"
+          class="rounded-full border px-3.5 py-1.5 text-xs font-bold transition"
+          :class="
+            activeCategory === cat
+              ? 'border-brand bg-brand text-white shadow-sm'
+              : 'border-slate-200 bg-white text-slate-600 hover:border-primary-200 hover:text-deep'
+          "
+          @click="activeCategory = cat"
+        >
+          {{ t(`faq.categories.${cat}`) }}
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <FaqAccordion v-if="filteredItems.length > 0" :items="filteredItems" />
+      <div
+        v-else
+        class="rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-sm font-semibold text-slate-500"
+      >
+        {{ t("docsNav.noResults") }}
+      </div>
     </div>
   </section>
 </template>

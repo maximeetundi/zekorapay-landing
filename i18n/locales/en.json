@@ -1,5 +1,16 @@
 {
-  "nav": { "cta": "Open the app", "home": "Home", "about": "About", "guide": "Guide", "docs": "API", "blog": "Blog", "faq": "FAQ", "contact": "Contact", "openMenu": "Open menu", "closeMenu": "Close menu" },
+  "nav": {
+    "cta": "Open the app",
+    "home": "Home",
+    "about": "About",
+    "guide": "Guide",
+    "docs": "API",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
   "docsNav": {
     "search": "Search...",
     "noResults": "No results.",
@@ -46,24 +57,70 @@
     "kicker": "What you can do",
     "heading": "Everything you can do with ZekoraPay",
     "subheading": "A complete platform bringing together banking services, community management, and financial inclusion.",
-    "wallet": { "title": "Multi-currency wallets", "description": "Local currencies and crypto centralized in one secure wallet." },
-    "transfer": { "title": "Instant transfers", "description": "Send and receive money in real time via mobile money or bank transfer, anywhere in the world." },
-    "cards": { "title": "Prepaid cards", "description": "Virtual or physical cards linked to your personal or business accounts." },
-    "exchange": { "title": "Exchange & Crypto", "description": "Convert between local currencies and crypto at a transparent rate." },
-    "qr": { "title": "QR Code payments", "description": "Accept fast payments in your shop, market, or association event." },
-    "tontines": { "title": "Tontines & Associations", "description": "Automatic contributions, transparent payouts, loans, and built-in governance." },
-    "enterprise": { "title": "B2B Enterprise", "description": "Business accounts, automated payroll, billing, and rental management." },
-    "shop": { "title": "ZekoraPay Shop", "description": "Individual or business online shop, with payments built right in." },
-    "donations": { "title": "Donations & Fundraising", "description": "Create fundraising campaigns and track donations in real time." },
-    "events": { "title": "Events & Ticketing", "description": "Sell tickets online and control entry with a scan." },
-    "cash": { "title": "Local agents", "description": "A network of local agents for cash deposits and withdrawals, no bank account needed." },
-    "video": { "title": "Meetings & Messaging", "description": "Built-in messaging and video meetings for your teams and associations." },
-    "ai": { "title": "AI Assistant", "description": "A smart assistant to automate alerts, reminders, and reports." },
+    "wallet": {
+      "title": "Multi-currency wallets",
+      "description": "Local currencies and crypto centralized in one secure wallet."
+    },
+    "transfer": {
+      "title": "Instant transfers",
+      "description": "Send and receive money in real time via mobile money or bank transfer, anywhere in the world."
+    },
+    "cards": {
+      "title": "Prepaid cards",
+      "description": "Virtual or physical cards linked to your personal or business accounts."
+    },
+    "exchange": {
+      "title": "Exchange & Crypto",
+      "description": "Convert between local currencies and crypto at a transparent rate."
+    },
+    "qr": {
+      "title": "QR Code payments",
+      "description": "Accept fast payments in your shop, market, or association event."
+    },
+    "tontines": {
+      "title": "Tontines & Associations",
+      "description": "Automatic contributions, transparent payouts, loans, and built-in governance."
+    },
+    "enterprise": {
+      "title": "B2B Enterprise",
+      "description": "Business accounts, automated payroll, billing, and rental management."
+    },
+    "shop": {
+      "title": "ZekoraPay Shop",
+      "description": "Individual or business online shop, with payments built right in."
+    },
+    "donations": {
+      "title": "Donations & Fundraising",
+      "description": "Create fundraising campaigns and track donations in real time."
+    },
+    "events": {
+      "title": "Events & Ticketing",
+      "description": "Sell tickets online and control entry with a scan."
+    },
+    "cash": {
+      "title": "Local agents",
+      "description": "A network of local agents for cash deposits and withdrawals, no bank account needed."
+    },
+    "video": {
+      "title": "Meetings & Messaging",
+      "description": "Built-in messaging and video meetings for your teams and associations."
+    },
+    "ai": {
+      "title": "AI Assistant",
+      "description": "A smart assistant to automate alerts, reminders, and reports."
+    },
     "learnMore": "Learn more",
     "detail": {
       "back": "Back to home",
       "highlightsHeading": "What you get",
       "ctaTitle": "Ready to simplify your finances?"
+    },
+    "categories": {
+      "all": "All",
+      "finance": "Finance",
+      "community": "Community",
+      "business": "Business",
+      "platform": "Platform"
     }
   },
   "apiCta": {
@@ -71,7 +128,9 @@
     "title": "Integrate ZekoraPay into",
     "titleAccent": "your application",
     "description": "A complete RESTful API with API-key authentication, signed webhooks and granular scopes. Integrate payments, wallets and shops in a few hours.",
-    "link": "Explore the documentation"
+    "link": "Explore the documentation",
+    "copy": "Copy",
+    "copied": "Copied"
   },
   "cta": {
     "title": "Ready to simplify your finances?",
@@ -80,20 +139,56 @@
   "howItWorks": {
     "heading": "How it works",
     "subheading": "Getting started takes three steps.",
-    "step1": { "title": "Create your account", "description": "Sign up for free in minutes, no bank card required." },
-    "step2": { "title": "Set up your profile", "description": "Verify your identity, set your PIN, and open your first wallets." },
-    "step3": { "title": "Start using ZekoraPay", "description": "Send money, create a tontine, open a shop, or manage your business." }
+    "step1": {
+      "title": "Create your account",
+      "description": "Sign up for free in minutes, no bank card required."
+    },
+    "step2": {
+      "title": "Set up your profile",
+      "description": "Verify your identity, set your PIN, and open your first wallets."
+    },
+    "step3": {
+      "title": "Start using ZekoraPay",
+      "description": "Send money, create a tontine, open a shop, or manage your business."
+    }
   },
   "faq": {
     "heading": "Frequently asked questions",
     "subheading": "Everything you need to know before you get started.",
-    "q1": { "question": "How much does ZekoraPay cost?", "answer": "Creating an account and basic use are free. Transparent transaction fees apply to certain operations (transfers, exchange), always shown before you confirm." },
-    "q2": { "question": "Do I need to create an account?", "answer": "Yes, an account is required to use ZekoraPay, unlike a simple showcase site — it's a financial platform that moves real money and needs to verify your identity." },
-    "q3": { "question": "Which countries does ZekoraPay cover?", "answer": "ZekoraPay covers several countries in West and Central Africa, with transfer corridors to the diaspora worldwide. Coverage keeps expanding." },
-    "q4": { "question": "How are my funds and data protected?", "answer": "Every sensitive operation (withdrawal, payment, transfer) is protected by your personal PIN, with end-to-end encryption on your data." },
-    "q5": { "question": "Can I use ZekoraPay for my business?", "answer": "Yes. The B2B Enterprise module supports multi-employee management, automated payroll, billing, and even rental management for real-estate businesses." },
-    "q6": { "question": "What languages is the app available in?", "answer": "French and English." },
-    "q7": { "question": "How do I create my first tontine?", "answer": "From the web app, create your group, invite members by phone or shared link, and set the contribution amount and frequency — ready in minutes." }
+    "q1": {
+      "question": "How much does ZekoraPay cost?",
+      "answer": "Creating an account and basic use are free. Transparent transaction fees apply to certain operations (transfers, exchange), always shown before you confirm."
+    },
+    "q2": {
+      "question": "Do I need to create an account?",
+      "answer": "Yes, an account is required to use ZekoraPay, unlike a simple showcase site — it's a financial platform that moves real money and needs to verify your identity."
+    },
+    "q3": {
+      "question": "Which countries does ZekoraPay cover?",
+      "answer": "ZekoraPay covers several countries in West and Central Africa, with transfer corridors to the diaspora worldwide. Coverage keeps expanding."
+    },
+    "q4": {
+      "question": "How are my funds and data protected?",
+      "answer": "Every sensitive operation (withdrawal, payment, transfer) is protected by your personal PIN, with end-to-end encryption on your data."
+    },
+    "q5": {
+      "question": "Can I use ZekoraPay for my business?",
+      "answer": "Yes. The B2B Enterprise module supports multi-employee management, automated payroll, billing, and even rental management for real-estate businesses."
+    },
+    "q6": {
+      "question": "What languages is the app available in?",
+      "answer": "French and English."
+    },
+    "q7": {
+      "question": "How do I create my first tontine?",
+      "answer": "From the web app, create your group, invite members by phone or shared link, and set the contribution amount and frequency — ready in minutes."
+    },
+    "categories": {
+      "all": "All",
+      "general": "General",
+      "security": "Security",
+      "business": "Business & Tontines"
+    }
   },
   "contact": {
     "heading": "Still have questions?",
@@ -106,10 +201,18 @@
     "tagline": "The financial platform for individuals, associations, and businesses worldwide.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "contact": "Contact"
+    "contact": "Contact",
+    "securityBadge": "Encrypted & PIN protected",
+    "colPlatform": "Platform",
+    "colResources": "Resources",
+    "colCompany": "Company & Legal"
   },
-  "language": { "label": "Language" },
-  "backToTop": { "label": "Back to top" },
+  "language": {
+    "label": "Language"
+  },
+  "backToTop": {
+    "label": "Back to top"
+  },
   "about": {
     "badge": "Our mission",
     "title": "About ZekoraPay",
@@ -118,10 +221,22 @@
     "missionText": "Our mission is to democratize access to quality financial services for everyone. We build innovative tools to simplify daily transactions for individuals, associations, and businesses.",
     "valuesTitle": "Our Values",
     "values": {
-      "innovation": { "title": "Innovation", "text": "We constantly push technological boundaries to deliver cutting-edge, secure, and intuitive solutions." },
-      "transparency": { "title": "Transparency", "text": "No hidden fees, no unnecessary jargon. We build trust through clarity." },
-      "inclusion": { "title": "Inclusion", "text": "We believe finance should be accessible to everyone, regardless of income, location, or education." },
-      "security": { "title": "Security", "text": "Protecting your funds and personal data is our absolute priority, with bank-grade security systems." }
+      "innovation": {
+        "title": "Innovation",
+        "text": "We constantly push technological boundaries to deliver cutting-edge, secure, and intuitive solutions."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "text": "No hidden fees, no unnecessary jargon. We build trust through clarity."
+      },
+      "inclusion": {
+        "title": "Inclusion",
+        "text": "We believe finance should be accessible to everyone, regardless of income, location, or education."
+      },
+      "security": {
+        "title": "Security",
+        "text": "Protecting your funds and personal data is our absolute priority, with bank-grade security systems."
+      }
     },
     "teamTitle": "The Team",
     "teamText": "Founded by a team passionate about finance and technology, ZekoraPay now counts dozens of experts dedicated to securing your transactions and continuously improving our ecosystem.",
@@ -133,7 +248,23 @@
     "emailLabel": "Email us",
     "comingSoon": "Contact details coming soon",
     "reportTitle": "Need help with your account?",
-    "reportText": "For any question about your account or a transaction, the support built into the web app remains the fastest way to reach us."
+    "reportText": "For any question about your account or a transaction, the support built into the web app remains the fastest way to reach us.",
+    "form": {
+      "topic": "Topic",
+      "topics": {
+        "support": "Support",
+        "enterprise": "Business",
+        "partnership": "Partnership",
+        "api": "API"
+      },
+      "name": "Full name",
+      "email": "Email address",
+      "message": "Your message",
+      "submit": "Send message",
+      "sentTitle": "Message ready to send",
+      "sentDesc": "Your email client has been opened with your inquiry. You can also use in-app support anytime.",
+      "newMsg": "New message"
+    }
   },
   "errorPage": {
     "title404": "Page not found",
@@ -164,5 +295,176 @@
     "news": "News",
     "education": "Financial Education",
     "finance": "Finance"
+  },
+  "mockup": {
+    "tabs": {
+      "wallet": "Wallet",
+      "tontine": "Tontine",
+      "shop": "Shop"
+    },
+    "balanceLabel": "Total balance",
+    "tontineTitle": "Family Tontine Douala",
+    "tontineProgress": "Current cycle",
+    "tontineCardTitle": "Monthly pool",
+    "tontineNextPayout": "Next payout: 15th of month",
+    "tontineContribution": "Contribution",
+    "shopTitle": "Shop & POS Sales",
+    "shopOrders": "orders",
+    "shopKpi1": "Today's revenue",
+    "shopKpi2": "Catalog",
+    "shopAction1": "Charge via QR / POS",
+    "shopAction2": "Withdraw to wallet",
+    "recentTitle": "Recent transactions",
+    "float1": "Tontines & Associations",
+    "float2": "Instant transfers",
+    "float3": "Prepaid cards",
+    "actions": {
+      "send": "Send",
+      "tontine": "Tontine",
+      "qr": "Pay QR",
+      "shop": "Shop",
+      "card": "Card",
+      "ai": "AI",
+      "donate": "Donate",
+      "business": "B2B"
+    },
+    "tx": {
+      "tx1": "Tontine Contribution",
+      "tx2": "Received from Jean P.",
+      "tx3": "ZekoraPay Shop",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "mar10": "Mar 10"
+    }
+  },
+  "rails": {
+    "kicker": "Connected to major payment rails",
+    "items": {
+      "mobileMoney": "Mobile Money",
+      "cards": "Visa / Mastercard",
+      "bankWire": "SEPA & SWIFT Wires",
+      "crypto": "Multi-Chain Crypto",
+      "diaspora": "Diaspora Corridors"
+    }
+  },
+  "solutions": {
+    "kicker": "Built for every profile",
+    "heading": "One platform, four dedicated workspaces",
+    "subheading": "Switch seamlessly between personal finance, community tontines, enterprise commerce, and developer APIs.",
+    "readGuide": "Read the guide",
+    "previewLabel": "Module preview",
+    "readyBadge": "Available",
+    "tabs": {
+      "personal": "Individuals",
+      "tontine": "Tontines & Associations",
+      "enterprise": "Business & Shop",
+      "developer": "Developers"
+    },
+    "panels": {
+      "personal": {
+        "badge": "Personal Account",
+        "title": "Your money, without borders or friction",
+        "description": "Centralize local currencies, crypto, prepaid cards, and instant transfers in one streamlined interface.",
+        "p1": "Multi-currency & crypto wallets",
+        "p2": "Fast Mobile Money deposits & withdrawals",
+        "p3": "Virtual cards for online checkout",
+        "p4": "AI assistant to track your spending",
+        "m1Label": "Onboarding",
+        "m1Value": "Free",
+        "m2Label": "Internal transfers",
+        "m2Value": "Instant",
+        "m3Label": "Security",
+        "m3Value": "PIN + KYC"
+      },
+      "tontine": {
+        "badge": "Governance & Group Savings",
+        "title": "Digitize your tontines and associations with confidence",
+        "description": "Automate contributions, track every payout in real time, and manage loans and video meetings in one place.",
+        "p1": "Automatic contributions & reminders",
+        "p2": "Transparent ledger for every member",
+        "p3": "Loans, fines & governance voting",
+        "p4": "Built-in video meetings & messaging",
+        "m1Label": "Transparency",
+        "m1Value": "100% auditable",
+        "m2Label": "Reminders",
+        "m2Value": "Automated",
+        "m3Label": "Payouts",
+        "m3Value": "Multi-approval"
+      },
+      "enterprise": {
+        "badge": "B2B Suite & Pro Stock",
+        "title": "Run your sales, multi-warehouse inventory, and team payroll",
+        "description": "Accept in-store POS payments, empower sellers, manage rentals, and automate payroll in one click.",
+        "p1": "Online storefront & dedicated POS",
+        "p2": "Multi-warehouse Pro Stock & alerts",
+        "p3": "Seller dashboard & debt collection",
+        "p4": "Automated payroll & B2B invoicing",
+        "m1Label": "Checkout",
+        "m1Value": "QR, Card, Wallet",
+        "m2Label": "Inventory",
+        "m2Value": "Real-time",
+        "m3Label": "Teams",
+        "m3Value": "Roles & approvals"
+      },
+      "developer": {
+        "badge": "REST API & Webhooks",
+        "title": "Integrate payments and wallets in just a few lines",
+        "description": "A modern documented API with scoped keys, HMAC-signed webhooks, and dedicated testing flows.",
+        "p1": "Bearer auth & granular permission scopes",
+        "p2": "Signed webhooks with automatic retries",
+        "p3": "Payments, cards & shop endpoints",
+        "p4": "Full interactive documentation",
+        "m1Label": "Base URL",
+        "m1Value": "api.zekorapay.com/v1",
+        "m2Label": "Security",
+        "m2Value": "HMAC-SHA256",
+        "m3Label": "Format",
+        "m3Value": "JSON REST"
+      }
+    }
+  },
+  "calculator": {
+    "kicker": "Transparent simulator",
+    "heading": "Estimate your conversions and transfers live",
+    "subheading": "Preview indicative rates and fees for each payout rail before you even open the app.",
+    "sendLabel": "You send",
+    "receiveLabel": "Recipient gets",
+    "swap": "Swap currencies",
+    "railLabel": "Delivery channel",
+    "rails": {
+      "mobile": "Mobile Money",
+      "bank": "Bank Wire",
+      "wallet": "ZekoraPay"
+    },
+    "rateLabel": "Indicative rate",
+    "feeLabel": "Estimated fee",
+    "estimatedArrival": "Estimated arrival",
+    "instant": "Instant (< 30s)",
+    "disclaimer": "Indicative rates for estimation only. Exact rate is locked before confirmation in the app.",
+    "cta": "Start transfer",
+    "points": {
+      "p1": "Zero hidden fees: everything is shown before confirmation",
+      "p2": "0% fee between ZekoraPay wallets",
+      "p3": "Supports XAF, XOF, EUR, USD and crypto"
+    }
+  },
+  "securityBand": {
+    "kicker": "Security & Compliance",
+    "heading": "Built on a verifiable security architecture",
+    "subheading": "Every financial operation is isolated, encrypted, and protected by multi-layer controls.",
+    "items": {
+      "pin": {
+        "title": "Personal PIN Protection",
+        "description": "Every withdrawal, transfer, or sensitive payment requires confirmation with your personal PIN."
+      },
+      "encryption": {
+        "title": "End-to-End Encryption",
+        "description": "Your data, API keys, and requests are encrypted in transit and at rest to banking standards."
+      },
+      "kyc": {
+        "title": "KYC Verification & Audit",
+        "description": "Progressive identity verification and immutable audit trails protect individuals and businesses."
+      }
+    }
   }
 }
