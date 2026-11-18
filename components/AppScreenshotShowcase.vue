@@ -5,12 +5,42 @@ import { ref } from "vue";
 const { t } = useI18n();
 
 const tabs = [
-  { key: "dashboard", icon: LayoutDashboard, img: "/guide/demarrage/dashboard.png" },
-  { key: "wallets", icon: Wallet, img: "/guide/portefeuilles/overview.png" },
-  { key: "cards", icon: CreditCard, img: "/guide/cartes/overview.png" },
-  { key: "tontines", icon: Users, img: "/guide/association/association_desktop_workspace_detail.png" },
-  { key: "shop", icon: ShoppingBag, img: "/guide/boutique/marketplace.png" },
-  { key: "enterprise", icon: Building2, img: "/guide/entreprises/dashboard.png" },
+  {
+    key: "dashboard",
+    icon: LayoutDashboard,
+    imgDesktop: "/guide/demarrage/dashboard.png",
+    imgMobile: "/guide/association/association_mobile_explorer_fr.png",
+  },
+  {
+    key: "wallets",
+    icon: Wallet,
+    imgDesktop: "/guide/portefeuilles/overview.png",
+    imgMobile: "/guide/association/association_mobile_my_fr.png",
+  },
+  {
+    key: "cards",
+    icon: CreditCard,
+    imgDesktop: "/guide/cartes/overview.png",
+    imgMobile: "/guide/association/association_mobile_workspace_fr.png",
+  },
+  {
+    key: "tontines",
+    icon: Users,
+    imgDesktop: "/guide/association/association_desktop_workspace_detail.png",
+    imgMobile: "/guide/association/association_mobile_workspace_fr.png",
+  },
+  {
+    key: "shop",
+    icon: ShoppingBag,
+    imgDesktop: "/guide/boutique/marketplace.png",
+    imgMobile: "/guide/association/association_mobile_explorer_fr.png",
+  },
+  {
+    key: "enterprise",
+    icon: Building2,
+    imgDesktop: "/guide/entreprises/dashboard.png",
+    imgMobile: "/guide/association/association_mobile_create_fr.png",
+  },
 ] as const;
 
 type TabKey = (typeof tabs)[number]["key"];
@@ -41,8 +71,8 @@ const currentTab = computed(() => tabs.find((tab) => tab.key === activeTab.value
       </button>
     </div>
 
-    <!-- Real App Window Frame -->
-    <div class="group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-2xl shadow-slate-200/70 dark:border-slate-700/80 dark:bg-slate-900 dark:shadow-black/50">
+    <!-- Desktop App Frame (shown on md+ screens) -->
+    <div class="group relative hidden overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-2xl shadow-slate-200/70 dark:border-slate-700/80 dark:bg-slate-900 dark:shadow-black/50 md:block">
       <div class="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-4 py-2.5 dark:border-slate-800 dark:bg-slate-950/70">
         <div class="flex items-center gap-1.5">
           <span class="h-2.5 w-2.5 rounded-full bg-red-400" />
@@ -66,11 +96,20 @@ const currentTab = computed(() => tabs.find((tab) => tab.key === activeTab.value
         @click="lightboxOpen = true"
       >
         <img
-          :src="currentTab.img"
+          :src="currentTab.imgDesktop"
           :alt="t(`screenshotTabs.${currentTab.key}`)"
           class="aspect-[16/10] w-full object-cover object-top transition duration-300 group-hover:scale-[1.01]"
         >
       </button>
+    </div>
+
+    <!-- Mobile App Frame (shown on small mobile screens < md) -->
+    <div class="mx-auto block w-[260px] overflow-hidden rounded-[2.2rem] border-[6px] border-slate-900 bg-slate-900 shadow-2xl shadow-slate-300/60 dark:border-slate-700 dark:shadow-black/60 md:hidden">
+      <img
+        :src="currentTab.imgMobile"
+        :alt="t(`screenshotTabs.${currentTab.key}`)"
+        class="w-full object-cover"
+      >
     </div>
 
     <!-- Caption -->
@@ -85,7 +124,7 @@ const currentTab = computed(() => tabs.find((tab) => tab.key === activeTab.value
         class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4 backdrop-blur-sm"
         @click.self="lightboxOpen = false"
       >
-        <div class="relative max-w-5xl w-full overflow-hidden rounded-2xl border border-white/15 bg-slate-900 shadow-2xl">
+        <div class="relative w-full max-w-5xl overflow-hidden rounded-2xl border border-white/15 bg-slate-900 shadow-2xl">
           <button
             type="button"
             class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black"
@@ -94,7 +133,7 @@ const currentTab = computed(() => tabs.find((tab) => tab.key === activeTab.value
             <X class="h-5 w-5" />
           </button>
           <img
-            :src="currentTab.img"
+            :src="currentTab.imgDesktop"
             :alt="t(`screenshotTabs.${currentTab.key}`)"
             class="max-h-[85vh] w-full object-contain"
           >
