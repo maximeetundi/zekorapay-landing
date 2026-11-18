@@ -152,6 +152,10 @@ function isActive(to: string): boolean {
               <ShieldCheck class="h-4 w-4" />
               {{ t("footer.securityBadge") }}
             </div>
+            <div class="mt-5 flex flex-wrap gap-2.5">
+              <StoreButton store="apple" :url="config.public.appStoreUrl" theme="dark" />
+              <StoreButton store="google" :url="config.public.playStoreUrl" theme="dark" />
+            </div>
           </div>
 
           <!-- Platform -->

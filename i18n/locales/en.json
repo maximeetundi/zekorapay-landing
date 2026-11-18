@@ -32,7 +32,7 @@
     "badge": "Global Financial Platform",
     "title": "Your financial world,",
     "titleAccent": "simplified.",
-    "subtitle": "Manage your tontines, businesses, and personal finances. Send money, pay, and invest securely with ZekoraPay.",
+    "subtitle": "Multi-currency & crypto wallets, prepaid cards, digital tontines, B2B enterprises, POS shops, and secure messaging — unified in one app.",
     "ctaPrimary": "Open the web app",
     "ctaSecondary": "Explore features"
   },
@@ -300,7 +300,8 @@
     "tabs": {
       "wallet": "Wallet",
       "tontine": "Tontine",
-      "shop": "Shop"
+      "shop": "Shop",
+      "cards": "Cards"
     },
     "balanceLabel": "Total balance",
     "tontineTitle": "Family Tontine Douala",
@@ -335,7 +336,8 @@
       "today": "Today",
       "yesterday": "Yesterday",
       "mar10": "Mar 10"
-    }
+    },
+    "cardLimitLabel": "Monthly limit"
   },
   "rails": {
     "kicker": "Connected to major payment rails",
@@ -466,5 +468,41 @@
         "description": "Progressive identity verification and immutable audit trails protect individuals and businesses."
       }
     }
+  },
+  "bento": {
+    "kicker": "Real ZekoraPay Ecosystem",
+    "heading": "Everything the app actually empowers you to do",
+    "subheading": "Every module connects seamlessly to your main wallet and is protected by your personal PIN.",
+    "c1": {
+      "title": "Multi-Currency & Crypto Wallets",
+      "desc": "Deposit and withdraw via Mobile Money or bank wire, and convert instantly between local currencies and crypto."
+    },
+    "c2": {
+      "title": "Digital Tontines & Associations",
+      "desc": "Launch your group, automate contributions, track payouts, manage loans, and host built-in video meetings."
+    },
+    "c3": {
+      "title": "ZekoraPay Shop & POS Terminal",
+      "desc": "Online storefront, multi-warehouse Pro Stock, seller workspace, and fast QR code checkout."
+    },
+    "c4": {
+      "title": "Virtual Prepaid Cards",
+      "desc": "Pay online globally, set custom spending limits, and freeze your card in one tap."
+    },
+    "c5": {
+      "title": "B2B Enterprise, Payroll & Messaging",
+      "desc": "Multi-employee accounts, automated payroll, real-estate rental management, video calls, and AI Assistant."
+    }
+  },
+  "mobileSection": {
+    "kicker": "Web, iOS & Android",
+    "heading": "Your financial platform in your pocket",
+    "subheading": "Use ZekoraPay today from any browser on app.zekorapay.com. Native iOS and Android apps are launching soon on the stores.",
+    "p1": "Real-time Web & Mobile sync",
+    "p2": "Instant notifications & PIN verification",
+    "p3": "Built-in QR scanner & POS checkout",
+    "p4": "Encrypted messaging & video calls",
+    "webCardLabel": "Active platform",
+    "statusLive": "Available now"
   }
 }

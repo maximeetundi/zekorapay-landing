@@ -32,7 +32,7 @@
     "badge": "Plateforme financière globale",
     "title": "Votre monde financier,",
     "titleAccent": "simplifié.",
-    "subtitle": "Gérez vos tontines, entreprises et finances personnelles. Envoyez de l'argent, payez et investissez en toute sécurité avec ZekoraPay.",
+    "subtitle": "Portefeuilles multi-devises & crypto, cartes prépayées, tontines digitales, entreprises B2B, boutiques POS et messagerie sécurisée — réunis dans une seule application.",
     "ctaPrimary": "Ouvrir l'app web",
     "ctaSecondary": "Découvrir les fonctionnalités"
   },
@@ -300,7 +300,8 @@
     "tabs": {
       "wallet": "Portefeuille",
       "tontine": "Tontine",
-      "shop": "Shop"
+      "shop": "Shop",
+      "cards": "Cartes"
     },
     "balanceLabel": "Solde total",
     "tontineTitle": "Tontine Familiale Douala",
@@ -335,7 +336,8 @@
       "today": "Aujourd'hui",
       "yesterday": "Hier",
       "mar10": "10 mars"
-    }
+    },
+    "cardLimitLabel": "Plafond mensuel"
   },
   "rails": {
     "kicker": "Connecté aux principaux rails de paiement",
@@ -466,5 +468,41 @@
         "description": "Contrôle d'identité progressif et journalisation immuable pour protéger particuliers et entreprises."
       }
     }
+  },
+  "bento": {
+    "kicker": "Écosystème réel ZekoraPay",
+    "heading": "Tout ce que l'application vous permet de faire",
+    "subheading": "Chaque module est connecté à votre portefeuille principal et protégé par votre code PIN.",
+    "c1": {
+      "title": "Portefeuilles Multi-Devises & Crypto",
+      "desc": "Dépôts et retraits par Mobile Money, virements bancaires et conversion instantanée entre devises locales et crypto-monnaies."
+    },
+    "c2": {
+      "title": "Tontines & Associations Digitales",
+      "desc": "Créez votre groupe, automatisez les cotisations, gérez les tours, prêts, amendes et réunions vidéo intégrées."
+    },
+    "c3": {
+      "title": "ZekoraPay Shop & Caisse POS",
+      "desc": "Boutique en ligne, gestion de stock multi-entrepôts Pro, tableau vendeur et encaissement rapide par QR Code."
+    },
+    "c4": {
+      "title": "Cartes Prépayées Virtuelles",
+      "desc": "Payez en ligne à l'international, contrôlez vos plafonds et gelez votre carte en un clic."
+    },
+    "c5": {
+      "title": "Entreprises B2B, Paie & Messagerie",
+      "desc": "Comptes multi-employés, paie automatisée, gestion locative immobilière, appels vidéo et Assistant IA."
+    }
+  },
+  "mobileSection": {
+    "kicker": "Web, iOS & Android",
+    "heading": "Votre plateforme financière dans votre poche",
+    "subheading": "Utilisez ZekoraPay dès aujourd'hui depuis n'importe quel navigateur sur app.zekorapay.com. Les applications natives iOS et Android arrivent très bientôt sur les stores.",
+    "p1": "Synchronisation temps réel Web & Mobile",
+    "p2": "Notifications instantanées & validation PIN",
+    "p3": "Scanner QR & Caisse POS intégrés",
+    "p4": "Messagerie chiffrée & appels vidéo",
+    "webCardLabel": "Plateforme active",
+    "statusLive": "Disponible maintenant"
   }
 }

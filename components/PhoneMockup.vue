@@ -5,6 +5,7 @@ import {
   Building2,
   CreditCard,
   Heart,
+  Lock,
   QrCode,
   Send,
   ShieldCheck,
@@ -20,7 +21,7 @@ import { ref } from "vue";
 
 const { t } = useI18n();
 
-type PhoneTab = "wallet" | "tontine" | "shop";
+type PhoneTab = "wallet" | "cards" | "tontine" | "shop";
 type CurrencyCode = "XAF" | "EUR" | "USDT";
 
 const activeTab = ref<PhoneTab>("wallet");
@@ -51,17 +52,17 @@ const transactions = [
 </script>
 
 <template>
-  <div class="relative mx-auto w-[300px] select-none sm:w-[316px]">
+  <div class="relative mx-auto w-[304px] select-none sm:w-[324px]">
     <div
       aria-hidden="true"
-      class="pointer-events-none absolute inset-x-0 top-10 -z-10 mx-auto h-[32rem] w-[32rem] rounded-full bg-gradient-to-tr from-brand/35 via-secondary/20 to-cyan-400/15 blur-3xl"
+      class="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-gradient-to-tr from-indigo-500/40 via-purple-500/25 to-cyan-400/25 blur-3xl"
     />
 
-    <div class="relative overflow-hidden rounded-[2.6rem] border-[7px] border-slate-900 bg-slate-900 shadow-2xl shadow-indigo-950/30 ring-1 ring-white/20">
+    <div class="relative overflow-hidden rounded-[2.6rem] border-[7px] border-slate-800/90 bg-slate-950 shadow-2xl shadow-indigo-950/60 ring-1 ring-white/20">
       <!-- Status bar -->
-      <div class="flex items-center justify-between bg-[#1e1b4b] px-6 pb-2 pt-3 text-[11px] font-semibold text-white/90">
+      <div class="flex items-center justify-between bg-[#131036] px-6 pb-2 pt-3 text-[11px] font-semibold text-white/90">
         <span>9:41</span>
-        <span class="h-3.5 w-16 rounded-full bg-black/40" />
+        <span class="h-3.5 w-16 rounded-full bg-black/50 ring-1 ring-white/10" />
         <span class="flex items-center gap-1">
           <Wifi class="h-3 w-3" />
           <ShieldCheck class="h-3 w-3 text-emerald-400" />
@@ -69,21 +70,21 @@ const transactions = [
       </div>
 
       <!-- Screen header -->
-      <div class="bg-gradient-to-br from-[#1e1b4b] via-[#312e81] to-[#4c1d95] px-5 pb-4 pt-1">
-        <div class="flex items-center justify-between gap-2">
-          <div class="flex gap-1 rounded-full bg-white/10 p-0.5 text-[10px] font-semibold text-white/80">
+      <div class="bg-gradient-to-br from-[#131036] via-[#27206b] to-[#4c1d95] px-4 pb-4 pt-1">
+        <div class="flex items-center justify-between gap-1.5">
+          <div class="flex gap-0.5 rounded-full bg-white/10 p-0.5 text-[9.5px] font-semibold text-white/80">
             <button
-              v-for="tab in (['wallet', 'tontine', 'shop'] as const)"
+              v-for="tab in (['wallet', 'cards', 'tontine', 'shop'] as const)"
               :key="tab"
               type="button"
-              class="rounded-full px-2.5 py-1 transition"
+              class="rounded-full px-2 py-1 transition"
               :class="activeTab === tab ? 'bg-white text-deep shadow-sm' : 'hover:text-white'"
               @click="activeTab = tab"
             >
               {{ t(`mockup.tabs.${tab}`) }}
             </button>
           </div>
-          <div class="flex gap-1 text-[9px] font-bold">
+          <div class="flex gap-0.5 text-[9px] font-bold">
             <button
               v-for="cur in (['XAF', 'EUR', 'USDT'] as const)"
               :key="cur"
@@ -105,6 +106,24 @@ const transactions = [
           <div class="mt-1.5 inline-flex items-center gap-1 rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
             <TrendingUp class="h-3 w-3" />
             {{ balances[activeCurrency].delta }}
+          </div>
+        </div>
+
+        <div v-else-if="activeTab === 'cards'" class="mt-3">
+          <div class="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-indigo-500/80 via-purple-600/80 to-slate-900 p-3.5 shadow-lg">
+            <div class="flex items-center justify-between text-[10px] font-bold text-white/80">
+              <span>ZekoraPay Virtual</span>
+              <span class="rounded bg-white/20 px-1.5 py-0.5 text-[9px]">VISA</span>
+            </div>
+            <p class="mt-4 font-mono text-sm font-bold tracking-widest text-white">
+              4532 •••• •••• 8841
+            </p>
+            <div class="mt-3 flex items-center justify-between text-[10px] text-white/80">
+              <span>EXP 09/29</span>
+              <span class="inline-flex items-center gap-1 text-emerald-300 font-bold">
+                <Lock class="h-2.5 w-2.5" /> Active
+              </span>
+            </div>
           </div>
         </div>
 
@@ -174,6 +193,28 @@ const transactions = [
         </div>
       </div>
 
+      <div v-else-if="activeTab === 'cards'" class="bg-slate-50 p-4 pb-6">
+        <div class="rounded-2xl bg-white p-3.5 shadow-sm ring-1 ring-slate-100">
+          <div class="flex items-center justify-between text-xs font-bold text-deep">
+            <span>{{ t("mockup.cardLimitLabel") }}</span>
+            <span class="text-brand">250 000 / 500 000 XAF</span>
+          </div>
+          <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+            <div class="h-full w-1/2 rounded-full bg-brand" />
+          </div>
+        </div>
+        <div class="mt-3 space-y-2">
+          <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2.5 text-[11px] shadow-sm">
+            <span class="font-semibold text-deep">Netflix & SaaS</span>
+            <span class="font-bold text-slate-600">-9,99 EUR</span>
+          </div>
+          <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2.5 text-[11px] shadow-sm">
+            <span class="font-semibold text-deep">Facebook Ads</span>
+            <span class="font-bold text-slate-600">-45,00 USD</span>
+          </div>
+        </div>
+      </div>
+
       <div v-else-if="activeTab === 'tontine'" class="bg-slate-50 p-4 pb-6">
         <div class="rounded-2xl bg-white p-3.5 shadow-sm ring-1 ring-slate-100">
           <div class="flex items-center justify-between">
@@ -194,10 +235,6 @@ const transactions = [
           <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2.5 text-[11px] shadow-sm">
             <span class="font-semibold text-deep">Jean-Paul M.</span>
             <span class="font-bold text-emerald-600">Payé</span>
-          </div>
-          <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2.5 text-[11px] shadow-sm">
-            <span class="font-semibold text-deep">Cédric T.</span>
-            <span class="font-bold text-amber-600">Auto-débit</span>
           </div>
         </div>
       </div>
@@ -235,23 +272,23 @@ const transactions = [
     </div>
 
     <!-- Floating trust cards -->
-    <div class="animate-float absolute -left-24 top-10 hidden items-center gap-2.5 rounded-2xl bg-white/95 px-3.5 py-2.5 shadow-xl shadow-slate-300/40 ring-1 ring-slate-100 backdrop-blur xl:flex">
-      <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+    <div class="animate-float absolute -left-24 top-12 hidden items-center gap-2.5 rounded-2xl border border-white/15 bg-slate-900/90 px-3.5 py-2.5 text-white shadow-xl backdrop-blur-md xl:flex">
+      <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300">
         <Users class="h-4 w-4" stroke-width="2.25" />
       </span>
-      <span class="text-xs font-bold text-deep">{{ t("mockup.float1") }}</span>
+      <span class="text-xs font-bold">{{ t("mockup.float1") }}</span>
     </div>
-    <div class="absolute -right-24 top-[50%] hidden items-center gap-2.5 rounded-2xl bg-white/95 px-3.5 py-2.5 shadow-xl shadow-slate-300/40 ring-1 ring-slate-100 backdrop-blur xl:flex">
-      <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-50 text-brand">
+    <div class="absolute -right-24 top-[50%] hidden items-center gap-2.5 rounded-2xl border border-white/15 bg-slate-900/90 px-3.5 py-2.5 text-white shadow-xl backdrop-blur-md xl:flex">
+      <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-500/25 text-indigo-300">
         <Send class="h-4 w-4" stroke-width="2.25" />
       </span>
-      <span class="text-xs font-bold text-deep">{{ t("mockup.float2") }}</span>
+      <span class="text-xs font-bold">{{ t("mockup.float2") }}</span>
     </div>
-    <div class="absolute -left-16 bottom-8 hidden items-center gap-2.5 rounded-2xl bg-white/95 px-3.5 py-2.5 shadow-xl shadow-slate-300/40 ring-1 ring-slate-100 backdrop-blur xl:flex">
-      <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+    <div class="absolute -left-16 bottom-10 hidden items-center gap-2.5 rounded-2xl border border-white/15 bg-slate-900/90 px-3.5 py-2.5 text-white shadow-xl backdrop-blur-md xl:flex">
+      <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300">
         <CreditCard class="h-4 w-4" stroke-width="2.25" />
       </span>
-      <span class="text-xs font-bold text-deep">{{ t("mockup.float3") }}</span>
+      <span class="text-xs font-bold">{{ t("mockup.float3") }}</span>
     </div>
   </div>
 </template>

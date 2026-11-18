@@ -30,7 +30,7 @@ const { t } = useI18n();
 usePageSeo({
   title: "ZekoraPay — La plateforme financière globale",
   description:
-    "Gérez vos tontines, entreprises et finances personnelles. Envoyez de l'argent, payez et investissez en toute sécurité avec ZekoraPay.",
+    "Gérez vos tontines, entreprises, boutiques POS, cartes prépayées et portefeuilles multi-devises & crypto en toute sécurité avec ZekoraPay.",
   path: "/",
 });
 
@@ -110,54 +110,79 @@ useHead(() => ({
 
 <template>
   <div>
-    <!-- Hero -->
-    <section class="hero-section dot-grid relative isolate overflow-hidden bg-white">
-      <div class="mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pb-24 sm:pt-20">
+    <!-- Dark Immersive Fintech Hero -->
+    <section class="relative isolate overflow-hidden bg-[#09081b] text-white">
+      <div
+        aria-hidden="true"
+        class="dot-grid-dark pointer-events-none absolute inset-0 opacity-60"
+      />
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -left-32 top-0 h-[34rem] w-[34rem] rounded-full bg-indigo-600/25 blur-[120px]"
+      />
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -right-24 bottom-0 h-[30rem] w-[30rem] rounded-full bg-purple-600/20 blur-[120px]"
+      />
+
+      <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pb-24 sm:pt-20">
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-10">
           <div>
-            <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700">
-              <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+            <span class="badge-pill border border-indigo-400/30 bg-indigo-500/15 text-indigo-200">
+              <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
               {{ t("hero.badge") }}
             </span>
-            <h1 class="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-deep sm:text-5xl lg:text-[3.35rem]">
+            <h1 class="mt-6 text-4xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
               {{ t("hero.title") }}
-              <span class="gradient-text block">{{ t("hero.titleAccent") }}</span>
+              <span class="bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent block">
+                {{ t("hero.titleAccent") }}
+              </span>
             </h1>
-            <p class="mt-5 max-w-lg text-lg leading-relaxed text-slate-600">
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
               {{ t("hero.subtitle") }}
             </p>
+
+            <!-- Primary CTAs -->
             <div id="open-app" class="mt-8 flex flex-col gap-3 sm:flex-row">
               <OpenAppButton />
-              <a href="#features" class="btn-outline-dark px-6 py-3.5 text-base">
+              <a href="#features" class="btn-outline px-6 py-3.5 text-base">
                 {{ t("hero.ctaSecondary") }}
               </a>
             </div>
-            <p class="mt-4 text-sm font-semibold text-slate-400">
+
+            <!-- App Store & Google Play Badges -->
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+              <StoreButton store="apple" :url="config.public.appStoreUrl" theme="dark" />
+              <StoreButton store="google" :url="config.public.playStoreUrl" theme="dark" />
+            </div>
+
+            <p class="mt-4 text-xs font-semibold text-slate-400">
               {{ priceLine }}
             </p>
           </div>
+
           <PhoneMockup />
         </div>
 
-        <!-- Stats bar -->
-        <div class="glass-card-light mt-16 grid grid-cols-2 gap-4 rounded-3xl p-6 sm:mt-20 sm:grid-cols-4 sm:p-8">
+        <!-- Dark Glass Stats Strip -->
+        <div class="mt-16 grid grid-cols-2 gap-4 rounded-3xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl sm:mt-20 sm:grid-cols-4 sm:p-8">
           <div
             v-for="stat in stats"
             :key="stat.key"
             class="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left"
           >
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-50 text-brand">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-400/25">
               <component :is="stat.icon" class="h-[18px] w-[18px]" stroke-width="2.25" />
             </span>
-            <span class="text-2xl font-black tracking-tight text-deep sm:text-3xl"><CountUp :value="stat.value" /></span>
-            <span class="text-xs font-semibold leading-tight text-slate-500">{{ t(`stats.${stat.key}`) }}</span>
+            <span class="text-2xl font-black tracking-tight text-white sm:text-3xl"><CountUp :value="stat.value" /></span>
+            <span class="text-xs font-semibold leading-tight text-slate-400">{{ t(`stats.${stat.key}`) }}</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Payment Rails Trust Strip -->
-    <section class="border-t border-slate-100 bg-slate-50/70 py-8">
+    <section class="border-b border-slate-100 bg-slate-50/80 py-8">
       <div class="mx-auto max-w-6xl px-6">
         <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-400">
           {{ t("rails.kicker") }}
@@ -175,13 +200,19 @@ useHead(() => ({
       </div>
     </section>
 
+    <!-- Bento Real App Ecosystem -->
+    <BentoEcosystem />
+
     <!-- Interactive Solution Showcase -->
     <SolutionShowcase />
 
     <!-- Interactive Currency & Fee Calculator -->
     <FeeCalculatorWidget />
 
-    <!-- Features Grid with Category Filter -->
+    <!-- Web & Mobile Apps (App Store / Google Play) -->
+    <MobileAppsShowcase />
+
+    <!-- All 13 Features Grid with Category Filter -->
     <section id="features" class="bg-white py-16 sm:py-24">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mx-auto max-w-2xl text-center">
@@ -190,7 +221,6 @@ useHead(() => ({
           <p class="mt-3 text-slate-600">{{ t("features.subheading") }}</p>
         </div>
 
-        <!-- Category Filter Pills -->
         <div class="mt-8 flex flex-wrap justify-center gap-2">
           <button
             v-for="cat in (['all', 'finance', 'community', 'business', 'platform'] as const)"
@@ -287,7 +317,7 @@ useHead(() => ({
 
     <!-- Final CTA -->
     <section class="bg-gradient-to-br from-gray-50 to-primary-50 py-20 sm:py-24">
-      <div class="mx-auto max-w-2xl px-6 text-center">
+      <div class="mx-auto max-w-3xl px-6 text-center">
         <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl shadow-glow-sm" style="background: linear-gradient(135deg,#6366f1,#a855f7)">
           <Rocket class="h-6 w-6 text-white" stroke-width="2.25" />
         </span>
@@ -298,6 +328,10 @@ useHead(() => ({
           <NuxtLink to="/docs" class="btn-outline-dark px-8 py-4 text-base">
             {{ t("apiCta.link") }}
           </NuxtLink>
+        </div>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <StoreButton store="apple" :url="config.public.appStoreUrl" theme="light" />
+          <StoreButton store="google" :url="config.public.playStoreUrl" theme="light" />
         </div>
         <p class="mt-4 text-sm font-semibold text-slate-400">{{ priceLine }}</p>
       </div>
