@@ -116,6 +116,14 @@ function isActive(to: string): boolean {
           <LanguageSwitcher class="hidden lg:flex" />
           <ThemeToggle class="hidden lg:inline-flex" />
           <a
+            :href="config.public.proAppUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-2 text-sm font-bold text-emerald-700 transition hover:-translate-y-0.5 hover:bg-emerald-500/20 dark:border-emerald-400/30 dark:bg-emerald-500/15 dark:text-emerald-300 lg:inline-flex"
+          >
+            ZekoraPay Pro
+          </a>
+          <a
             :href="config.public.webAppUrl"
             target="_blank"
             rel="noopener noreferrer"

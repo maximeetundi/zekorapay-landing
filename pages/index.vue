@@ -132,8 +132,17 @@ useHead(() => ({
             </p>
 
             <!-- Primary CTAs -->
-            <div id="open-app" class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div id="open-app" class="mt-8 flex flex-wrap gap-3">
               <OpenAppButton />
+              <a
+                :href="config.public.proAppUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-base font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-500"
+              >
+                <Building2 class="h-5 w-5" />
+                <span>ZekoraPay Pro</span>
+              </a>
               <a href="#features" class="btn-outline-dark px-6 py-3.5 text-base dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
                 {{ t("hero.ctaSecondary") }}
               </a>
@@ -191,6 +200,9 @@ useHead(() => ({
         </div>
       </div>
     </section>
+
+    <!-- Dual App Showcase (ZekoraPay vs ZekoraPay Pro) -->
+    <DualAppShowcase />
 
     <!-- Bento Real App Ecosystem with Real Screenshots -->
     <BentoEcosystem />
