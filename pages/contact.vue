@@ -42,25 +42,25 @@ async function copyEmail() {
 <template>
   <section class="mx-auto max-w-4xl px-6 py-16 sm:py-24">
     <div class="mx-auto max-w-2xl text-center">
-      <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-tint text-brand">
+      <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-600 dark:text-orange-400">
         <Mail class="h-6 w-6" stroke-width="2.2" />
       </span>
-      <h1 class="mt-4 text-3xl font-black tracking-tight text-deep sm:text-4xl">{{ t("contactPage.heading") }}</h1>
-      <p class="mt-3 text-slate-600">{{ t("contactPage.subtitle") }}</p>
+      <h1 class="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white sm:text-4xl">{{ t("contactPage.heading") }}</h1>
+      <p class="mt-3 text-slate-600 dark:text-slate-300">{{ t("contactPage.subtitle") }}</p>
     </div>
 
     <div class="mt-12 grid gap-8 lg:grid-cols-12">
       <!-- Interactive Inquiry Form -->
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:col-span-7">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-8 lg:col-span-7">
         <div
           v-if="sent"
           class="flex flex-col items-center gap-3 py-8 text-center"
         >
-          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
             <Check class="h-6 w-6" stroke-width="2.5" />
           </span>
-          <h2 class="text-lg font-extrabold text-deep">{{ t("contactPage.form.sentTitle") }}</h2>
-          <p class="max-w-sm text-sm text-slate-600">{{ t("contactPage.form.sentDesc") }}</p>
+          <h2 class="text-lg font-extrabold text-slate-900 dark:text-white">{{ t("contactPage.form.sentTitle") }}</h2>
+          <p class="max-w-sm text-sm text-slate-600 dark:text-slate-300">{{ t("contactPage.form.sentDesc") }}</p>
           <button
             type="button"
             class="btn-outline-dark mt-2 px-4 py-2 text-xs"

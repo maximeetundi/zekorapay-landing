@@ -40,23 +40,39 @@ const filteredItems = computed(() => {
 <template>
   <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
     <div class="mx-auto max-w-2xl text-center">
-      <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700">
+      <span class="badge-pill border border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-300">
         <HelpCircle class="h-3.5 w-3.5" />
         {{ t("nav.faq") }}
       </span>
-      <h1 class="mt-4 text-4xl font-black tracking-tight text-deep">{{ t("faq.heading") }}</h1>
-      <p class="mt-3 text-slate-600">{{ t("faq.subheading") }}</p>
+      <h1 class="mt-4 text-4xl font-black tracking-tight text-slate-900 dark:text-white">{{ t("faq.heading") }}</h1>
+      <p class="mt-3 text-slate-600 dark:text-slate-300">{{ t("faq.subheading") }}</p>
+    </div>
+
+    <!-- Dual-app quick summary -->
+    <div class="mt-8 grid gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/80 p-4 dark:border-slate-800 dark:bg-slate-900/60 sm:grid-cols-2">
+      <div class="rounded-xl bg-white p-3.5 dark:bg-slate-900">
+        <p class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">ZekoraPay &amp; ZekoraPay Pro</p>
+        <p class="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+          Un seul identifiant vous donne accès à <strong class="text-slate-900 dark:text-white">app.zekorapay.com</strong> (personnel, abonnements &amp; factures) et <strong class="text-slate-900 dark:text-white">pro.zekorapay.com</strong> (entreprises &amp; POS).
+        </p>
+      </div>
+      <div class="rounded-xl bg-white p-3.5 dark:bg-slate-900">
+        <p class="text-xs font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">KYC &amp; Sécurité</p>
+        <p class="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+          La vérification KYC personnelle et la validation KYC entreprise sont accessibles directement depuis <strong class="text-slate-900 dark:text-white">ZekoraPay Pro</strong> sans changer d'application.
+        </p>
+      </div>
     </div>
 
     <!-- Search & Category Filters -->
-    <div class="mt-10 space-y-4">
+    <div class="mt-8 space-y-4">
       <div class="relative">
         <Search class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
         <input
           v-model="query"
           type="search"
           :placeholder="t('docsNav.search')"
-          class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm font-medium text-deep outline-none transition focus:border-brand focus:bg-white focus:ring-2 focus:ring-brand/15"
+          class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm font-medium text-slate-900 outline-none transition focus:border-brand focus:bg-white focus:ring-2 focus:ring-brand/15 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:bg-slate-950"
         >
       </div>
 

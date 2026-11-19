@@ -119,7 +119,7 @@ useHead(() => ({
       <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-12 sm:pb-24 sm:pt-18">
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div class="lg:col-span-6">
-            <span class="badge-pill border border-primary-100 bg-primary-50 text-primary-700 dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300">
+            <span class="badge-pill border border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-300">
               <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
               {{ t("hero.badge") }}
             </span>
@@ -172,7 +172,7 @@ useHead(() => ({
             :key="stat.key"
             class="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left"
           >
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-50 text-brand dark:bg-indigo-500/15 dark:text-indigo-300">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-50 text-orange-600 dark:bg-orange-500/15 dark:text-orange-300">
               <component :is="stat.icon" class="h-[18px] w-[18px]" stroke-width="2.25" />
             </span>
             <span class="text-2xl font-black tracking-tight text-slate-900 dark:text-white sm:text-3xl"><CountUp :value="stat.value" /></span>

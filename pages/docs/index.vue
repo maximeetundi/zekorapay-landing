@@ -34,11 +34,11 @@ useHead(() => ({
 <template>
   <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
     <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-tint px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand">
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
         {{ t("docsNav.apiBadge") }}
       </span>
-      <h1 class="mt-4 text-4xl font-black tracking-tight text-deep">{{ t("docsNav.apiHeading") }}</h1>
-      <p class="mt-3 text-slate-600">{{ t("docsNav.apiSubtitle") }}</p>
+      <h1 class="mt-4 text-4xl font-black tracking-tight text-slate-900 dark:text-white">{{ t("docsNav.apiHeading") }}</h1>
+      <p class="mt-3 text-slate-600 dark:text-slate-300">{{ t("docsNav.apiSubtitle") }}</p>
     </div>
 
     <div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -46,15 +46,15 @@ useHead(() => ({
         v-for="page in pages"
         :key="page.slug"
         :to="`/docs/${page.slug}`"
-        class="group rounded-2xl border border-slate-100 p-5 transition hover:border-brand-tint hover:bg-brand-tint/30"
+        class="group rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-emerald-500/40"
       >
-        <h2 class="font-extrabold text-deep group-hover:text-brand">{{ page.title }}</h2>
-        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{{ page.tagline }}</p>
+        <h2 class="font-extrabold text-slate-900 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">{{ page.title }}</h2>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ page.tagline }}</p>
       </NuxtLink>
     </div>
 
-    <div class="mt-10 rounded-2xl border border-slate-100 bg-slate-50 p-5 text-center">
-      <p class="text-sm text-slate-600">{{ t("docsNav.guideCallout") }}</p>
+    <div class="mt-10 rounded-2xl border border-slate-200/80 bg-slate-50 p-5 text-center dark:border-slate-800 dark:bg-slate-900/60">
+      <p class="text-sm text-slate-600 dark:text-slate-300">{{ t("docsNav.guideCallout") }}</p>
       <NuxtLink to="/guide" class="mt-2 inline-flex items-center gap-1 text-sm font-bold text-brand hover:underline">
         {{ t("docsNav.guideCalloutLink") }} →
       </NuxtLink>
