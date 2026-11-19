@@ -43,7 +43,7 @@ const { t } = useI18n();
         <div class="flex justify-center lg:col-span-5">
           <div class="w-[260px] overflow-hidden rounded-[2.4rem] border-[6px] border-slate-900 bg-slate-900 shadow-2xl shadow-slate-300/60 dark:border-slate-700 dark:shadow-black/60">
             <img
-              src="/guide/demarrage/dashboard_mobile.png"
+              src="/guide/demarrage/app_mobile_preview.png"
               alt="ZekoraPay Mobile App"
               class="w-full object-cover"
             >
