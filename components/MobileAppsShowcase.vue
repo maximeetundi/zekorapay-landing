@@ -36,18 +36,6 @@ const { t } = useI18n();
             <OpenAppButton />
             <StoreButton store="apple" :url="config.public.appStoreUrl" theme="light" />
             <StoreButton store="google" :url="config.public.playStoreUrl" theme="light" />
-            <a
-              :href="config.public.apkUserUrl"
-              download
-              class="inline-flex items-center gap-2 rounded-2xl border border-slate-800 bg-slate-950 px-4 py-2.5 text-sm font-extrabold tracking-tight text-white shadow-lg shadow-slate-900/15 transition hover:bg-slate-900"
-              :title="t('store.downloadApkTitle')"
-            >
-              <Smartphone class="h-5 w-5 shrink-0" />
-              <span class="flex flex-col text-left leading-tight">
-                <span class="text-[10px] font-medium text-white/70">{{ t('store.apkEyebrow') }}</span>
-                <span>{{ t('store.apkName') }}</span>
-              </span>
-            </a>
           </div>
         </div>
 

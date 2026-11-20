@@ -23,7 +23,7 @@ usePageSeo({
 });
 
 const stats = [
-  { icon: Users, value: "13", key: "resources" },
+  { icon: Users, value: "12", key: "resources" },
   { icon: TrendingUp, value: "5", key: "counties" },
   { icon: Heart, value: "24/7", key: "categories" },
   { icon: ShieldCheck, value: "100%", key: "free" },

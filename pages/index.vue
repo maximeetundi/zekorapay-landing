@@ -9,7 +9,6 @@ import {
   Landmark,
   Lock,
   QrCode,
-  Repeat,
   Rocket,
   Send,
   ShieldCheck,
@@ -41,7 +40,6 @@ const features = [
   { icon: Wallet, key: "wallet", slug: "portefeuilles-multi-devises", cat: "finance" },
   { icon: Send, key: "transfer", slug: "transferts-instantanes", cat: "finance" },
   { icon: CreditCard, key: "cards", slug: "cartes-prepayees", cat: "finance" },
-  { icon: Repeat, key: "exchange", slug: "change-et-crypto", cat: "finance" },
   { icon: QrCode, key: "qr", slug: "paiement-qr-code", cat: "business" },
   { icon: Users, key: "tontines", slug: "tontines-associations", cat: "community" },
   { icon: Building2, key: "enterprise", slug: "entreprises-b2b", cat: "business" },
@@ -80,7 +78,7 @@ const steps = [
 ] as const;
 
 const stats = [
-  { icon: Users, value: "13", key: "resources" },
+  { icon: Users, value: "12", key: "resources" },
   { icon: TrendingUp, value: "5", key: "counties" },
   { icon: Heart, value: "24/7", key: "categories" },
   { icon: ShieldCheck, value: "100%", key: "free" },
