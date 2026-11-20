@@ -204,6 +204,9 @@ useHead(() => ({
     <!-- Dual App Showcase (ZekoraPay vs ZekoraPay Pro) -->
     <DualAppShowcase />
 
+    <!-- New Platform Modules: Delivery & Trust Badges -->
+    <NewModulesShowcase />
+
     <!-- Bento Real App Ecosystem with Real Screenshots -->
     <BentoEcosystem />
 
