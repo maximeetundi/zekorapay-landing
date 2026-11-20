@@ -41,7 +41,10 @@
     "appleName": "App Store",
     "googleEyebrow": "Bientôt sur",
     "googleName": "Google Play",
-    "comingSoon": "Bientôt"
+    "comingSoon": "Bientôt",
+    "apkEyebrow": "Téléchargement direct",
+    "apkName": "Android APK",
+    "downloadApkTitle": "Télécharger l'APK Android directement"
   },
   "pricing": {
     "priced": "Gratuit à l'inscription · {price}",

@@ -112,6 +112,8 @@ export default defineNuxtConfig({
     public: {
       appStoreUrl: "",
       playStoreUrl: "",
+      apkUserUrl: "https://cdn.zekorapay.com/releases/zekorapay.apk",
+      apkProUrl: "https://cdn.zekorapay.com/releases/zekorapay-pro.apk",
       contactEmail: "support@zekorapay.com",
       webAppUrl: "https://app.zekorapay.com",
       proAppUrl: "https://pro.zekorapay.com",

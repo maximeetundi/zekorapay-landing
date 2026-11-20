@@ -41,7 +41,10 @@
     "appleName": "App Store",
     "googleEyebrow": "Coming soon on",
     "googleName": "Google Play",
-    "comingSoon": "Soon"
+    "comingSoon": "Soon",
+    "apkEyebrow": "Download directly",
+    "apkName": "Android APK",
+    "downloadApkTitle": "Download Android APK directly"
   },
   "pricing": {
     "priced": "Free to sign up · {price}",
