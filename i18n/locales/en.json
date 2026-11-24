@@ -14,16 +14,13 @@
   "docsNav": {
     "search": "Search...",
     "noResults": "No results.",
-    "guideBadge": "User guide",
-    "guideHeading": "ZekoraPay user guide",
-    "guideSubtitle": "Everything you need to use the app, step by step.",
     "apiCallout": "Are you a developer looking to integrate ZekoraPay into your system?",
     "apiCalloutLink": "Check out the API documentation",
     "apiBadge": "API documentation",
     "apiHeading": "ZekoraPay API documentation",
     "apiSubtitle": "Integrate wallets, payments, shop and more directly into your systems.",
-    "guideCallout": "Looking for how to use the app itself instead?",
-    "guideCalloutLink": "Check out the user guide",
+    "guideCallout": "Need step-by-step guidance inside the app? Our built-in AI Assistant guides you on every screen.",
+    "guideCalloutLink": "Discover the ZekoraPay AI Assistant",
     "pinRequired": "PIN required",
     "menuToggle": "Contents",
     "menuCollapse": "Collapse menu"
@@ -48,7 +45,7 @@
   },
   "pricing": {
     "priced": "Free to sign up · {price}",
-    "default": "Available now on the web, mobile apps coming soon"
+    "default": "Available now on Web (App & Pro) and direct Android APK"
   },
   "stats": {
     "resources": "Built-in features",
@@ -106,11 +103,11 @@
     },
     "video": {
       "title": "Meetings & Messaging",
-      "description": "Built-in messaging and video meetings for your teams and associations."
+      "description": "Strictly separated Personal vs Business Pro messaging, encrypted files, and built-in HD LiveKit video meetings."
     },
     "ai": {
-      "title": "AI Assistant",
-      "description": "A smart assistant to automate alerts, reminders, and reports."
+      "title": "AI Assistant & Cockpit",
+      "description": "Step-by-step interactive guidance, messaging & PDF/Excel/Word/ZIP docs, audit dashboard, and customizable action policies."
     },
     "learnMore": "Learn more",
     "detail": {
@@ -356,7 +353,7 @@
     "kicker": "Built for every profile",
     "heading": "One platform, four dedicated workspaces",
     "subheading": "Switch seamlessly between personal finance, community tontines, enterprise commerce, and developer APIs.",
-    "readGuide": "Read the guide",
+    "readGuide": "Explore this module",
     "previewLabel": "Module preview",
     "readyBadge": "Available",
     "tabs": {

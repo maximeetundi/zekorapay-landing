@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BookOpen, Code2, HelpCircle, Home, Mail, Menu, Newspaper, ShieldCheck, UserRound } from "lucide-vue-next";
+import { Code2, HelpCircle, Home, Mail, Menu, Newspaper, ShieldCheck, UserRound } from "lucide-vue-next";
 
 const { t, locale } = useI18n();
 const config = useRuntimeConfig();
@@ -10,7 +10,6 @@ const scrolled = ref(false);
 const navIconMap: Record<string, typeof Home> = {
   home: Home,
   about: UserRound,
-  guide: BookOpen,
   docs: Code2,
   blog: Newspaper,
   faq: HelpCircle,
@@ -66,7 +65,6 @@ useHead(() => ({
 const navLinks = [
   { to: "/", key: "home" },
   { to: "/about", key: "about" },
-  { to: "/guide", key: "guide" },
   { to: "/docs", key: "docs" },
   { to: "/blog", key: "blog" },
   { to: "/faq", key: "faq" },
@@ -189,7 +187,7 @@ function isActive(to: string): boolean {
               {{ t("footer.colResources") }}
             </h3>
             <ul class="mt-4 space-y-2.5 text-sm">
-              <li><NuxtLink to="/guide" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.guide") }}</NuxtLink></li>
+              <li><NuxtLink to="/features/assistant-ia" class="transition hover:text-brand dark:hover:text-white">{{ t("features.ai.title") }}</NuxtLink></li>
               <li><NuxtLink to="/docs" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.docs") }}</NuxtLink></li>
               <li><NuxtLink to="/blog" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.blog") }}</NuxtLink></li>
               <li><NuxtLink to="/faq" class="transition hover:text-brand dark:hover:text-white">{{ t("nav.faq") }}</NuxtLink></li>

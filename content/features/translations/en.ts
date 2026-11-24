@@ -78,14 +78,14 @@ export const en: Record<string, LocalizedFeature> = {
   },
   enterprise: {
     body: [
-      "Open a business account for your company, manage your employees with custom roles and permissions, and centralize your corporate treasury.",
-      "Automate employee payroll, track billing and subscriptions, manage your fleet of business cards, and even run a rental management module (properties, leases, tenants) for real-estate businesses — all from a single dashboard.",
+      "Open a business workspace on ZekoraPay Pro, delegate tasks with strict RBAC roles and permissions, centralize multi-signature treasury, and bill subscribers through Enterprise Services (tuition fees, recurring plans, tiered utilities).",
+      "Automate employee payroll, enforce quorum voting on sensitive operations, manage POS shops and rental fleets, and oversee every collaborator's AI usage from the dedicated Enterprise AI Governance Cockpit.",
     ],
     highlights: [
-      "Multi-employee business accounts",
-      "Automated payroll",
-      "Billing and subscriptions",
-      "Rental management module",
+      "Strict RBAC roles & multi-sig voting",
+      "Automated payroll, billing & Services",
+      "Enterprise AI Cockpit & per-member rules",
+      "Rental fleets & multi-warehouse Pro Stock",
     ],
   },
   shop: {
@@ -138,26 +138,26 @@ export const en: Record<string, LocalizedFeature> = {
   },
   video: {
     body: [
-      "Chat one-on-one or in groups with your contacts, business teams, or association members, with file sharing and real-time notifications.",
-      "Hold your meetings and assemblies over video directly in the app — especially useful for tontine decisions, business board meetings, or simply staying connected with family and friends.",
+      "Communicate safely with definitive separation between Personal messaging (ZekoraPay) and Business messaging (ZekoraPay Pro), featuring encrypted file attachments and real-time alerts.",
+      "Host HD video meetings for tontine assemblies or corporate boards directly inside the app, and let the AI Assistant send single or bulk messages with attachments when permitted.",
     ],
     highlights: [
-      "One-on-one and group messaging",
-      "Built-in video meetings",
-      "File sharing",
-      "Real-time notifications",
+      "Strict Personal vs Business Pro separation",
+      "Built-in HD LiveKit video meetings",
+      "AI single & bulk messaging with attachments",
+      "Real-time notifications & encryption",
     ],
   },
   ai: {
     body: [
-      "A built-in smart assistant to help you across the app: answers to your questions, automatic contribution and deadline alerts, and report generation for your tontines or business.",
-      "The assistant relies on your account's real data to give you relevant answers, without ever having access to your credentials or security codes.",
+      "The ZekoraPay AI Assistant replaces static manuals: it masters every module to guide you step by step, deep-link you cleanly to sensitive screens (KYC, API keys, security), and execute daily operations including shops, rentals, single/bulk messaging, and secure PDF, Excel, Word, CSV & ZIP import/export.",
+      "With the built-in AI Analytics & Governance Cockpit, individuals and enterprise admins audit every conversation, action trace, and per-member token consumption while customizing allowed or blocked actions inside immutable system security boundaries.",
     ],
     highlights: [
-      "Built-in conversational assistant",
-      "Automatic contribution alerts",
-      "Auto-generated reports",
-      "Never has access to your credentials",
+      "Built-in interactive guidance across modules",
+      "Audit dashboard, action trace & per-member tokens",
+      "Granular allowed / blocked action policies",
+      "Secure PDF, XLSX, DOCX & ZIP import/export",
     ],
   },
 };

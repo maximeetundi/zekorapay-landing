@@ -55,7 +55,7 @@ useHead(() => ({
 
     <div class="mt-10 rounded-2xl border border-slate-200/80 bg-slate-50 p-5 text-center dark:border-slate-800 dark:bg-slate-900/60">
       <p class="text-sm text-slate-600 dark:text-slate-300">{{ t("docsNav.guideCallout") }}</p>
-      <NuxtLink to="/guide" class="mt-2 inline-flex items-center gap-1 text-sm font-bold text-brand hover:underline">
+      <NuxtLink to="/features/assistant-ia" class="mt-2 inline-flex items-center gap-1 text-sm font-bold text-brand hover:underline">
         {{ t("docsNav.guideCalloutLink") }} →
       </NuxtLink>
     </div>

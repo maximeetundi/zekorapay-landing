@@ -75,14 +75,14 @@ export const fr: Record<string, LocalizedFeature> = {
   },
   enterprise: {
     body: [
-      "Ouvrez un compte professionnel pour votre entreprise, gérez vos employés avec des rôles et permissions personnalisés, et centralisez votre trésorerie d'entreprise.",
-      "Automatisez la gestion de la paie de vos employés, suivez votre facturation et vos abonnements, gérez votre parc de cartes professionnelles, et pilotez même un module de gestion locative (biens, baux, locataires) pour les entreprises immobilières — le tout depuis un seul tableau de bord.",
+      "Ouvrez un compte professionnel sur ZekoraPay Pro, déléguez à vos employés avec des rôles et permissions RBAC stricts, centralisez votre trésorerie multi-signatures et facturez vos clients via le module Services (scolarité, abonnements, compteurs d'eau/électricité).",
+      "Automatisez la paie de vos collaborateurs, suivez factures et approbations par quorum, pilotez vos boutiques POS et espaces locatifs, et supervisez l'Assistant IA de chaque membre depuis le Cockpit de gouvernance et d'audit.",
     ],
     highlights: [
-      "Comptes professionnels multi-employés",
-      "Paie automatisée",
-      "Facturation et abonnements",
-      "Module de gestion locative",
+      "Rôles RBAC & votes multi-signatures",
+      "Paie automatisée, facturation & Services",
+      "Cockpit IA Entreprise & règles par membre",
+      "Gestion locative & Stock Pro multi-entrepôts",
     ],
   },
   shop: {
@@ -135,26 +135,26 @@ export const fr: Record<string, LocalizedFeature> = {
   },
   video: {
     body: [
-      "Discutez en messagerie directe ou en groupe avec vos contacts, vos équipes d'entreprise ou les membres de votre association, avec partage de fichiers et notifications en temps réel.",
-      "Tenez vos réunions et assemblées en visioconférence directement dans l'application — particulièrement utile pour les décisions de tontine, les conseils d'administration d'entreprise, ou simplement rester connecté avec vos proches.",
+      "Échangez avec vos proches ou vos équipes grâce à une séparation définitive entre la messagerie Personnelle (ZekoraPay) et la messagerie Professionnelle (ZekoraPay Pro), avec partage sécurisé de fichiers et notifications temps réel.",
+      "Animez vos réunions vidéo HD et assemblées de tontine ou d'entreprise directement dans l'application, et demandez même à l'Assistant IA d'envoyer des messages simples ou groupés avec pièces jointes.",
     ],
     highlights: [
-      "Messagerie individuelle et de groupe",
-      "Réunions vidéo intégrées",
-      "Partage de fichiers",
-      "Notifications en temps réel",
+      "Séparation stricte Personnel vs Entreprise Pro",
+      "Réunions vidéo HD LiveKit intégrées",
+      "Envoi de messages & fichiers via l'IA",
+      "Chiffrement & notifications en temps réel",
     ],
   },
   ai: {
     body: [
-      "Un assistant intelligent intégré pour vous accompagner dans l'application : réponses à vos questions, alertes automatiques de cotisations et d'échéances, et génération de rapports pour vos tontines ou votre entreprise.",
-      "L'assistant s'appuie sur les données réelles de votre compte pour vous donner des réponses pertinentes, sans jamais avoir accès à vos identifiants ou codes de sécurité.",
+      "L'Assistant IA ZekoraPay remplace les guides statiques : il connaît l'ensemble des modules de l'application pour vous guider pas à pas en temps réel, vous rediriger vers les écrans sensibles (KYC, clés API, sécurité) et exécuter vos demandes courantes (boutiques, locations, messages simples ou groupés, imports/exports PDF, Excel, Word, CSV, ZIP).",
+      "Grâce au Cockpit d'analyse et de gouvernance IA, les particuliers et les administrateurs d'entreprise suivent chaque conversation, chaque action exécutée et la consommation de tokens par membre, tout en choisissant les actions autorisées ou bloquées dans les limites des règles de sécurité système.",
     ],
     highlights: [
-      "Assistant conversationnel intégré",
-      "Alertes automatiques de cotisations",
-      "Rapports générés automatiquement",
-      "Jamais d'accès à vos identifiants",
+      "Guide interactif intégré sur tous les modules",
+      "Cockpit d'audit, traces d'actions & tokens par membre",
+      "Politiques granulaires d'actions autorisées / bloquées",
+      "Imports/exports sécurisés PDF, XLSX, DOCX, ZIP",
     ],
   },
 };

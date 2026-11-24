@@ -14,16 +14,13 @@
   "docsNav": {
     "search": "Rechercher...",
     "noResults": "Aucun résultat.",
-    "guideBadge": "Guide utilisateur",
-    "guideHeading": "Guide utilisateur ZekoraPay",
-    "guideSubtitle": "Tout ce qu'il faut savoir pour utiliser l'application, étape par étape.",
     "apiCallout": "Vous êtes développeur et souhaitez intégrer ZekoraPay à votre système ?",
     "apiCalloutLink": "Consultez la documentation API",
     "apiBadge": "Documentation API",
     "apiHeading": "Documentation API ZekoraPay",
     "apiSubtitle": "Intégrez portefeuilles, paiements, boutique et plus directement dans vos systèmes.",
-    "guideCallout": "Vous cherchez plutôt comment utiliser l'application elle-même ?",
-    "guideCalloutLink": "Consultez le guide utilisateur",
+    "guideCallout": "Besoin d'aide pas à pas sur l'application ? Notre Assistant IA intégré vous guide directement depuis chaque écran.",
+    "guideCalloutLink": "Découvrir l'Assistant IA ZekoraPay",
     "pinRequired": "PIN requis",
     "menuToggle": "Sommaire",
     "menuCollapse": "Réduire le menu"
@@ -48,7 +45,7 @@
   },
   "pricing": {
     "priced": "Gratuit à l'inscription · {price}",
-    "default": "Disponible dès maintenant sur le web, apps mobiles bientôt disponibles"
+    "default": "Disponible dès maintenant sur Web (App & Pro) et APK Android"
   },
   "stats": {
     "resources": "Fonctionnalités intégrées",
@@ -106,11 +103,11 @@
     },
     "video": {
       "title": "Réunions & Messagerie",
-      "description": "Messagerie et réunions vidéo intégrées pour vos équipes et associations."
+      "description": "Messagerie séparée Personnel vs Entreprise Pro, partage de fichiers et réunions vidéo LiveKit intégrées."
     },
     "ai": {
-      "title": "Assistant IA",
-      "description": "Un assistant intelligent pour automatiser alertes, relances et rapports."
+      "title": "Assistant & Cockpit IA",
+      "description": "Guide interactif pas à pas, messagerie & docs PDF/Excel/Word/ZIP, tableau d'audit des conversations et règles d'actions personnalisables."
     },
     "learnMore": "En savoir plus",
     "detail": {
@@ -356,7 +353,7 @@
     "kicker": "Conçu pour chaque profil",
     "heading": "Une seule plateforme, quatre univers dédiés",
     "subheading": "Passez librement d'un usage personnel à une association, une boutique ou une intégration API.",
-    "readGuide": "Lire le guide",
+    "readGuide": "Explorer ce module",
     "previewLabel": "Aperçu du module",
     "readyBadge": "Disponible",
     "tabs": {

@@ -24,9 +24,9 @@ const personas = [
 ] as const;
 
 const personaRoutes: Record<PersonaKey, { guide: string; feature?: string; external?: string }> = {
-  personal: { guide: "/guide/portefeuilles", feature: "/features/portefeuilles-multi-devises" },
-  tontine: { guide: "/guide/association", feature: "/features/tontines-associations" },
-  enterprise: { guide: "/guide/entreprises", feature: "/features/entreprises-b2b" },
+  personal: { guide: "/features/portefeuilles-multi-devises", feature: "/features/portefeuilles-multi-devises" },
+  tontine: { guide: "/features/tontines-associations", feature: "/features/tontines-associations" },
+  enterprise: { guide: "/features/entreprises-b2b", feature: "/features/entreprises-b2b" },
   developer: { guide: "/docs" },
 };
 </script>

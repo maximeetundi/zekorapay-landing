@@ -12,14 +12,14 @@ const userPoints = computed(() =>
         "Instant transfers, virtual cards & local Cash Agents",
         "Digital tontines & association governance",
         "Browse shops, rentals, events, donations & enterprise services",
-        "Encrypted chat, video calls & personal AI assistant",
+        "Personal messaging, video calls & interactive AI Copilot with custom action rules",
       ]
     : [
         "Portefeuilles multi-devises & crypto (XAF, XOF, EUR, USD, USDT)",
         "Virements instantanés, cartes virtuelles & agents Cash",
         "Tontines digitales et gestion d'associations",
         "Marketplace Boutiques, Locations, Événements, Dons & Services",
-        "Messagerie sécurisée, appels vidéo & assistant IA personnel",
+        "Messagerie dédiée, appels vidéo & Copilote IA interactif personnalisable",
       ],
 );
 
@@ -29,15 +29,15 @@ const proPoints = computed(() =>
         "Opens directly on your default Enterprise Dashboard",
         "Enterprise treasury, payroll & multi-signature approvals",
         "Pro Shops with POS register, cashiers & Stock Pro",
-        "Merchant payments, invoicing, B2B procurement & API keys",
-        "Dedicated Team & Customer Support messaging only",
+        "Strictly isolated Team & Customer Support messaging",
+        "Enterprise AI Cockpit: per-member token audit, allowed/blocked action rules & multi-format import/export (PDF, XLSX, DOCX, ZIP)",
       ]
     : [
         "Ouverture directe sur le tableau de bord de votre entreprise par défaut",
         "Trésorerie entreprise, paie des salaires & approbations multi-signatures",
         "Boutiques Pro avec caisse POS, caissiers & Stock Pro",
-        "Paiements marchands, facturation, achats B2B & clés API",
-        "Messagerie Pro dédiée (Équipe & Service Client uniquement)",
+        "Messagerie Pro isolée (Équipe & Service Client uniquement)",
+        "Cockpit IA Entreprise : audit par membre, suivi tokens, règles d'actions autorisées/bloquées & import/export PDF, XLSX, DOCX, ZIP",
       ],
 );
 </script>
