@@ -1,22 +1,24 @@
 # ZekoraPay
 
-> ZekoraPay is a global financial platform for Africa: multi-currency wallets, instant transfers, prepaid cards, currency exchange, QR-code merchant payments, digital tontines/associations, enterprise accounts, an online shop, donation campaigns, event ticketing, a cash-in/cash-out agent network, video meetings and an AI assistant — all in one web app.
+> ZekoraPay is a comprehensive financial and enterprise platform built around two dedicated applications:
+> - **ZekoraPay App (Personal & Associations — https://app.zekorapay.com)**: Multi-currency fiat (XAF, XOF, EUR, USD...) and crypto wallets, Mobile Money deposits/withdrawals, instant transfers, virtual prepaid cards, currency conversion, digital tontines & associations, QR merchant checkout, online shop, event ticketing, rentals booking, donation campaigns, end-to-end encrypted messaging with video meetings, and an AI assistant.
+> - **ZekoraPay Pro (B2B & Enterprises — https://pro.zekorapay.com)**: Multi-employee accounts with granular permissions, multi-admin PIN approval workflows, enterprise treasury & bulk transfers, automated payroll, invoicing & custom-branded PDF exports (Word-style enterprise header/footer), multi-warehouse stock & POS shops, real-estate rental management, fleet delivery, cash-in/cash-out agent network, public developer APIs, and AI governance cockpit.
 
-The web app is live today at https://app.zekorapay.com. Mobile apps are not yet published.
+Both ZekoraPay App and ZekoraPay Pro are live on Web, installable as Progressive Web Apps (PWA), and distributed as Android APKs directly from each application. ZekoraPay provides payment, wallet, savings-group, commerce, and enterprise financial operations (it is not a speculative trading or investment advisory platform).
 
 ## Product
 
-- [Home](https://zekorapay.com/): overview of the platform and its 13 core features
-- [About](https://zekorapay.com/about): mission, values, team
-- [Features](https://zekorapay.com/#features): detail page for each feature (wallets, transfers, cards, exchange, QR payments, tontines, enterprise, shop, donations, events, agents, meetings, AI assistant)
+- [Home](https://zekorapay.com/): overview of ZekoraPay App & ZekoraPay Pro and all 13+ core modules
+- [About](https://zekorapay.com/about): mission, values, dual-app architecture
+- [Features](https://zekorapay.com/#features): detail pages for wallets, transfers, cards, exchange, QR payments, tontines, enterprise B2B, shop, donations, events, agents, meetings, and AI assistant
 
 ## User guide
 
-- [Guide](https://zekorapay.com/guide): how to use the app, step by step, with real screenshots — account creation & KYC, wallets, transfers, cash deposits/withdrawals, currency conversion, cards, merchant payments, tontines & associations, events & ticketing, the enterprise module, rentals & real estate, the shop, donations, video meetings, and becoming an agent.
+- [Guide](https://zekorapay.com/guide): step-by-step documentation with screenshots for account creation & KYC, wallets, transfers, cash-in/cash-out, conversion, virtual cards, merchant QR, tontines & associations, events & ticketing, enterprise Pro workspace, rentals & real estate, shop, donations, video meetings, and agents.
 
 ## Developer API
 
-- [API documentation](https://zekorapay.com/docs): public REST API for third-party integrations — authentication (API keys, scopes, rate limits), wallets, merchant payments, exchange, shop, donations, events, cards, users, and webhooks. Base URL: `https://api.app.zekorapay.com/public-api-gateway/v1`.
+- [API documentation](https://zekorapay.com/docs): public REST API for third-party integrations — API keys, HMAC-SHA256 webhooks, granular scopes, wallets, merchant payments, exchange, shop, donations, events, cards, users. Base URL: `https://api.app.zekorapay.com/public-api-gateway/v1`.
 
 ## Other
 

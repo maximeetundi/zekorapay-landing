@@ -29,7 +29,7 @@
     "badge": "Plateforme financière globale",
     "title": "Votre monde financier,",
     "titleAccent": "simplifié.",
-    "subtitle": "Gérez votre argent au quotidien, envoyez et recevez des fonds partout dans le monde, épargnez en tontine et pilotez votre boutique ou votre entreprise en toute sécurité depuis un seul compte.",
+    "subtitle": "ZekoraPay App pour vos finances du quotidien (wallets multi-devises & crypto, Mobile Money, virements, cartes virtuelles, tontines) et ZekoraPay Pro pour piloter votre entreprise (trésorerie multi-admin, paie, facturation, stock & boutiques POS).",
     "ctaPrimary": "Ouvrir l'app web",
     "ctaSecondary": "Découvrir les fonctionnalités"
   },
@@ -173,7 +173,7 @@
     },
     "q5": {
       "question": "Puis-je utiliser ZekoraPay pour mon entreprise ?",
-      "answer": "Oui. Le module Entreprises B2B permet la gestion multi-employés, la paie automatisée, la facturation et même la gestion locative pour les sociétés immobilières."
+      "answer": "Oui, avec ZekoraPay Pro (pro.zekorapay.com) : comptes multi-employés avec rôles et vues personnalisées, approbations multi-administrateurs par code PIN, paie automatisée, facturation et PDF personnalisés (entête et pied de page d'entreprise), gestion de stock multi-entrepôts, boutiques POS QR et gestion locative."
     },
     "q6": {
       "question": "Dans quelles langues l'application est-elle disponible ?",

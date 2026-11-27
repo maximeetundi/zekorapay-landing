@@ -77,14 +77,44 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      titleTemplate: (title) => (title ? `${title}` : "ZekoraPay — La plateforme financière globale"),
+      titleTemplate: (title) => (title ? `${title}` : "ZekoraPay — App Particuliers & Pro Entreprises"),
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "robots", content: "index, follow" },
+        { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
         { name: "theme-color", content: "#091A30" },
+        {
+          name: "description",
+          content:
+            "Plateforme financière tout-en-un : ZekoraPay App (wallets multi-devises & crypto, Mobile Money, cartes virtuelles, virements, tontines) et ZekoraPay Pro (trésorerie B2B, approbations multi-admin, paie, facturation, stock & POS).",
+        },
+        {
+          name: "keywords",
+          content:
+            "ZekoraPay, ZekoraPay App, ZekoraPay Pro, portefeuille multi-devises, wallet crypto, Mobile Money, virements internationaux, carte prépayée virtuelle, tontine digitale, gestion entreprise B2B, paie, facturation, POS QR, messagerie chiffrée",
+        },
         { property: "og:site_name", content: "ZekoraPay" },
+        { property: "og:type", content: "website" },
         { property: "og:locale", content: "fr_FR" },
+        {
+          property: "og:title",
+          content: "ZekoraPay — Finances personnelles (App) & Gestion d'entreprise (Pro)",
+        },
+        {
+          property: "og:description",
+          content:
+            "Envoyez et recevez des fonds, payez par Mobile Money ou carte virtuelle, gérez vos tontines et pilotez votre entreprise (trésorerie, paie, facturation, stock, boutiques POS) sur ZekoraPay.",
+        },
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:title",
+          content: "ZekoraPay — App Particuliers & Pro Entreprises",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Portefeuilles multi-devises & crypto, virements instantanés, cartes prépayées, tontines digitales et suite complète B2B ZekoraPay Pro.",
+        },
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },

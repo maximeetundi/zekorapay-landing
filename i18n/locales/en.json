@@ -29,7 +29,7 @@
     "badge": "Global Financial Platform",
     "title": "Your financial world,",
     "titleAccent": "simplified.",
-    "subtitle": "Manage your everyday money, send and receive funds worldwide, save together in tontines, and run your shop or business securely from one unified account.",
+    "subtitle": "ZekoraPay App for everyday personal finance (multi-currency & crypto wallets, Mobile Money, instant transfers, virtual cards, digital tontines) and ZekoraPay Pro for running your business (multi-admin treasury, payroll, custom-branded invoicing, stock & POS).",
     "ctaPrimary": "Open the web app",
     "ctaSecondary": "Explore features"
   },
@@ -173,7 +173,7 @@
     },
     "q5": {
       "question": "Can I use ZekoraPay for my business?",
-      "answer": "Yes. The B2B Enterprise module supports multi-employee management, automated payroll, billing, and even rental management for real-estate businesses."
+      "answer": "Yes, via ZekoraPay Pro (pro.zekorapay.com): multi-employee accounts with granular permissions, multi-admin PIN approval workflows, automated payroll, invoicing with custom enterprise PDF headers/footers, multi-warehouse stock, QR POS shops, and real-estate rental management."
     },
     "q6": {
       "question": "What languages is the app available in?",
@@ -495,9 +495,9 @@
     }
   },
   "mobileSection": {
-    "kicker": "Web, iOS & Android",
-    "heading": "Your financial platform in your pocket",
-    "subheading": "Use ZekoraPay today from any browser on app.zekorapay.com. Native iOS and Android apps are launching soon on the stores.",
+    "kicker": "Web, PWA & Android",
+    "heading": "Your financial platform everywhere you go",
+    "subheading": "Use ZekoraPay App (app.zekorapay.com) and ZekoraPay Pro (pro.zekorapay.com) from any browser, install them as PWAs or download the official Android APKs directly from each app.",
     "p1": "Real-time Web & Mobile sync",
     "p2": "Instant notifications & PIN verification",
     "p3": "Built-in QR scanner & POS checkout",

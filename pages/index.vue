@@ -28,9 +28,14 @@ const { t, locale } = useI18n();
 const isEn = computed(() => locale.value === "en");
 
 usePageSeo({
-  title: "ZekoraPay — La plateforme financière globale",
+  title:
+    locale.value === "en"
+      ? "ZekoraPay — Personal Finance App & B2B Enterprise Pro"
+      : "ZekoraPay — Finances personnelles (App) & Gestion d'entreprise (Pro)",
   description:
-    "Portefeuilles multi-devises & crypto, dépôts Mobile Money, cartes prépayées, tontines digitales, entreprises B2B, boutiques POS et messagerie sécurisée.",
+    locale.value === "en"
+      ? "Multi-currency & crypto wallets, Mobile Money, virtual cards, instant transfers, digital tontines, and ZekoraPay Pro (B2B treasury, multi-admin approvals, payroll, invoicing, stock & POS)."
+      : "Portefeuilles multi-devises & crypto, Mobile Money, cartes virtuelles, virements instantanés, tontines digitales et ZekoraPay Pro (trésorerie B2B, approbations multi-admin, paie, facturation, stock & POS).",
   path: "/",
 });
 
@@ -93,14 +98,70 @@ useHead(() => ({
       type: "application/ld+json",
       innerHTML: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        name: "ZekoraPay",
-        applicationCategory: "FinanceApplication",
-        operatingSystem: "Web",
-        description:
-          "ZekoraPay is the all-in-one platform for payments, digital savings groups (tontines), transfers, and B2B financial services in Africa.",
-        publisher: { "@id": `${config.public.siteUrl}/#organization` },
-        url: config.public.webAppUrl,
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            name: "ZekoraPay App",
+            applicationCategory: "FinanceApplication",
+            operatingSystem: "Web, Android, iOS (PWA)",
+            description:
+              "Application financière pour particuliers et associations : portefeuilles multi-devises (XAF, XOF, EUR, USD...) et crypto, dépôts/retraits Mobile Money, virements instantanés, cartes prépayées virtuelles, tontines digitales, paiements QR, achats en boutique, billetterie et messagerie chiffrée.",
+            featureList: [
+              "Multi-currency and crypto wallets",
+              "Mobile Money deposits and withdrawals",
+              "Instant peer-to-peer and international transfers",
+              "Virtual prepaid Visa/Mastercard cards",
+              "Digital savings groups (tontines) and associations",
+              "End-to-end encrypted messaging and video meetings",
+              "Embedded AI financial assistant",
+            ],
+            publisher: { "@id": `${config.public.siteUrl}/#organization` },
+            url: config.public.webAppUrl,
+          },
+          {
+            "@type": "SoftwareApplication",
+            name: "ZekoraPay Pro",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web, Android, iOS (PWA)",
+            description:
+              "Suite de gestion financière B2B pour entreprises : comptes multi-employés avec permissions granulaires, approbations PIN multi-administrateurs, paie automatisée, facturation et reçus PDF personnalisés (entête et pied de page), gestion de stock multi-entrepôts, boutiques POS QR, gestion locative immobilière et réseau d'agents/livraison.",
+            featureList: [
+              "Multi-employee enterprise treasury and bulk transfers",
+              "Multi-admin PIN approval workflows and security limits",
+              "Automated payroll and team management",
+              "Custom branded PDF invoices and receipts with enterprise headers/footers",
+              "Multi-warehouse stock, POS boutiques, and QR merchant payments",
+              "Real-estate rental management, fleet delivery, and field agents",
+            ],
+            publisher: { "@id": `${config.public.siteUrl}/#organization` },
+            url: config.public.proAppUrl || "https://pro.zekorapay.com",
+          },
+          {
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: t("faq.q1.question"),
+                acceptedAnswer: { "@type": "Answer", text: t("faq.q1.answer") },
+              },
+              {
+                "@type": "Question",
+                name: t("faq.q4.question"),
+                acceptedAnswer: { "@type": "Answer", text: t("faq.q4.answer") },
+              },
+              {
+                "@type": "Question",
+                name: t("faq.q5.question"),
+                acceptedAnswer: { "@type": "Answer", text: t("faq.q5.answer") },
+              },
+              {
+                "@type": "Question",
+                name: t("faq.q7.question"),
+                acceptedAnswer: { "@type": "Answer", text: t("faq.q7.answer") },
+              },
+            ],
+          },
+        ],
       }),
     },
   ],
