@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { CheckCircle2, Smartphone } from "lucide-vue-next";
+import { CheckCircle2, Download, Smartphone } from "lucide-vue-next";
 
 const config = useRuntimeConfig();
-const { t } = useI18n();
+const { t, locale } = useI18n();
+const isEn = computed(() => locale.value === "en");
 </script>
 
 <template>
@@ -36,6 +37,28 @@ const { t } = useI18n();
             <OpenAppButton />
             <StoreButton store="apple" :url="config.public.appStoreUrl" theme="light" />
             <StoreButton store="google" :url="config.public.playStoreUrl" theme="light" />
+          </div>
+
+          <!-- Direct Android APK Downloads (User & Pro) -->
+          <div class="mt-4 flex flex-wrap items-center gap-2.5">
+            <a
+              :href="config.public.apkUserUrl"
+              download
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-bold text-slate-700 transition hover:border-brand/40 hover:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+            >
+              <img src="/logo-dark.png" alt="" class="h-4 w-4 rounded object-cover">
+              <Download class="h-3.5 w-3.5 text-brand dark:text-indigo-400" />
+              {{ isEn ? "Android APK — ZekoraPay" : "APK Android — ZekoraPay" }}
+            </a>
+            <a
+              :href="config.public.apkProUrl"
+              download
+              class="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-50 px-3.5 py-2 text-xs font-bold text-emerald-800 transition hover:bg-emerald-100 dark:border-emerald-400/30 dark:bg-emerald-500/15 dark:text-emerald-300 dark:hover:bg-emerald-500/25"
+            >
+              <img src="/logo-pro.png" alt="" class="h-4 w-4 rounded object-cover">
+              <Download class="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+              {{ isEn ? "Android APK — ZekoraPay Pro" : "APK Android — ZekoraPay Pro" }}
+            </a>
           </div>
         </div>
 

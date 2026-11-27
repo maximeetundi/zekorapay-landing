@@ -24,7 +24,8 @@ import {
 } from "lucide-vue-next";
 
 const config = useRuntimeConfig();
-const { t } = useI18n();
+const { t, locale } = useI18n();
+const isEn = computed(() => locale.value === "en");
 
 usePageSeo({
   title: "ZekoraPay — La plateforme financière globale",
@@ -138,7 +139,7 @@ useHead(() => ({
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-base font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-500"
               >
-                <Building2 class="h-5 w-5" />
+                <img src="/logo-pro.png" alt="" class="h-5 w-5 rounded object-cover ring-1 ring-white/25">
                 <span>ZekoraPay Pro</span>
               </a>
               <a href="#features" class="btn-outline-dark px-6 py-3.5 text-base dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
@@ -325,13 +326,22 @@ useHead(() => ({
     <!-- Final CTA -->
     <section class="border-t border-slate-100 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 sm:py-24">
       <div class="mx-auto max-w-3xl px-6 text-center">
-        <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl shadow-glow-sm" style="background: linear-gradient(135deg,#6366f1,#a855f7)">
-          <Rocket class="h-6 w-6 text-white" stroke-width="2.25" />
-        </span>
+        <div class="flex justify-center">
+          <BrandLogo size="lg" :show-wordmark="false" />
+        </div>
         <h2 class="mt-6 text-3xl font-black text-slate-900 dark:text-white sm:text-4xl">{{ t("cta.title") }}</h2>
         <p class="mt-3 text-lg text-slate-500 dark:text-slate-400">{{ t("cta.subtitle") }}</p>
         <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <OpenAppButton />
+          <a
+            :href="config.public.proAppUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-base font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-500"
+          >
+            <img src="/logo-pro.png" alt="" class="h-5 w-5 rounded object-cover ring-1 ring-white/25">
+            <span>ZekoraPay Pro</span>
+          </a>
           <NuxtLink to="/docs" class="btn-outline-dark px-8 py-4 text-base dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
             {{ t("apiCta.link") }}
           </NuxtLink>
@@ -339,6 +349,24 @@ useHead(() => ({
         <div class="mt-6 flex flex-wrap justify-center gap-3">
           <StoreButton store="apple" :url="config.public.appStoreUrl" theme="light" />
           <StoreButton store="google" :url="config.public.playStoreUrl" theme="light" />
+        </div>
+        <div class="mt-4 flex flex-wrap justify-center gap-2.5">
+          <a
+            :href="config.public.apkUserUrl"
+            download
+            class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-bold text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+          >
+            <img src="/logo-dark.png" alt="" class="h-3.5 w-3.5 rounded object-cover">
+            {{ isEn ? "APK ZekoraPay" : "APK ZekoraPay" }}
+          </a>
+          <a
+            :href="config.public.apkProUrl"
+            download
+            class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 px-3.5 py-1.5 text-xs font-bold text-emerald-700 transition hover:bg-emerald-100 dark:border-emerald-400/30 dark:bg-emerald-500/15 dark:text-emerald-300"
+          >
+            <img src="/logo-pro.png" alt="" class="h-3.5 w-3.5 rounded object-cover">
+            APK ZekoraPay Pro
+          </a>
         </div>
         <p class="mt-4 text-sm font-semibold text-slate-400 dark:text-slate-500">{{ priceLine }}</p>
       </div>

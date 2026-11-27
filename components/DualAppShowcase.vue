@@ -26,17 +26,17 @@ const userPoints = computed(() =>
 const proPoints = computed(() =>
   isEn.value
     ? [
-        "Opens directly on your default Enterprise Dashboard",
-        "Enterprise treasury, payroll & multi-signature approvals",
-        "Pro Shops with POS register, cashiers & Stock Pro",
-        "Strictly isolated Team & Customer Support messaging",
+        "Direct launch on your Enterprise Dashboard + Custom Views to pin your main module (Rentals, POS, Treasury)",
+        "Enterprise treasury, payroll, delegated spending limits & multi-admin approvals",
+        "Pro Shops with POS register, cashiers, Stock Pro & direct Rental Management",
+        "Ultra-fast 3G/offline SWR caching & strictly isolated Team / Customer Support messaging",
         "Enterprise AI Cockpit: per-member token audit, allowed/blocked action rules & multi-format import/export (PDF, XLSX, DOCX, ZIP)",
       ]
     : [
-        "Ouverture directe sur le tableau de bord de votre entreprise par défaut",
-        "Trésorerie entreprise, paie des salaires & approbations multi-signatures",
-        "Boutiques Pro avec caisse POS, caissiers & Stock Pro",
-        "Messagerie Pro isolée (Équipe & Service Client uniquement)",
+        "Ouverture directe sur le tableau de bord entreprise + Vues personnalisées pour épingler votre module clé",
+        "Trésorerie entreprise, paie, plafonds de dépense délégués & approbations multi-admins",
+        "Boutiques Pro avec caisse POS, caissiers, Stock Pro & Gestion Locative directe",
+        "Cache SWR ultra-rapide même en 3G/hors-ligne & Messagerie Pro isolée (Équipe & Support Client)",
         "Cockpit IA Entreprise : audit par membre, suivi tokens, règles d'actions autorisées/bloquées & import/export PDF, XLSX, DOCX, ZIP",
       ],
 );
@@ -73,9 +73,15 @@ const proPoints = computed(() =>
               </span>
               <span class="text-xs font-semibold text-slate-400">app.zekorapay.com</span>
             </div>
-            <h3 class="mt-4 text-2xl font-black text-slate-900 dark:text-white">
-              ZekoraPay
-            </h3>
+            <div class="mt-4 flex items-center gap-3.5">
+              <BrandLogo variant="app" size="lg" :show-wordmark="false" />
+              <div>
+                <h3 class="text-2xl font-black text-slate-900 dark:text-white">
+                  Zekora<span class="text-emerald-600 dark:text-emerald-400">Pay</span>
+                </h3>
+                <p class="text-xs font-semibold text-slate-400">Web · iOS · Android APK</p>
+              </div>
+            </div>
             <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               {{
                 isEn
@@ -119,7 +125,7 @@ const proPoints = computed(() =>
         </div>
 
         <!-- Pro App Card -->
-        <div class="flex flex-col justify-between rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950 p-7 text-white shadow-xl sm:p-8">
+        <div class="flex flex-col justify-between rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-br from-[#091A30] via-[#0B2239] to-[#045E4C] p-7 text-white shadow-xl sm:p-8">
           <div>
             <div class="flex items-center justify-between gap-3">
               <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/20 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-emerald-300">
@@ -128,9 +134,15 @@ const proPoints = computed(() =>
               </span>
               <span class="text-xs font-semibold text-emerald-300/80">pro.zekorapay.com</span>
             </div>
-            <h3 class="mt-4 text-2xl font-black text-white">
-              ZekoraPay <span class="text-emerald-400">Pro</span>
-            </h3>
+            <div class="mt-4 flex items-center gap-3.5">
+              <BrandLogo variant="pro" surface="dark" size="lg" :show-wordmark="false" />
+              <div>
+                <h3 class="text-2xl font-black text-white">
+                  ZekoraPay <span class="text-emerald-400">Pro</span>
+                </h3>
+                <p class="text-xs font-semibold text-emerald-200/75">Web Pro · Android APK Pro</p>
+              </div>
+            </div>
             <p class="mt-2 text-sm leading-relaxed text-slate-300">
               {{
                 isEn

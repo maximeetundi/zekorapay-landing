@@ -86,21 +86,21 @@ function isActive(to: string): boolean {
           : 'border-slate-100 bg-white/95 backdrop-blur-sm dark:border-slate-800/80 dark:bg-slate-950/90'
       "
     >
-      <div class="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-3 px-6 py-3.5">
-        <NuxtLink to="/" class="flex items-center gap-2.5">
-          <img src="/logo.png" alt="ZekoraPay" class="h-9 w-auto dark:brightness-110">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3.5">
+        <NuxtLink to="/" class="flex shrink-0 items-center">
+          <BrandLogo size="md" />
         </NuxtLink>
 
-        <div class="flex items-center justify-center">
-          <nav class="hidden items-center gap-1 text-sm font-semibold text-slate-600 dark:text-slate-300 lg:flex">
-            <NuxtLink
+        <div class="flex min-w-0 items-center justify-center">
+          <nav class="hidden items-center gap-0.5 text-sm font-semibold text-slate-600 dark:text-slate-300 lg:flex">
+              <NuxtLink
               v-for="link in navLinks"
               :key="link.to"
               :to="link.to"
-              class="flex items-center gap-1.5 rounded-lg px-3 py-1.5 transition hover:bg-slate-100 hover:text-deep dark:hover:bg-slate-800 dark:hover:text-white"
+              class="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1.5 transition hover:bg-slate-100 hover:text-deep dark:hover:bg-slate-800 dark:hover:text-white"
               :class="isActive(link.to) ? 'bg-primary-50 text-brand dark:bg-indigo-500/15 dark:text-indigo-300' : ''"
             >
-              <component :is="navIconMap[link.key]" class="h-4 w-4" stroke-width="2.2" />
+              <component :is="navIconMap[link.key]" class="h-4 w-4 shrink-0" stroke-width="2.2" />
               {{ t(`nav.${link.key}`) }}
             </NuxtLink>
           </nav>
@@ -117,15 +117,16 @@ function isActive(to: string): boolean {
             :href="config.public.proAppUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-2 text-sm font-bold text-emerald-700 transition hover:-translate-y-0.5 hover:bg-emerald-500/20 dark:border-emerald-400/30 dark:bg-emerald-500/15 dark:text-emerald-300 lg:inline-flex"
+            class="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 text-sm font-bold text-emerald-700 transition hover:-translate-y-0.5 hover:bg-emerald-500/20 dark:border-emerald-400/30 dark:bg-emerald-500/15 dark:text-emerald-300 lg:inline-flex"
           >
-            ZekoraPay Pro
+            <img src="/logo-pro.png" alt="" class="h-4 w-4 shrink-0 rounded object-cover">
+            <span>ZekoraPay Pro</span>
           </a>
           <a
             :href="config.public.webAppUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="hidden rounded-xl bg-gradient-to-r from-brand to-secondary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-glow-sm lg:inline-flex"
+            class="hidden shrink-0 whitespace-nowrap rounded-xl bg-gradient-to-r from-brand to-secondary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-glow-sm lg:inline-flex"
           >
             {{ t("nav.cta") }}
           </a>
@@ -152,8 +153,8 @@ function isActive(to: string): boolean {
         <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
           <!-- Brand -->
           <div class="lg:col-span-5">
-            <NuxtLink to="/" class="inline-flex items-center gap-2.5">
-              <img src="/logo.png" alt="ZekoraPay" class="h-9 w-auto">
+            <NuxtLink to="/" class="inline-flex items-center">
+              <BrandLogo size="md" />
             </NuxtLink>
             <p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               {{ t("footer.tagline") }}
@@ -210,14 +211,25 @@ function isActive(to: string): boolean {
 
         <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 text-xs text-slate-500 dark:border-slate-800 sm:flex-row">
           <p>{{ t("footer.rights", { year: new Date().getFullYear() }) }}</p>
-          <a
-            :href="config.public.webAppUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-semibold text-brand transition hover:underline dark:text-indigo-400"
-          >
-            app.zekorapay.com
-          </a>
+          <div class="flex items-center gap-4">
+            <a
+              :href="config.public.webAppUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-brand transition hover:underline dark:text-indigo-400"
+            >
+              app.zekorapay.com
+            </a>
+            <span aria-hidden="true" class="text-slate-300 dark:text-slate-700">·</span>
+            <a
+              :href="config.public.proAppUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-emerald-600 transition hover:underline dark:text-emerald-400"
+            >
+              pro.zekorapay.com
+            </a>
+          </div>
         </div>
       </div>
     </footer>

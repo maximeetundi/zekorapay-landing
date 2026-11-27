@@ -82,7 +82,7 @@ export default defineNuxtConfig({
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "robots", content: "index, follow" },
-        { name: "theme-color", content: "#1e1b4b" },
+        { name: "theme-color", content: "#091A30" },
         { property: "og:site_name", content: "ZekoraPay" },
         { property: "og:locale", content: "fr_FR" },
       ],

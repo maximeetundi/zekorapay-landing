@@ -64,20 +64,19 @@ onUnmounted(() => {
     <Transition name="menu-slide">
       <aside
         v-if="open"
-        class="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col bg-white shadow-2xl lg:hidden"
+        class="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col bg-white shadow-2xl dark:bg-slate-950 lg:hidden"
         role="dialog"
         aria-modal="true"
         :aria-label="t('nav.openMenu')"
       >
-        <!-- Bandeau dégradé cohérent avec le CTA final de la home, pour donner
-        au tiroir une identité visuelle forte plutôt qu'un simple panneau blanc. -->
-        <div class="relative overflow-hidden bg-gradient-to-br from-deep via-[#132b6b] to-brand px-5 pb-6 pt-5">
+        <!-- Bandeau dégradé cohérent avec l'identité ZekoraPay -->
+        <div class="relative overflow-hidden bg-gradient-to-br from-[#091A30] via-[#0C2D48] to-[#045E4C] px-5 pb-6 pt-5">
           <div
             aria-hidden="true"
-            class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"
+            class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-emerald-400/15 blur-2xl"
           />
           <div class="relative flex items-center justify-between">
-            <img src="/logo.png" alt="ZekoraPay" class="h-8 w-auto brightness-0 invert">
+            <BrandLogo surface="dark" size="sm" />
             <button
               type="button"
               class="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25"
@@ -96,11 +95,11 @@ onUnmounted(() => {
             :key="link.to"
             :to="link.to"
             class="flex items-center gap-3.5 rounded-xl px-3.5 py-3.5 text-base font-bold transition"
-            :class="isActive(link.to) ? 'bg-brand-tint text-brand' : 'text-slate-700 hover:bg-slate-50'"
+            :class="isActive(link.to) ? 'bg-brand-tint text-brand dark:bg-indigo-500/15 dark:text-indigo-300' : 'text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-900'"
           >
             <span
               class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
-              :class="isActive(link.to) ? 'bg-white text-brand' : 'bg-slate-100 text-slate-500'"
+              :class="isActive(link.to) ? 'bg-white text-brand dark:bg-slate-900 dark:text-indigo-300' : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400'"
             >
               <component :is="iconMap[link.key]" class="h-[18px] w-[18px]" stroke-width="2.25" />
             </span>
@@ -108,9 +107,7 @@ onUnmounted(() => {
           </NuxtLink>
         </nav>
 
-        <div class="border-t border-slate-100 px-5 py-5">
-          <!-- Le sélecteur de langue vit maintenant dans la barre d'en-tête
-          (entre logo et bouton menu), plus ici — voir layouts/default.vue. -->
+        <div class="space-y-2.5 border-t border-slate-100 px-5 py-5 dark:border-slate-800">
           <a
             :href="config.public.webAppUrl"
             target="_blank"
@@ -119,6 +116,16 @@ onUnmounted(() => {
             @click="close"
           >
             {{ t("nav.cta") }}
+          </a>
+          <a
+            :href="config.public.proAppUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-500/20 dark:border-emerald-400/30 dark:text-emerald-300"
+            @click="close"
+          >
+            <img src="/logo-pro.png" alt="" class="h-4 w-4 rounded object-cover">
+            ZekoraPay Pro
           </a>
         </div>
       </aside>

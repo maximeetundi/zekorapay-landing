@@ -91,12 +91,16 @@ const personaRoutes: Record<PersonaKey, { guide: string; feature?: string; exter
 
           <div class="mt-8 flex flex-wrap items-center gap-3">
             <a
-              :href="config.public.webAppUrl"
+              :href="activePersona === 'enterprise' ? config.public.proAppUrl : config.public.webAppUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-primary px-5 py-2.5 text-sm"
+              :class="
+                activePersona === 'enterprise'
+                  ? 'inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-500'
+                  : 'btn-primary px-5 py-2.5 text-sm'
+              "
             >
-              {{ t("nav.cta") }}
+              {{ activePersona === "enterprise" ? "ZekoraPay Pro" : t("nav.cta") }}
               <ArrowRight class="h-4 w-4" />
             </a>
             <NuxtLink

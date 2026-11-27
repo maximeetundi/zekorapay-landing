@@ -24,31 +24,31 @@ function goHome() {
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col bg-white">
-    <header class="border-b border-slate-100">
+  <div class="flex min-h-screen flex-col bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <header class="border-b border-slate-100 dark:border-slate-800">
       <div class="mx-auto flex max-w-6xl items-center px-6 py-4">
-        <NuxtLink to="/" class="flex items-center gap-2.5">
-          <img src="/logo.png" alt="ZekoraPay" class="h-9 w-auto">
+        <NuxtLink to="/" class="flex items-center">
+          <BrandLogo size="md" />
         </NuxtLink>
       </div>
     </header>
 
     <main class="flex flex-1 items-center justify-center px-6 py-16">
       <div class="flex flex-col items-center gap-4 text-center">
-        <span class="flex h-14 w-14 items-center justify-center rounded-full bg-brand-tint text-brand">
+        <span class="flex h-14 w-14 items-center justify-center rounded-full bg-brand-tint text-brand dark:bg-indigo-500/15 dark:text-indigo-300">
           <SearchX v-if="isNotFound" class="h-6 w-6" stroke-width="2.25" />
           <TriangleAlert v-else class="h-6 w-6" stroke-width="2.25" />
         </span>
-        <p class="text-sm font-bold uppercase tracking-wide text-brand">{{ isNotFound ? '404' : t('errorPage.genericCode') }}</p>
-        <h1 class="text-3xl font-black text-deep sm:text-4xl">
+        <p class="text-sm font-bold uppercase tracking-wide text-brand dark:text-indigo-400">{{ isNotFound ? '404' : t('errorPage.genericCode') }}</p>
+        <h1 class="text-3xl font-black text-deep dark:text-white sm:text-4xl">
           {{ isNotFound ? t('errorPage.title404') : t('errorPage.titleGeneric') }}
         </h1>
-        <p class="max-w-md text-slate-600">
+        <p class="max-w-md text-slate-600 dark:text-slate-300">
           {{ isNotFound ? t('errorPage.body404') : t('errorPage.bodyGeneric') }}
         </p>
         <button
           type="button"
-          class="mt-2 flex items-center gap-2 rounded-[10px] bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#21568c]"
+          class="mt-2 flex items-center gap-2 rounded-[10px] bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-700"
           @click="goHome"
         >
           <Home class="h-4 w-4" stroke-width="2.25" />
@@ -57,9 +57,9 @@ function goHome() {
       </div>
     </main>
 
-    <footer class="border-t border-slate-100">
+    <footer class="border-t border-slate-100 dark:border-slate-800">
       <div class="mx-auto flex max-w-6xl items-center justify-center px-6 py-8 text-sm text-slate-500">
-        <img src="/logo.png" alt="ZekoraPay" class="h-8 w-auto opacity-75">
+        <BrandLogo size="sm" />
       </div>
     </footer>
   </div>
