@@ -59,7 +59,7 @@
   "features": {
     "kicker": "Ce que vous pouvez faire",
     "heading": "Tout ce que vous pouvez faire avec ZekoraPay",
-    "subheading": "Une plateforme complète réunissant services bancaires, gestion communautaire et inclusion financière.",
+    "subheading": "Une plateforme complète réunissant paiements instantanés, portefeuilles multi-devises, gestion communautaire et inclusion financière.",
     "wallet": {
       "title": "Portefeuilles multi-devises",
       "description": "Gérez vos devises locales (XAF, XOF, EUR, USD...) et crypto (USDT, BTC, ETH, SOL, BNB) dans un portefeuille sécurisé avec dépôts Mobile Money (Orange Money, MTN MoMo, Wave...)."
