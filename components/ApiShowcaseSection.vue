@@ -10,38 +10,49 @@ const copied = ref(false);
 
 const snippets: Record<LangTab, string> = {
   curl: `curl -X POST https://api.zekorapay.com/v1/payments/requests \\
-  -H "Authorization: Bearer zp_live_..." \\
+  -H "X-Api-Key: zk_live_..." \\
+  -H "Idempotency-Key: req_2026_0042" \\
   -H "Content-Type: application/json" \\
   -d '{
+    "type": "fixed",
     "amount": 50000,
     "currency": "XAF",
+    "title": "Facture #2026-0042",
     "reference": "INV-2026-0042"
   }'`,
   node: `const res = await fetch("https://api.zekorapay.com/v1/payments/requests", {
   method: "POST",
   headers: {
-    "Authorization": "Bearer zp_live_...",
+    "X-Api-Key": "zk_live_...",
+    "Idempotency-Key": "req_2026_0042",
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
+    type: "fixed",
     amount: 50000,
     currency: "XAF",
+    title: "Facture #2026-0042",
     reference: "INV-2026-0042",
   }),
 });
-const payment = await res.json();`,
+const { payment_request, payment_url } = await res.json();`,
   python: `import requests
 
 res = requests.post(
     "https://api.zekorapay.com/v1/payments/requests",
-    headers={"Authorization": "Bearer zp_live_..."},
+    headers={
+        "X-Api-Key": "zk_live_...",
+        "Idempotency-Key": "req_2026_0042",
+    },
     json={
+        "type": "fixed",
         "amount": 50000,
         "currency": "XAF",
+        "title": "Facture #2026-0042",
         "reference": "INV-2026-0042",
     },
 )
-print(res.json()["payment_id"])`,
+print(res.json()["payment_url"])`,
 };
 
 async function copyCode() {
@@ -74,6 +85,14 @@ async function copyCode() {
               <Code2 class="h-5 w-5" stroke-width="2.25" />
               {{ t("apiCta.link") }}
             </NuxtLink>
+            <a
+              href="https://api.zekorapay.com/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-base font-bold text-white transition hover:bg-white/20"
+            >
+              {{ t("apiCta.reference") }} ↗
+            </a>
           </div>
         </div>
 

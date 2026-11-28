@@ -39,6 +39,28 @@ useHead(() => ({
       </span>
       <h1 class="mt-4 text-4xl font-black tracking-tight text-slate-900 dark:text-white">{{ t("docsNav.apiHeading") }}</h1>
       <p class="mt-3 text-slate-600 dark:text-slate-300">{{ t("docsNav.apiSubtitle") }}</p>
+
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-xs">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 font-mono font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+          {{ t("docsNav.baseUrl") }}: https://api.zekorapay.com/v1
+        </span>
+        <a
+          href="https://api.zekorapay.com/docs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 rounded-full bg-brand px-3.5 py-1.5 font-bold text-white transition hover:opacity-90"
+        >
+          {{ t("docsNav.interactiveDocs") }} ↗
+        </a>
+        <a
+          href="https://api.zekorapay.com/openapi.json"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 font-bold text-slate-700 transition hover:border-brand hover:text-brand dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+        >
+          {{ t("docsNav.openapiSpec") }} ↗
+        </a>
+      </div>
     </div>
 
     <div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">

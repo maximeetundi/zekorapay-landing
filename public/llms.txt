@@ -18,7 +18,7 @@ Both ZekoraPay App and ZekoraPay Pro are live on Web, installable as Progressive
 
 ## Developer API
 
-- [API documentation](https://zekorapay.com/docs): public REST API for third-party integrations — API keys, HMAC-SHA256 webhooks, granular scopes, wallets, merchant payments, exchange, shop, donations, events, cards, users. Base URL: `https://api.app.zekorapay.com/public-api-gateway/v1`.
+- [API documentation](https://zekorapay.com/docs): public REST API v2.1 for personal & enterprise third-party integrations — `zk_live_`/`zk_test_` API keys, timestamped `Zekorapay-Signature` HMAC-SHA256 webhooks, granular scopes, merchant QR/link payments with sandbox simulation, read-only wallets, B2B invoices & subscriptions, delivery logistics, exchange quotes, shop, donations, and tenant-isolated event ticket check-in. Base URL: `https://api.zekorapay.com/v1` · Interactive OpenAPI 3.1 docs: `https://api.zekorapay.com/docs` (`https://api.zekorapay.com/openapi.json`).
 
 ## Other
 

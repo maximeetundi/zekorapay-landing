@@ -39,7 +39,7 @@ Ce dépôt contient le **site vitrine** de ZekoraPay — la présentation publiq
 | `/guide` | Guide utilisateur — accueil |
 | `/guide/[slug]` | Guide utilisateur — sujet détaillé (compte, dépôts, tontines, événements, entreprise, boutique, cartes), avec captures d'écran réelles quand elles existent |
 | `/docs` | Documentation API — accueil |
-| `/docs/[slug]` | Documentation API — domaine détaillé (authentification, portefeuilles, paiements, change, boutique, dons, événements, cartes, utilisateurs, webhooks) |
+| `/docs/[slug]` | Documentation API — domaine détaillé (`introduction`, `authentification`, `paiements`, `portefeuilles`, `facturation`, `livraison`, `boutique`, `evenements`, `dons`, `change`, `utilisateurs`, `webhooks`) |
 | `/faq` | Questions fréquentes |
 | `/contact` | Contact |
 | `/privacy` | Politique de confidentialité |

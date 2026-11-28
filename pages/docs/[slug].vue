@@ -43,6 +43,7 @@ const methodClass: Record<string, string> = {
   GET: "bg-ok-bg text-ok",
   POST: "bg-brand-tint text-brand",
   PUT: "bg-warn-bg text-warn",
+  PATCH: "bg-indigo-100 text-indigo-700",
   DELETE: "bg-danger-bg text-danger",
 };
 </script>
